@@ -205,7 +205,11 @@ You can enable Twikoo by adding the following configuration to the config file:
 
 ## TODO
 
-- [ ] WebSub
-- [x] comment
-- [ ] search
-- [ ] analytics
+- [ ] 竖排文字
+- [ ] 添加外链图标
+- [ ] 摘要优化
+- [ ] 暗色模式按钮
+- [ ] 支持 github alert
+- [ ] 优化滚动区域
+- [ ] 自定义正文字体
+- [ ] 重新编写 README.md
