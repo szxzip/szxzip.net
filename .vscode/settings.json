@@ -47,5 +47,9 @@
     "scss",
     "pcss",
     "postcss"
-  ]
+  ],
+  "css.lint.validProperties": [
+    "text-autospace"
+  ],
+  "css.lint.unknownAtRules": "ignore"
 }

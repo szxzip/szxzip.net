@@ -6,17 +6,20 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.16.6"
+    "astro": "astro",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.6",
+    "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.39.2",
-    "eslint-plugin-format": "^1.1.0",
-    "prettier-plugin-astro": "^0.14.1",
     "eslint-plugin-astro": "^1.5.0",
-    "astro-eslint-parser": "^1.2.2"
+    "eslint-plugin-format": "^1.2.0",
+    "eslint-plugin-tailwindcss": "4.0.0-beta.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.1.18"
   }
 }

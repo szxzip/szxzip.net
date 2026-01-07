@@ -1,0 +1,10 @@
+@layer base {
+  :root {
+    text-autospace: normal;
+  }
+
+  html {
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+  }
+}
