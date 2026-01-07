@@ -3,3 +3,4 @@ shellEmulator: true
 onlyBuiltDependencies:
   - esbuild
   - sharp
+  - simple-git-hooks
