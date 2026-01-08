@@ -1,0 +1,51 @@
+---
+import '../styles/main.css'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <hgroup>
+          <h1></h1>
+          <h2></h2>
+        </hgroup>
+        <nav>
+          <!-- navgation -->
+          <ul><li></li></ul>
+          <!-- social links -->
+          <ul><li>social</li></ul>
+        </nav>
+      </header>
+      <!-- content -->
+      <main></main>
+      <!--  -->
+      <footer></footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  /* :root {
+    --uno-colors-primary: theme('colors.primary');
+    --uno-colors-background: theme('colors.background');
+    --uno-fonts-ui: theme('fontFamily.ui');
+    --uno-colors-shadow: theme('colors.shadow');
+  } */
+
+  body {
+    min-height: 100svh;
+    min-width: 100svw;
+    background-size: 7px 7px;
+    background-image:
+      linear-gradient(to right, #0000000a 1px, transparent 1px),
+      linear-gradient(to bottom, #0000000a 1px, transparent 1px);
+  }
+</style>
