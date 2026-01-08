@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
-    "heti": "^0.9.6"
+
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",

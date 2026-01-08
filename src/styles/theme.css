@@ -4,5 +4,6 @@
   --color-accent: oklch(0.5444 0.1953 13.22);
   --color-neutral: oklch(0 0 0);
 
-  --font-hiragino: hiragino-mincho-pron, sans-serif;
+  --font-hiragino-mincho-pron: hiragino-mincho-pron, sans-serif;
+  --font-source-sans-pro: source-sans-pro, sans-serif;
 }
