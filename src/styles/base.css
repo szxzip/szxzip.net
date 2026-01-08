@@ -7,4 +7,20 @@
     font-size: 16px;
     text-rendering: optimizeLegibility;
   }
+
+  body {
+    min-height: 100svh;
+    min-width: 100svw;
+
+    color: var(--color-primary);
+    text-shadow: 1px 1px 1px var(--color-shadow);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: var(--color-secondary);
+    background-size: 7px 7px;
+    background-image:
+      linear-gradient(to right, var(--color-shadow) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-shadow) 1px, transparent 1px);
+  }
 }

@@ -1,2 +1,6 @@
 @theme {
+  --color-primary: oklch(0.3687 0.0523 258.29);
+  --color-secondary: oklch(1 0 0);
+  --color-accent: oklch(0.5444 0.1953 13.22);
+  --color-shadow: oklch(0 0 0 / 3.92%);
 }
