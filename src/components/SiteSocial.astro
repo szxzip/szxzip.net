@@ -1,0 +1,17 @@
+---
+import { themeConfig } from '@/theme.config'
+
+const socialLinks = themeConfig.site.socialLinks
+---
+
+<ul class="flex-center text-3.5 gap-2">
+  {
+    socialLinks.map(({ title, url, icon }) => (
+      <li>
+        <a href={url} aria-label={title} title={title}>
+          <span class="iconify text-2xl inline-block" class:list={[icon]} />
+        </a>
+      </li>
+    ))
+  }
+</ul>

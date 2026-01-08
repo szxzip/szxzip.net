@@ -3,3 +3,8 @@
 @import './theme.css';
 @import './utilities.css';
 @import './components.css';
+
+@plugin "@iconify/tailwind4" {
+  prefix: 'iconify';
+  prefixes: mdi;
+}

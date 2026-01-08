@@ -16,6 +16,7 @@ export interface SiteConfig {
 export interface SocialLink {
   title: string
   url: string
+  icon: string
 }
 
 export interface NavigationLink {
