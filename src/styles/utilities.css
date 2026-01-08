@@ -1,0 +1,9 @@
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@utility text-* {
+  font-size: calc(--value(number) * var(--spacing));
+}
