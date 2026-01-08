@@ -88,5 +88,8 @@
   "css.lint.validProperties": [
     "text-autospace"
   ],
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "cSpell.words": [
+    "heti"
+  ]
 }
