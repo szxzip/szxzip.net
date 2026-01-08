@@ -14,11 +14,11 @@ export interface SiteConfig {
 }
 
 export interface SocialLink {
-  name: string
-  href: string
+  title: string
+  url: string
 }
 
 export interface NavigationLink {
-  name: string
-  href: string
+  title: string
+  url: string
 }

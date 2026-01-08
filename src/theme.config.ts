@@ -7,41 +7,42 @@ export const themeConfig: ThemeConfig = {
     website: 'https://typography.moeyua.com/',
     title: '講評世界',
     subtitle: 'Moeyua',
-    socialLinks: [
-      {
-        name: 'github',
-        href: 'https://github.com/moeyua',
-      },
-      {
-        name: 'rss',
-        href: '/atom.xml',
-      },
-      {
-        name: 'twitter',
-        href: 'https://twitter.com/moeyua',
-      },
-      {
-        name: 'mastodon',
-        href: 'https://mastodon.social/@moeyua',
-      },
-    ],
     navigationLinks: [
       {
-        name: 'Posts',
-        href: '/',
+        title: 'Posts',
+        url: '/',
       },
       {
-        name: 'Archive',
-        href: '/archive',
+        title: 'Archive',
+        url: '/archive',
       },
       {
-        name: 'Categories',
-        href: '/categories',
+        title: 'Categories',
+        url: '/categories',
       },
       {
-        name: 'About',
-        href: '/about',
+        title: 'About',
+        url: '/about',
       },
     ],
+    socialLinks: [
+      {
+        title: 'github',
+        url: 'https://github.com/moeyua',
+      },
+      {
+        title: 'rss',
+        url: '/atom.xml',
+      },
+      {
+        title: 'twitter',
+        url: 'https://twitter.com/moeyua',
+      },
+      {
+        title: 'mastodon',
+        url: 'https://mastodon.social/@moeyua',
+      },
+    ],
+
   },
 }

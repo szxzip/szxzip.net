@@ -1,0 +1,17 @@
+---
+import { themeConfig } from '@/theme.config'
+
+const navigationLinks = themeConfig.site.navigationLinks
+---
+
+<ul class="flex-center text-3.5 gap-2">
+  {
+    navigationLinks.map(({ title, url }) => (
+      <li>
+        <a href={url} class="link">
+          {title}
+        </a>
+      </li>
+    ))
+  }
+</ul>

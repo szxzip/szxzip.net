@@ -1,4 +1,5 @@
 ---
+import SiteNavigation from '@/components/SiteNavigation.astro'
 import SiteTitle from '@/components/SiteTitle.astro'
 import '@/styles/main.css'
 ---
@@ -13,17 +14,19 @@ import '@/styles/main.css'
   </head>
   <body>
     <div class="container p-7.5">
-      <header class="m-7.5">
+      <header class="m-7.5 flex flex-col gap-2.5">
         <SiteTitle />
         <nav>
           <!-- navgation -->
-          <ul><li></li></ul>
+          <SiteNavigation />
           <!-- social links -->
           <ul><li></li></ul>
         </nav>
       </header>
       <!-- content -->
-      <main></main>
+      <main>
+        <slot />
+      </main>
       <!--  -->
       <footer></footer>
     </div>
