@@ -4,7 +4,7 @@ const siteConfig: SiteConfig = {
   author: 'Moeyua',
   description: 'Rediscory the beauty of typography',
   website: 'https://typography.moeyua.com/',
-  title: '活版印字',
+  title: '講評世界',
   subtitle: 'Typography',
   socialLinks: [
     {

@@ -4,6 +4,8 @@
   --color-accent: oklch(0.5444 0.1953 13.22);
   --color-neutral: oklch(0 0 0);
 
-  --font-hiragino-mincho-pron: hiragino-mincho-pron, sans-serif;
-  --font-source-sans-pro: source-sans-pro, sans-serif;
+  --font-serif: HiraMinProN-W6, Source Han Serif CN, Source Han Serif SC, Source Han Serif TC, serif;
+  --font-sans:
+    Source Sans Pro, Roboto, Helvetica, Helvetica Neue, Source Han Sans SC, Source Han Sans TC, PingFang SC,
+    PingFang HK, PingFang TC, sans-serif;
 }

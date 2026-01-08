@@ -5,7 +5,7 @@
 
   html {
     font-size: 16px;
-    font-family: var(--font-source-sans-pro);
+    font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
   }
 
