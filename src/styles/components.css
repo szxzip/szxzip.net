@@ -1,0 +1,7 @@
+@layer components {
+  .link {
+    @apply underline underline-offset-2 decoration-[0.1em];
+    @apply ease-in-out duration-300 transition-colors;
+    @apply hover:bg-primary hover:text-secondary hover:decoration-primary;
+  }
+}
