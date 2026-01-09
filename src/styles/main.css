@@ -3,8 +3,7 @@
 @import './theme.css';
 @import './utilities.css';
 @import './components.css';
-@import './heti.css';
-@import './heti.overrides.css';
+@import './typography.css';
 
 @plugin "@iconify/tailwind4" {
   prefix: 'iconify';

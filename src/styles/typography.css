@@ -1,3 +1,9 @@
+@import './heti.css';
+
+.heti {
+  @apply font-sans;
+}
+
 .heti a {
   @apply link;
 }

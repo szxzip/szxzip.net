@@ -20,10 +20,10 @@ const { Content } = await render(postEntry)
 <Layout>
   <div>
     <header>
-      <h2 class="text-5 font-bold mb-2">
+      <h2 class="text-6 font-bold mb-2">
         <a class="link" href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
       </h2>
-      <p class="text-3.5 mb-2">
+      <div class="text-3.5 mb-8">
         <time datetime={postEntry.data.pubDate.toString()}>发布于 {formatDate(postEntry.data.pubDate)}</time>
         {
           postEntry.data.tags.map((tag) => (
@@ -32,7 +32,7 @@ const { Content } = await render(postEntry)
             </a>
           ))
         }
-      </p>
+      </div>
     </header>
 
     <article class="heti">
