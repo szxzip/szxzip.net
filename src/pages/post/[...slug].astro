@@ -7,13 +7,17 @@ import { render } from 'astro:content'
 export async function getStaticPaths() {
   const posts = await getPostEntries()
 
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { postEntry: post },
-  }))
+  return posts.map((post, index) => {
+    const prevPost = posts[index - 1] || null
+    const nextPost = posts[index + 1] || null
+    return {
+      params: { slug: post.id },
+      props: { postEntry: post, prevPost, nextPost },
+    }
+  })
 }
 
-const { postEntry } = Astro.props
+const { postEntry, prevPost, nextPost } = Astro.props
 const { Content } = await render(postEntry)
 ---
 
@@ -38,5 +42,25 @@ const { Content } = await render(postEntry)
     <article class="heti">
       <Content />
     </article>
+
+    <footer class="mt-5">
+      <div class="flex flex-row flex-wrap gap-x-4">
+        {
+          prevPost && (
+            <a href={getPostUrl(prevPost)} class="link flex-center">
+              <span>上一篇：{prevPost.data.title}</span>
+            </a>
+          )
+        }
+
+        {
+          nextPost && (
+            <a href={getPostUrl(nextPost)} class="link flex-center">
+              <span>下一篇：{nextPost.data.title}</span>
+            </a>
+          )
+        }
+      </div>
+    </footer>
   </div>
 </Layout>
