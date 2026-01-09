@@ -1,9 +1,21 @@
 .heti a {
   @apply link;
+}
 
-  &:hover {
-    border-block-end: none !important;
-    padding-block-end: none !important;
-    text-decoration-line: underline;
-  }
+.heti a:hover {
+  border-block-end: none !important;
+  padding-block-end: none !important;
+  text-decoration-line: underline;
+}
+
+.heti code {
+  @apply text-accent bg-accent/15;
+  @apply px-[0.2em] wrap-break-word rounded-sm;
+}
+
+.heti blockquote {
+  background-color: unset;
+
+  @apply border-l-4 border-primary/30 pl-4;
+  @apply text-primary/80;
 }
