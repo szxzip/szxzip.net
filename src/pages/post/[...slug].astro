@@ -1,4 +1,5 @@
 ---
+import Pagination from '@/components/Pagination.astro'
 import Layout from '@/layouts/Layout.astro'
 import { formatDate } from '@/utils/date'
 import { getPostEntries, getPostUrl } from '@/utils/post'
@@ -43,24 +44,16 @@ const { Content } = await render(postEntry)
       <Content />
     </article>
 
-    <footer class="mt-5">
-      <div class="flex flex-row flex-wrap gap-x-4">
-        {
-          prevPost && (
-            <a href={getPostUrl(prevPost)} class="link flex-center">
-              <span>上一篇：{prevPost.data.title}</span>
-            </a>
-          )
-        }
-
-        {
-          nextPost && (
-            <a href={getPostUrl(nextPost)} class="link flex-center">
-              <span>下一篇：{nextPost.data.title}</span>
-            </a>
-          )
-        }
-      </div>
+    <footer class="py-5">
+      <Pagination
+        showLeft={Boolean(prevPost)}
+        leftTitle={`${'上一篇：'}${prevPost?.data.title}`}
+        leftUrl={getPostUrl(prevPost)}
+        showRight={Boolean(nextPost)}
+        rightTitle={`${'下一篇：'}${nextPost?.data.title}`}
+        rightUrl={getPostUrl(nextPost)}
+        showPageCount={false}
+      />
     </footer>
   </div>
 </Layout>
