@@ -1,9 +1,9 @@
 ---
-import { fetchPostEntries } from '@/utils/post'
+import { getPostEntries } from '@/utils/post'
 import Layout from '@/layouts/Layout.astro'
 import PostSummary from '@/components/PostSummary.astro'
 
-const postEntries = await fetchPostEntries()
+const postEntries = await getPostEntries()
 ---
 
 <Layout>
