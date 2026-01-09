@@ -5,8 +5,8 @@ export const themeConfig: ThemeConfig = {
     author: 'Moeyua',
     description: 'Rediscory the beauty of typography',
     website: 'https://typography.moeyua.com/',
-    title: '講評世界',
-    subtitle: 'Moeyua',
+    title: '活版印字',
+    subtitle: 'Typography',
     navigationLinks: [
       {
         title: '文章',
@@ -28,7 +28,7 @@ export const themeConfig: ThemeConfig = {
     socialLinks: [
       {
         title: 'github',
-        url: 'https://github.com/moeyua',
+        url: 'https://github.com',
         icon: 'mdi--github',
       },
       {
@@ -38,12 +38,12 @@ export const themeConfig: ThemeConfig = {
       },
       {
         title: 'twitter',
-        url: 'https://twitter.com/moeyua',
+        url: 'https://twitter.com',
         icon: 'mdi--twitter',
       },
       {
         title: 'mastodon',
-        url: 'https://mastodon.social/@moeyua',
+        url: 'https://mastodon.social',
         icon: 'mdi--mastodon',
       },
     ],
