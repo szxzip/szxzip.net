@@ -2,7 +2,6 @@
 @import './base.css';
 @import './theme.css';
 @import './utilities.css';
-@import './components.css';
 @import './typography.css';
 
 @plugin "@iconify/tailwind4" {
