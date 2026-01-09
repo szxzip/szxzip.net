@@ -1,17 +1,17 @@
 ---
-import { fetchPostEntries } from '@/services/post'
-import Layout from '../layouts/Layout.astro'
-import PostEntry from '@/components/PostEntry.astro'
+import { fetchPostEntries } from '@/utils/post'
+import Layout from '@/layouts/Layout.astro'
+import PostSummary from '@/components/PostSummary.astro'
 
 const postEntries = await fetchPostEntries()
 ---
 
 <Layout>
-  <ul class="flex flex-col">
+  <ul class="flex flex-col gap-7.5">
     {
       postEntries.map((postEntry) => (
         <li>
-          <PostEntry postEntry={postEntry} />
+          <PostSummary postEntry={postEntry} />
         </li>
       ))
     }

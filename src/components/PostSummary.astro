@@ -1,0 +1,28 @@
+---
+import { formatDate } from '@/utils/date'
+import type { PostEntry } from '@/types/post'
+
+interface Props {
+  postEntry: PostEntry
+}
+const { postEntry } = Astro.props
+---
+
+<div>
+  <h2 class="text-5 font-bold mb-2">
+    <a class="link" href={'/'}>{postEntry.data.title}</a>
+  </h2>
+  <p class="text-3.5 mb-2">
+    <span>发布于 {formatDate(postEntry.data.pubDate)}</span>
+    {
+      postEntry.data.tags.map((tag) => (
+        <a href="" class="link">
+          <span> # {tag} </span>
+        </a>
+      ))
+    }
+  </p>
+  <p>
+    {postEntry.data.description}
+  </p>
+</div>
