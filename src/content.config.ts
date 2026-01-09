@@ -1,21 +1,18 @@
+// import { rssSchema } from '@astrojs/rss'
 import { glob } from 'astro/loaders'
 import { z } from 'astro/zod'
 import { defineCollection } from 'astro:content'
 
 const posts = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/contents/post' }),
+  loader: glob({ pattern: '**/*.md', base: './src/posts' }),
   schema: z.object({
     title: z.string(),
-    published: z.date(),
+    pubDate: z.date(),
     description: z.string().optional().default(''),
     tags: z.array(z.string()).optional().default([]),
     draft: z.boolean().optional().default(false),
+    slug: z.string().optional(),
   }),
 })
 
-const specs = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/contents/spec' }),
-  schema: z.object({}),
-})
-
-export const collections = { posts, specs }
+export const collections = { posts }
