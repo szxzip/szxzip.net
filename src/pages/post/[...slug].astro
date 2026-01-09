@@ -1,22 +1,42 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { getPostEntries } from '@/utils/post'
+import { formatDate } from '@/utils/date'
+import { getPostEntries, getPostUrl } from '@/utils/post'
 import { render } from 'astro:content'
 
 export async function getStaticPaths() {
   const posts = await getPostEntries()
-  console.log('posts', posts)
+
   return posts.map((post) => ({
     params: { slug: post.id },
-    props: { post },
+    props: { postEntry: post },
   }))
 }
 
-const { post } = Astro.props
-const { Content } = await render(post)
+const { postEntry } = Astro.props
+const { Content } = await render(postEntry)
 ---
 
 <Layout>
-  <h1>{post.data.title}</h1>
-  <Content />
+  <div>
+    <header>
+      <h2 class="text-5 font-bold mb-2">
+        <a href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
+      </h2>
+      <p class="text-3.5 mb-2">
+        <time datetime={postEntry.data.pubDate.toString()}>发布于 {formatDate(postEntry.data.pubDate)}</time>
+        {
+          postEntry.data.tags.map((tag) => (
+            <a href="" class="link">
+              <span> # {tag} </span>
+            </a>
+          ))
+        }
+      </p>
+    </header>
+
+    <article class="heti">
+      <Content />
+    </article>
+  </div>
 </Layout>
