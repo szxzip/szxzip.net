@@ -4,11 +4,11 @@ import { themeConfig } from '@/theme.config'
 const navigationLinks = themeConfig.site.navigationLinks
 ---
 
-<ul class="flex-center text-3.5 gap-2">
+<ul class="flex-center gap-2">
   {
     navigationLinks.map(({ title, url }) => (
       <li>
-        <a href={url} class="link">
+        <a href={url} class="link font-bold text-3.5">
           {title}
         </a>
       </li>

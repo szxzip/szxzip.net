@@ -9,19 +9,19 @@ export const themeConfig: ThemeConfig = {
     subtitle: 'Moeyua',
     navigationLinks: [
       {
-        title: 'Posts',
+        title: '文章',
         url: '/',
       },
       {
-        title: 'Archive',
+        title: '归档',
         url: '/archive',
       },
       {
-        title: 'Categories',
+        title: '分类',
         url: '/categories',
       },
       {
-        title: 'About',
+        title: '关于',
         url: '/about',
       },
     ],
