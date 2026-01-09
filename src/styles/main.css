@@ -4,6 +4,7 @@
 @import './utilities.css';
 @import './components.css';
 @import './heti.css';
+@import './heti.overrides.css';
 
 @plugin "@iconify/tailwind4" {
   prefix: 'iconify';

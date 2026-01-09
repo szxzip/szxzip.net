@@ -1,0 +1,9 @@
+.heti a {
+  @apply link;
+
+  &:hover {
+    border-block-end: none !important;
+    padding-block-end: none !important;
+    text-decoration-line: underline;
+  }
+}

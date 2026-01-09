@@ -21,7 +21,7 @@ const { Content } = await render(postEntry)
   <div>
     <header>
       <h2 class="text-5 font-bold mb-2">
-        <a href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
+        <a class="link" href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
       </h2>
       <p class="text-3.5 mb-2">
         <time datetime={postEntry.data.pubDate.toString()}>发布于 {formatDate(postEntry.data.pubDate)}</time>
