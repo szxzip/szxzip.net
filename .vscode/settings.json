@@ -90,6 +90,7 @@
   ],
   "css.lint.unknownAtRules": "ignore",
   "cSpell.words": [
-    "heti"
+    "heti",
+    "iconify"
   ]
 }

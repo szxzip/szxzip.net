@@ -7,5 +7,8 @@ export async function getPostEntries() {
 }
 
 export function getPostUrl(postEntry: PostEntry) {
+  if (!postEntry) {
+    return '/'
+  }
   return `/post/${postEntry.id}/`
 }
