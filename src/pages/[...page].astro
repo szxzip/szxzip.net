@@ -1,0 +1,43 @@
+---
+import { getPostEntries, getPostUrl } from '@/utils/post'
+import Layout from '@/layouts/Layout.astro'
+import PostSummary from '@/components/PostSummary.astro'
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro'
+import Pagination from '@/components/Pagination.astro'
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const postEntries = await getPostEntries()
+  return paginate(postEntries, {
+    pageSize: 1,
+  })
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { page } = Astro.props
+---
+
+<Layout>
+  <div>
+    <ul class="flex flex-col gap-7.5">
+      {
+        page.data.map((postEntry) => (
+          <li>
+            <PostSummary postEntry={postEntry} />
+          </li>
+        ))
+      }
+    </ul>
+
+    <Pagination
+      showLeft={Boolean(page.url.prev)}
+      leftTitle={'上一页'}
+      leftUrl={page.url.prev}
+      showRight={Boolean(page.url.next)}
+      rightTitle={'下一页'}
+      rightUrl={page.url.next}
+      currentPage={page.currentPage}
+      totalPage={page.lastPage}
+    />
+  </div>
+</Layout>
