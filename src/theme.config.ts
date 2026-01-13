@@ -1,6 +1,6 @@
-import type { ThemeConfig } from '@/theme'
+import { defineThemeConfig } from '@/theme'
 
-export const themeConfig: ThemeConfig = {
+export const themeConfig = defineThemeConfig({
   site: {
     author: 'Moeyua',
     description: 'Rediscory the beauty of typography',
@@ -49,4 +49,4 @@ export const themeConfig: ThemeConfig = {
       },
     ],
   },
-}
+})
