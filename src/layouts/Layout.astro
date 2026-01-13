@@ -4,21 +4,22 @@ import SiteCredits from '@/components/SiteCredits.astro'
 import SiteNavigation from '@/components/SiteNavigation.astro'
 import SiteSocial from '@/components/SiteSocial.astro'
 import SiteTitle from '@/components/SiteTitle.astro'
+import { themeConfig } from '@/theme.config'
 import '@/styles/main.css'
 
 const fadeDown = {
   forwards: {
-    old: { name: 'fade-out-down', duration: '0.5s', easing: 'ease-out' },
-    new: { name: 'fade-in-down', duration: '1s', easing: 'ease-out', delay: '0.5s' },
+    old: { name: 'fade-out-down', duration: '0.5s', easing: 'linear' },
+    new: { name: 'fade-in-down', duration: '0.5s', easing: 'linear', delay: '0.5s' },
   },
   backwards: {
-    old: { name: 'fade-out-down', duration: '0.5s', easing: 'ease-out' },
-    new: { name: 'fade-in-down', duration: '1s', easing: 'ease-out', delay: '0.5s' },
+    old: { name: 'fade-out-down', duration: '0.5s', easing: 'linear' },
+    new: { name: 'fade-in-down', duration: '0.5s', easing: 'linear', delay: '0.5s' },
   },
 }
 ---
 
-<html lang="en">
+<html lang={themeConfig.site.locale}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -28,8 +29,8 @@ const fadeDown = {
     <ClientRouter />
   </head>
   <body>
-    <div class="container p-7.5">
-      <header class="m-7.5 flex flex-col gap-2.5">
+    <div class="container p-7.5" transition:animate={fadeDown}>
+      <header class="m-7.5 flex flex-col gap-2.5" transition:persist>
         <SiteTitle />
         <nav class="flex flex-col gap-3.5">
           <SiteNavigation />
@@ -37,7 +38,7 @@ const fadeDown = {
         </nav>
       </header>
 
-      <main transition:animate={fadeDown}>
+      <main>
         <slot />
       </main>
 
@@ -48,7 +49,7 @@ const fadeDown = {
   </body>
 </html>
 
-<style is:global>
+<style is:inline>
   @keyframes fade-in-down {
     0% {
       transform: translateY(-1rem);
