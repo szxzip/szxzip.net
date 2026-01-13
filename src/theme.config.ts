@@ -1,4 +1,4 @@
-import type { ThemeConfig } from './types/theme'
+import type { ThemeConfig } from '@/theme'
 
 export const themeConfig: ThemeConfig = {
   site: {
@@ -48,6 +48,5 @@ export const themeConfig: ThemeConfig = {
         icon: 'mdi--mastodon',
       },
     ],
-
   },
 }
