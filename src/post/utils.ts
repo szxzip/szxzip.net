@@ -1,4 +1,4 @@
-import type { PostEntry } from '@/types/post'
+import type { PostEntry } from '@/post/types'
 import { getCollection } from 'astro:content'
 
 export async function getPostEntries() {
