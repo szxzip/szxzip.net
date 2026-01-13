@@ -1,9 +1,11 @@
 ---
+import { useTranslate } from '@/i18n'
 import { getPostEntries } from '@/post'
 import Layout from '@/layouts/Layout.astro'
 import PostSummary from '@/components/PostSummary.astro'
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro'
 import Pagination from '@/components/Pagination.astro'
+import { themeConfig } from '@/theme.config'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const postEntries = await getPostEntries()
@@ -15,6 +17,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { page } = Astro.props
+const { t } = useTranslate(themeConfig.site.locale)
 ---
 
 <Layout>
@@ -31,10 +34,10 @@ const { page } = Astro.props
 
     <Pagination
       showLeft={Boolean(page.url.prev)}
-      leftTitle={'上一页'}
+      leftTitle={t('prev')}
       leftUrl={page.url.prev}
       showRight={Boolean(page.url.next)}
-      rightTitle={'下一页'}
+      rightTitle={t('next')}
       rightUrl={page.url.next}
       currentPage={page.currentPage}
       totalPage={page.lastPage}

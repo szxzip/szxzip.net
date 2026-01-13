@@ -1,11 +1,14 @@
 ---
+import { useTranslate } from '@/i18n'
 import { formatPostDate, getPostUrl } from '@/post'
 import type { PostEntry } from '@/post'
+import { themeConfig } from '@/theme.config'
 
 interface Props {
   postEntry: PostEntry
 }
 const { postEntry } = Astro.props
+const { t } = useTranslate(themeConfig.site.locale)
 ---
 
 <div>
@@ -13,7 +16,7 @@ const { postEntry } = Astro.props
     <a class="link" href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
   </h2>
   <p class="text-3.5 mb-2">
-    <span>发布于 {formatPostDate(postEntry.data.pubDate)}</span>
+    <span>{t('posted_at')} {formatPostDate(postEntry.data.pubDate, themeConfig.site.locale)}</span>
     {
       postEntry.data.tags.map((tag) => (
         <a href="" class="link">

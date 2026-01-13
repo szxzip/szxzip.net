@@ -14,7 +14,9 @@ export function getPostUrl(postEntry: PostEntry) {
   return `/post/${postEntry.id}/`
 }
 
-export function formatPostDate(date: Date) {
+export function formatPostDate(date: Date, locale: string = 'zh-cn') {
   const instant = Temporal.Instant.from(date.toISOString())
-  return instant.toZonedDateTimeISO(Temporal.Now.timeZoneId()).toLocaleString('zh-CN', { dateStyle: 'medium' })
+  const [language, region] = locale.split('-')
+  const localeString = region ? `${language}-${region.toUpperCase()}` : locale
+  return instant.toZonedDateTimeISO(Temporal.Now.timeZoneId()).toLocaleString(localeString, { dateStyle: 'medium' })
 }

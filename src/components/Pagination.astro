@@ -1,5 +1,6 @@
 ---
-// const { translate: t } = Astro.locals
+import { useTranslate } from '@/i18n'
+import { themeConfig } from '@/theme.config'
 
 interface Props {
   showLeft?: boolean
@@ -26,10 +27,14 @@ const {
   currentPage,
   totalPage,
 } = Astro.props
+
+const { t } = useTranslate(themeConfig.site.locale)
+const pageNumberText = t('page_number', currentPage ?? 0)
+const pageCountText = t('page_count', totalPage ?? 0)
 ---
 
 <div class="mt-5">
-  {showPageCount && <div class="mb-2.5">{`第 ${currentPage} 页 / 共 ${totalPage} 页`}</div>}
+  {showPageCount && <div class="mb-2.5">{`${pageNumberText} / ${pageCountText}`}</div>}
 
   <div class="flex items-center gap-4">
     {

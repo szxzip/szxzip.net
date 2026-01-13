@@ -1,7 +1,9 @@
 ---
 import Pagination from '@/components/Pagination.astro'
 import Layout from '@/layouts/Layout.astro'
+import { useTranslate } from '@/i18n'
 import { getPostEntries, getPostUrl, formatPostDate } from '@/post'
+import { themeConfig } from '@/theme.config'
 import { render } from 'astro:content'
 
 export async function getStaticPaths() {
@@ -18,6 +20,9 @@ export async function getStaticPaths() {
 }
 
 const { postEntry, prevPost, nextPost } = Astro.props
+const { t } = useTranslate(themeConfig.site.locale)
+const prevTitle = prevPost ? `${t('prev_post')}: ${prevPost.data.title}` : undefined
+const nextTitle = nextPost ? `${t('next_post')}: ${nextPost.data.title}` : undefined
 const { Content } = await render(postEntry)
 ---
 
@@ -28,7 +33,9 @@ const { Content } = await render(postEntry)
         <a class="link" href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
       </h2>
       <div class="text-3.5 mb-8">
-        <time datetime={postEntry.data.pubDate.toString()}>发布于 {formatPostDate(postEntry.data.pubDate)}</time>
+        <time datetime={postEntry.data.pubDate.toString()}
+          >{t('posted_at')} {formatPostDate(postEntry.data.pubDate, themeConfig.site.locale)}</time
+        >
         {
           postEntry.data.tags.map((tag) => (
             <a href="" class="link">
@@ -46,10 +53,10 @@ const { Content } = await render(postEntry)
     <footer class="py-5">
       <Pagination
         showLeft={Boolean(prevPost)}
-        leftTitle={`${'上一篇：'}${prevPost?.data.title}`}
+        leftTitle={prevTitle}
         leftUrl={getPostUrl(prevPost)}
         showRight={Boolean(nextPost)}
-        rightTitle={`${'下一篇：'}${nextPost?.data.title}`}
+        rightTitle={nextTitle}
         rightUrl={getPostUrl(nextPost)}
         showPageCount={false}
       />
