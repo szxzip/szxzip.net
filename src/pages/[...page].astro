@@ -10,7 +10,7 @@ import { themeConfig } from '@/theme.config'
 export const getStaticPaths = (async ({ paginate }) => {
   const postEntries = await getPostEntries()
   return paginate(postEntries, {
-    pageSize: 1,
+    pageSize: 5,
   })
 }) satisfies GetStaticPaths
 

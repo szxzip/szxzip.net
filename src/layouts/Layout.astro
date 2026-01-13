@@ -1,9 +1,21 @@
 ---
+import { ClientRouter } from 'astro:transitions'
 import SiteCredits from '@/components/SiteCredits.astro'
 import SiteNavigation from '@/components/SiteNavigation.astro'
 import SiteSocial from '@/components/SiteSocial.astro'
 import SiteTitle from '@/components/SiteTitle.astro'
 import '@/styles/main.css'
+
+const fadeDown = {
+  forwards: {
+    old: { name: 'fade-out-down', duration: '0.5s', easing: 'ease-out' },
+    new: { name: 'fade-in-down', duration: '1s', easing: 'ease-out', delay: '0.5s' },
+  },
+  backwards: {
+    old: { name: 'fade-out-down', duration: '0.5s', easing: 'ease-out' },
+    new: { name: 'fade-in-down', duration: '1s', easing: 'ease-out', delay: '0.5s' },
+  },
+}
 ---
 
 <html lang="en">
@@ -13,6 +25,7 @@ import '@/styles/main.css'
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+    <ClientRouter />
   </head>
   <body>
     <div class="container p-7.5">
@@ -24,7 +37,7 @@ import '@/styles/main.css'
         </nav>
       </header>
 
-      <main>
+      <main transition:animate={fadeDown}>
         <slot />
       </main>
 
@@ -34,3 +47,38 @@ import '@/styles/main.css'
     </div>
   </body>
 </html>
+
+<style is:global>
+  @keyframes fade-in-down {
+    0% {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out-down {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
