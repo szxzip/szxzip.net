@@ -48,20 +48,21 @@ const fadeDown: TransitionDirectionalAnimations = {
     <ClientRouter />
   </head>
   <body>
-    <div class="container p-7.5">
-      <header class="m-7.5 flex flex-col gap-2.5">
+    <div class="container mx-auto p-7.5 lg:flex lg:flex-row-reverse">
+      <header class="m-7.5 flex flex-col gap-2.5 relative">
         <SiteTitle />
         <nav class="flex flex-col gap-3.5">
           <SiteNavigation />
           <SiteSocial />
         </nav>
+        <SiteCredits class:list={['lg:block']} />
       </header>
 
-      <main transition:animate="fade">
+      <main transition:animate="fade" class="lg:grow">
         <slot />
       </main>
 
-      <footer class="my-7.5">
+      <footer class="my-7.5 lg:hidden">
         <SiteCredits />
       </footer>
     </div>
