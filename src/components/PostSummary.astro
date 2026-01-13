@@ -1,7 +1,6 @@
 ---
-import { formatDate } from '@/utils/date'
-import type { PostEntry } from '@/post/types'
-import { getPostUrl } from '@/post'
+import { formatPostDate, getPostUrl } from '@/post'
+import type { PostEntry } from '@/post'
 
 interface Props {
   postEntry: PostEntry
@@ -14,7 +13,7 @@ const { postEntry } = Astro.props
     <a class="link" href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
   </h2>
   <p class="text-3.5 mb-2">
-    <span>发布于 {formatDate(postEntry.data.pubDate)}</span>
+    <span>发布于 {formatPostDate(postEntry.data.pubDate)}</span>
     {
       postEntry.data.tags.map((tag) => (
         <a href="" class="link">

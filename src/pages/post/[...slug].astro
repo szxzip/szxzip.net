@@ -1,8 +1,7 @@
 ---
 import Pagination from '@/components/Pagination.astro'
 import Layout from '@/layouts/Layout.astro'
-import { formatDate } from '@/utils/date'
-import { getPostEntries, getPostUrl } from '@/post'
+import { getPostEntries, getPostUrl, formatPostDate } from '@/post'
 import { render } from 'astro:content'
 
 export async function getStaticPaths() {
@@ -29,7 +28,7 @@ const { Content } = await render(postEntry)
         <a class="link" href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
       </h2>
       <div class="text-3.5 mb-8">
-        <time datetime={postEntry.data.pubDate.toString()}>发布于 {formatDate(postEntry.data.pubDate)}</time>
+        <time datetime={postEntry.data.pubDate.toString()}>发布于 {formatPostDate(postEntry.data.pubDate)}</time>
         {
           postEntry.data.tags.map((tag) => (
             <a href="" class="link">
