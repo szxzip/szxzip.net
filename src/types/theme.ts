@@ -1,6 +1,7 @@
+import type { SupportedLocale } from '@/i18n/locales'
+
 export interface ThemeConfig {
   site: SiteConfig
-
 }
 
 export interface SiteConfig {
@@ -11,6 +12,7 @@ export interface SiteConfig {
   subtitle: string
   socialLinks: SocialLink[]
   navigationLinks: NavigationLink[]
+  locale: SupportedLocale
 }
 
 export interface SocialLink {
