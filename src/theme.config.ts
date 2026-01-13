@@ -7,7 +7,7 @@ export const themeConfig = defineThemeConfig({
     website: 'https://typography.moeyua.com/',
     title: '活版印字',
     subtitle: 'Typography',
-    locale: 'en-us',
+    locale: 'zh-cn',
     navigationLinks: [
       {
         title: '文章',
