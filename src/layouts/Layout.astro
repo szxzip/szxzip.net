@@ -7,14 +7,33 @@ import SiteTitle from '@/components/SiteTitle.astro'
 import { themeConfig } from '@/theme.config'
 import '@/styles/main.css'
 
-const fadeDown = {
+export interface TransitionAnimation {
+  name: string // 关键帧的名称
+  delay?: number | string
+  duration?: number | string
+  easing?: string
+  fillMode?: string
+  direction?: string
+}
+
+export interface TransitionAnimationPair {
+  old: TransitionAnimation | TransitionAnimation[]
+  new: TransitionAnimation | TransitionAnimation[]
+}
+
+export interface TransitionDirectionalAnimations {
+  forwards: TransitionAnimationPair
+  backwards: TransitionAnimationPair
+}
+
+const fadeDown: TransitionDirectionalAnimations = {
   forwards: {
-    old: { name: 'fade-out-down', duration: '0.5s', easing: 'linear' },
-    new: { name: 'fade-in-down', duration: '0.5s', easing: 'linear', delay: '0.5s' },
+    old: { name: 'fade-out-down', duration: '0.5s', easing: 'ease-in-out' },
+    new: { name: 'fade-in-up', duration: '1s', easing: 'ease-in-out', delay: '0.5s' },
   },
   backwards: {
-    old: { name: 'fade-out-down', duration: '0.5s', easing: 'linear' },
-    new: { name: 'fade-in-down', duration: '0.5s', easing: 'linear', delay: '0.5s' },
+    old: { name: 'fade-out-down', duration: '0.5s', easing: 'ease-in-out' },
+    new: { name: 'fade-in-up', duration: '1s', easing: 'ease-in-out', delay: '0.5s' },
   },
 }
 ---
@@ -29,8 +48,8 @@ const fadeDown = {
     <ClientRouter />
   </head>
   <body>
-    <div class="container p-7.5" transition:animate={fadeDown}>
-      <header class="m-7.5 flex flex-col gap-2.5" transition:persist>
+    <div class="container p-7.5">
+      <header class="m-7.5 flex flex-col gap-2.5">
         <SiteTitle />
         <nav class="flex flex-col gap-3.5">
           <SiteNavigation />
@@ -38,7 +57,7 @@ const fadeDown = {
         </nav>
       </header>
 
-      <main>
+      <main transition:animate="fade">
         <slot />
       </main>
 
@@ -49,10 +68,21 @@ const fadeDown = {
   </body>
 </html>
 
-<style is:inline>
+<style is:global>
   @keyframes fade-in-down {
     0% {
       transform: translateY(-1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      transform: translateY(1rem);
       opacity: 0;
     }
     100% {
@@ -72,14 +102,14 @@ const fadeDown = {
     }
   }
 
-  @keyframes fade-in-left {
+  @keyframes fade-out-up {
     0% {
-      opacity: 0;
-      transform: translateX(1rem);
+      transform: translateY(0);
+      opacity: 1;
     }
     100% {
-      opacity: 1;
-      transform: translateX(0);
+      transform: translateY(-1rem);
+      opacity: 0;
     }
   }
 </style>
