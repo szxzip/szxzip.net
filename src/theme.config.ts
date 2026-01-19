@@ -26,6 +26,9 @@ export const themeConfig = defineThemeConfig({
         url: '/about',
       },
     ],
+    rss: {
+      fullText: true,
+    },
     socialLinks: [
       {
         title: 'github',

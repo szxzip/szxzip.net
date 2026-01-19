@@ -1,0 +1,42 @@
+import rss from '@astrojs/rss'
+import MarkdownIt from 'markdown-it'
+import sanitizeHtml from 'sanitize-html'
+import { getPostEntries } from '@/post'
+import { themeConfig } from '@/theme.config'
+
+const markdownParser = new MarkdownIt()
+
+export async function GET() {
+  const entries = await getPostEntries()
+  const filteredEntries = import.meta.env.PROD
+    ? entries.filter(entry => !entry.data.draft)
+    : entries
+
+  const sortedEntries = [...filteredEntries].sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+  )
+
+  const items = sortedEntries.map((entry) => {
+    const content = themeConfig.site.rss?.fullText === false
+      ? undefined
+      : sanitizeHtml(markdownParser.render(entry.body ?? ''), {
+          allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+        })
+
+    return {
+      title: entry.data.title,
+      pubDate: entry.data.pubDate,
+      description: entry.data.description,
+      link: `/posts/${entry.id}/`,
+      content,
+    }
+  })
+
+  return rss({
+    title: themeConfig.site.title,
+    description: themeConfig.site.description,
+    site: themeConfig.site.website,
+    items,
+    customData: `<language>${themeConfig.site.locale}</language>`,
+  })
+}

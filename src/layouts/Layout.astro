@@ -34,7 +34,13 @@ const viewTransition = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={themeConfig.site.title}
+      href={new URL('atom.xml', themeConfig.site.website)}
+    />
+    <title>{themeConfig.site.title}</title>
     <ClientRouter />
   </head>
   <body>

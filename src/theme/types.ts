@@ -10,6 +10,9 @@ export interface SiteConfig {
   website: string
   title: string
   subtitle: string
+  rss?: {
+    fullText?: boolean
+  }
   socialLinks: SocialLink[]
   navigationLinks: NavigationLink[]
   locale: SupportedLocale
