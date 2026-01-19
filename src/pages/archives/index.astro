@@ -1,13 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import { useTranslate } from '@/i18n'
-import { formatPostDate, getPostEntries, getPostUrl } from '@/post'
+import { formatPostDate, getPostEntries, getPostUrl, sortPostEntriesByDate } from '@/post'
 import { themeConfig } from '@/theme.config'
 
 const { t } = useTranslate(themeConfig.site.locale)
 const postEntries = await getPostEntries()
-const visiblePosts = import.meta.env.DEV ? postEntries : postEntries.filter((post) => !post.data.draft)
-const sortedPosts = [...visiblePosts].sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+const sortedPosts = sortPostEntriesByDate(postEntries)
 
 const postsByYear = new Map<number, typeof sortedPosts>()
 

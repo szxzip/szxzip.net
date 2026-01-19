@@ -4,7 +4,9 @@ import { getCollection } from 'astro:content'
 
 export async function getPostEntries() {
   const postsEntries = await getCollection('posts')
-  return postsEntries
+  return import.meta.env.PROD
+    ? postsEntries.filter(entry => !entry.data.draft)
+    : postsEntries
 }
 
 export function getPostUrl(postEntry: PostEntry) {

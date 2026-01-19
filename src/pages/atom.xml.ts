@@ -1,20 +1,15 @@
 import rss from '@astrojs/rss'
 import MarkdownIt from 'markdown-it'
 import sanitizeHtml from 'sanitize-html'
-import { getPostEntries } from '@/post'
+import { getPostEntries, sortPostEntriesByDate } from '@/post'
 import { themeConfig } from '@/theme.config'
 
 const markdownParser = new MarkdownIt()
 
 export async function GET() {
   const entries = await getPostEntries()
-  const filteredEntries = import.meta.env.PROD
-    ? entries.filter(entry => !entry.data.draft)
-    : entries
 
-  const sortedEntries = [...filteredEntries].sort(
-    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
-  )
+  const sortedEntries = sortPostEntriesByDate(entries)
 
   const items = sortedEntries.map((entry) => {
     const content = themeConfig.feeds?.rss?.fullText === false
