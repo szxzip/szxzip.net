@@ -15,7 +15,7 @@ export const themeConfig = defineThemeConfig({
       },
       {
         title: '归档',
-        url: '/archive',
+        url: '/archives',
       },
       {
         title: '标签',

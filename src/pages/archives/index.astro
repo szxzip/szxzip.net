@@ -1,0 +1,48 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { useTranslate } from '@/i18n'
+import { formatPostDate, getPostEntries, getPostUrl } from '@/post'
+import { themeConfig } from '@/theme.config'
+
+const { t } = useTranslate(themeConfig.site.locale)
+const postEntries = await getPostEntries()
+const visiblePosts = import.meta.env.DEV ? postEntries : postEntries.filter((post) => !post.data.draft)
+const sortedPosts = [...visiblePosts].sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+
+const postsByYear = new Map<number, typeof sortedPosts>()
+
+sortedPosts.forEach((post) => {
+  const year = post.data.pubDate.getFullYear()
+  if (!postsByYear.has(year)) {
+    postsByYear.set(year, [])
+  }
+  postsByYear.get(year)?.push(post)
+})
+
+const years = Array.from(postsByYear.keys()).sort((a, b) => b - a)
+---
+
+<Layout>
+  <div class="max-w-2xl w-full">
+    <h1 class="text-7 font-bold mb-6">{t('archive')}</h1>
+    {
+      years.map((year) => (
+        <section class="mb-10">
+          <h2 class="text-5 font-bold mb-4">{year}</h2>
+          <ul class="flex flex-col gap-3">
+            {postsByYear.get(year)?.map((postEntry) => (
+              <li class="flex flex-wrap items-baseline gap-3">
+                <a class="link" href={getPostUrl(postEntry)}>
+                  {postEntry.data.title}
+                </a>
+                <time class="text-3.5" datetime={postEntry.data.pubDate.toString()}>
+                  {formatPostDate(postEntry.data.pubDate, themeConfig.site.locale)}
+                </time>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Layout>
