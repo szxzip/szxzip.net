@@ -46,18 +46,24 @@ const viewTransition = {
           'lg:h-svh lg:justify-end lg:gap-12 lg:sticky lg:top-0 lg:py-20 lg:w-1/4',
         ]}
       >
-        <SiteTitle class:list={['mb-auto', 'lg:mt-0']} />
+        <div class:list={['mb-auto', 'lg:mt-0']}>
+          <SiteTitle />
+        </div>
+
         <nav class:list={['flex flex-col gap-3.5']}>
           <SiteNavigation />
           <SiteSocial />
         </nav>
-        <SiteCredits class:list={['lg:block  hidden']} />
+
+        <div class:list={['hidden', 'lg:block']}>
+          <SiteCredits />
+        </div>
       </header>
 
       <main
         id="site-main"
         transition:animate={viewTransition}
-        class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center ']}
+        class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center']}
       >
         <slot />
       </main>
@@ -75,8 +81,11 @@ const viewTransition = {
     () => {
       const siteHeader = document.getElementById('site-header')
       const siteMain = document.getElementById('site-main')
+      const siteFooter = document.getElementById('site-footer')
       siteHeader?.classList.add('lg:animate-fade-in-left')
-      siteMain?.classList.add('lg:animate-fade-in-down')
+      siteHeader?.classList.add('animate-fade-in-down')
+      siteMain?.classList.add('animate-fade-in-down')
+      siteFooter?.classList.add('animate-fade-in-down')
     },
     { once: true },
   )
