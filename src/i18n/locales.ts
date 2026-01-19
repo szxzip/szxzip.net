@@ -13,6 +13,7 @@ export interface LocaleMapping {
   next: string
   prev_post: string
   next_post: string
+  pinned: string
 }
 export type SupportedLocale = typeof SUPPORTED_LOCALES[number]
 
@@ -34,6 +35,7 @@ export const LOCALEMAPPINGS: Record<SupportedLocale, LocaleMapping> = {
     next: 'Next',
     prev_post: 'Previous post',
     next_post: 'Next post',
+    pinned: 'Pinned',
   },
   'zh-cn': {
     home: '首页',
@@ -50,6 +52,7 @@ export const LOCALEMAPPINGS: Record<SupportedLocale, LocaleMapping> = {
     next: '下一页',
     prev_post: '上一篇',
     next_post: '下一篇',
+    pinned: '置顶',
   },
   'zh-tw': {
     home: '首頁',
@@ -66,6 +69,7 @@ export const LOCALEMAPPINGS: Record<SupportedLocale, LocaleMapping> = {
     next: '下一頁',
     prev_post: '上一篇',
     next_post: '下一篇',
+    pinned: '置頂',
   },
   'ja-jp': {
     home: 'ホーム',
@@ -82,6 +86,7 @@ export const LOCALEMAPPINGS: Record<SupportedLocale, LocaleMapping> = {
     next: '次へ',
     prev_post: '前の記事',
     next_post: '次の記事',
+    pinned: '固定',
   },
   'ko-kr': {
     home: '홈',
@@ -98,6 +103,7 @@ export const LOCALEMAPPINGS: Record<SupportedLocale, LocaleMapping> = {
     next: '다음',
     prev_post: '이전 글',
     next_post: '다음 글',
+    pinned: '고정',
   },
   'it-it': {
     home: 'Home',
@@ -114,5 +120,6 @@ export const LOCALEMAPPINGS: Record<SupportedLocale, LocaleMapping> = {
     next: 'Successivo',
     prev_post: 'Articolo precedente',
     next_post: 'Articolo successivo',
+    pinned: 'In evidenza',
   },
 } as const
