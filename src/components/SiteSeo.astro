@@ -1,5 +1,15 @@
 ---
 import { themeConfig } from '@/theme.config'
+import { SEO } from 'astro-seo'
 
-const { title } = Astro.props
+interface Props {
+  title?: string
+  description?: string
+  openGraph?: unknown
+  twitter?: unknown
+}
+
+const { title = themeConfig.site.title, description = themeConfig.site.description } = Astro.props
 ---
+
+<SEO title={title} description={description} />

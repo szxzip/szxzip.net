@@ -1,12 +1,13 @@
+import type { Props as AstroSeoProps } from 'astro-seo'
 import type { SupportedLocale } from '@/i18n/locales'
 
 export interface ThemeConfig {
   site: SiteConfig
-  theme?: ThemeSettings
-  content?: ContentSettings
-  feeds?: FeedSettings
-  services?: ServicesSettings
-  experimental?: ExperimentalSettings
+  theme?: AppearanceConfig
+  content?: ContentConfig
+  feeds?: FeedConfig
+  services?: ServicesConfig
+  experimental?: ExperimentalConfig
 }
 
 export interface SiteConfig {
@@ -20,7 +21,24 @@ export interface SiteConfig {
   locale: SupportedLocale
 }
 
-export interface ThemeSettings {
+export interface FeedConfig {
+  rss?: {
+    fullText?: boolean
+  }
+}
+
+export interface SeoConfig extends AstroSeoProps {}
+
+interface ServicesConfig {
+  comments?: {
+    provider?: 'giscus' | 'disqus' | 'utterances' | 'none'
+  }
+  analytics?: {
+    provider?: 'none' | 'ga' | 'plausible' | 'umami'
+  }
+}
+
+export interface AppearanceConfig {
   darkMode?: 'auto' | 'light' | 'dark'
   font?: {
     body?: string
@@ -29,7 +47,7 @@ export interface ThemeSettings {
   }
 }
 
-export interface ContentSettings {
+interface ContentConfig {
   mdx?: {
     enabled?: boolean
   }
@@ -39,22 +57,7 @@ export interface ContentSettings {
   }
 }
 
-export interface FeedSettings {
-  rss?: {
-    fullText?: boolean
-  }
-}
-
-export interface ServicesSettings {
-  comments?: {
-    provider?: 'giscus' | 'disqus' | 'utterances' | 'none'
-  }
-  analytics?: {
-    provider?: 'none' | 'ga' | 'plausible' | 'umami'
-  }
-}
-
-export interface ExperimentalSettings {}
+export interface ExperimentalConfig {}
 
 export interface SocialLink {
   title: string
