@@ -18,7 +18,7 @@ export function getPostUrl(postEntry: PostEntry) {
 
 export async function getPostTags() {
   const tagsSet = new Set<string>()
-  const posts = await getCollection('posts')
+  const posts = await getPostEntries()
   posts.forEach((post) => {
     post.data.tags?.forEach(tag => tagsSet.add(tag))
   })
