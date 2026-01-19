@@ -35,7 +35,7 @@ const nextTitle = nextPost ? `${t('next_post')}: ${nextPost.data.title}` : undef
 const { Content } = await render(postEntry)
 ---
 
-<Layout>
+<Layout title={postEntry.data.title} description={postEntry.data.description}>
   <div class="max-w-2xl w-full">
     <header>
       <h2 class="text-6 font-bold mb-2">
