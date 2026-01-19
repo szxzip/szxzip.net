@@ -20,6 +20,7 @@ import '@/styles/main.css'
   <body>
     <div class:list={['container mx-auto', 'lg:flex lg:flex-row-reverse lg:justify-center']}>
       <header
+        id="site-header"
         class:list={[
           'p-7.5 flex flex-col gap-2.5',
           'lg:h-svh lg:justify-end lg:gap-12 lg:sticky lg:top-0 lg:py-20 lg:w-1/4',
@@ -33,13 +34,30 @@ import '@/styles/main.css'
         <SiteCredits class:list={['lg:block  hidden']} />
       </header>
 
-      <main transition:animate="fade" class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center']}>
+      <main
+        id="site-main"
+        transition:animate="fade"
+        class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center ']}
+      >
         <slot />
       </main>
 
-      <footer class:list={['p-7.5', 'lg:hidden ']}>
+      <footer id="site-footer" class:list={['p-7.5', 'lg:hidden ']}>
         <SiteCredits />
       </footer>
     </div>
   </body>
 </html>
+
+<script>
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      const siteHeader = document.getElementById('site-header')
+      const siteMain = document.getElementById('site-main')
+      siteHeader?.classList.add('lg:animate-fade-in-left')
+      siteMain?.classList.add('lg:animate-fade-in-down')
+    },
+    { once: true },
+  )
+</script>
