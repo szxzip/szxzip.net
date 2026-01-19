@@ -18,21 +18,26 @@ import '@/styles/main.css'
     <ClientRouter />
   </head>
   <body>
-    <div class="container mx-auto lg:flex lg:flex-row-reverse relative">
-      <header class="p-7.5 flex flex-col gap-2.5 lg:h-svh lg:justify-end lg:gap-12 lg:sticky lg:top-0 lg:py-20">
-        <SiteTitle class:list={['lg:mt-0 mb-auto']} />
-        <nav class="flex flex-col gap-3.5">
+    <div class:list={['container mx-auto', 'lg:flex lg:flex-row-reverse lg:justify-center']}>
+      <header
+        class:list={[
+          'p-7.5 flex flex-col gap-2.5',
+          'lg:h-svh lg:justify-end lg:gap-12 lg:sticky lg:top-0 lg:py-20 lg:w-1/4',
+        ]}
+      >
+        <SiteTitle class:list={['mb-auto', 'lg:mt-0']} />
+        <nav class:list={['flex flex-col gap-3.5']}>
           <SiteNavigation />
           <SiteSocial />
         </nav>
         <SiteCredits class:list={['lg:block  hidden']} />
       </header>
 
-      <main transition:animate="fade" class="px-7.5 lg:grow lg:py-20">
+      <main transition:animate="fade" class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center']}>
         <slot />
       </main>
 
-      <footer class="lg:hidden p-7.5">
+      <footer class:list={['p-7.5', 'lg:hidden ']}>
         <SiteCredits />
       </footer>
     </div>
