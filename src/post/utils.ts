@@ -23,6 +23,16 @@ export async function getPostTags() {
   return Array.from(tagsSet).sort()
 }
 
+export function sortPostEntriesByDate(entries: PostEntry[]): PostEntry[] {
+  return [...entries].sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+}
+
+export function pinPostEntries(entries: PostEntry[]): PostEntry[] {
+  const pinnedEntries = entries.filter(entry => entry.data.pinned)
+  const regularEntries = entries.filter(entry => !entry.data.pinned)
+  return [...pinnedEntries, ...regularEntries]
+}
+
 export function getPostTagUrl(tag: string) {
   return `/tags/${tag}`
 }

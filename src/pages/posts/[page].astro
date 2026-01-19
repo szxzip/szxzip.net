@@ -1,6 +1,6 @@
 ---
 import { useTranslate } from '@/i18n'
-import { getPostEntries } from '@/post'
+import { getPostEntries, pinPostEntries, sortPostEntriesByDate } from '@/post'
 import Layout from '@/layouts/Layout.astro'
 import PostSummary from '@/components/PostSummary.astro'
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro'
@@ -9,7 +9,10 @@ import { themeConfig } from '@/theme.config'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const postEntries = await getPostEntries()
-  return paginate(postEntries, {
+  const sortedEntries = sortPostEntriesByDate(postEntries)
+  const pinnedEntries = pinPostEntries(sortedEntries)
+
+  return paginate(pinnedEntries, {
     pageSize: 5,
   })
 }) satisfies GetStaticPaths

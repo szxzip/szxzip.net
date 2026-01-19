@@ -11,6 +11,7 @@ const posts = defineCollection({
     description: z.string().optional().default(''),
     tags: z.array(z.string()).optional().default([]),
     draft: z.boolean().optional().default(false),
+    pinned: z.boolean().optional().default(false),
     slug: z.string().optional(),
   }),
 })

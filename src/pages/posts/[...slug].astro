@@ -2,16 +2,25 @@
 import Pagination from '@/components/Pagination.astro'
 import Layout from '@/layouts/Layout.astro'
 import { useTranslate } from '@/i18n'
-import { formatPostDate, getPostEntries, getPostTagUrl, getPostUrl } from '@/post'
+import {
+  formatPostDate,
+  getPostEntries,
+  getPostTagUrl,
+  getPostUrl,
+  pinPostEntries,
+  sortPostEntriesByDate,
+} from '@/post'
 import { themeConfig } from '@/theme.config'
 import { render } from 'astro:content'
 
 export async function getStaticPaths() {
   const posts = await getPostEntries()
+  const sortedPosts = sortPostEntriesByDate(posts)
+  const pinnedPosts = pinPostEntries(sortedPosts)
 
-  return posts.map((post, index) => {
-    const prevPost = posts[index - 1] || null
-    const nextPost = posts[index + 1] || null
+  return pinnedPosts.map((post, index) => {
+    const prevPost = pinnedPosts[index - 1] || null
+    const nextPost = pinnedPosts[index + 1] || null
     return {
       params: { slug: post.id },
       props: { postEntry: post, prevPost, nextPost },

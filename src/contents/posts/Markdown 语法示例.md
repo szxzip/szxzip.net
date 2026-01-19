@@ -4,6 +4,7 @@ pubDate: 2024-07-20
 tags: [Markdown, Guide]
 description: '覆盖基础 Markdown 与常见 GFM 扩展的示例文档，用于验证标题、列表、表格、代码块、脚注、任务列表与删除线等语法渲染效果。'
 draft: true
+pinned: true
 slug: markdown-sample
 ---
 
