@@ -18,8 +18,8 @@ export const themeConfig = defineThemeConfig({
         url: '/archive',
       },
       {
-        title: '分类',
-        url: '/categories',
+        title: '标签',
+        url: '/tags',
       },
       {
         title: '关于',

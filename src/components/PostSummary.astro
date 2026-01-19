@@ -1,6 +1,6 @@
 ---
 import { useTranslate } from '@/i18n'
-import { formatPostDate, getPostUrl } from '@/post'
+import { formatPostDate, getPostTagUrl, getPostUrl } from '@/post'
 import type { PostEntry } from '@/post'
 import { themeConfig } from '@/theme.config'
 
@@ -19,7 +19,7 @@ const { t } = useTranslate(themeConfig.site.locale)
     <span>{t('posted_at')} {formatPostDate(postEntry.data.pubDate, themeConfig.site.locale)}</span>
     {
       postEntry.data.tags.map((tag) => (
-        <a href="" class="link">
+        <a href={getPostTagUrl(tag)} class="link">
           <span> # {tag} </span>
         </a>
       ))

@@ -1,7 +1,7 @@
 ---
 title: Markdown（中文译本）
 pubDate: 2026-01-09
-tags: [test]
+tags: [test, 中文, "中文 排版", 阅读, "字体 结构", typography]
 description: '这是 Markdown 语法的中文翻译文档。'
 draft: false
 slug: markdown-zh

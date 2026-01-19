@@ -23,6 +23,10 @@ export async function getPostTags() {
   return Array.from(tagsSet).sort()
 }
 
+export function getPostTagUrl(tag: string) {
+  return `/tags/${tag}`
+}
+
 export function formatPostDate(date: Date, locale: string = 'zh-cn') {
   const instant = Temporal.Instant.from(date.toISOString())
   const [language, region] = locale.split('-')

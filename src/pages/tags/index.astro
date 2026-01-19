@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { useTranslate } from '@/i18n'
+import { getPostEntries, getPostTagUrl, getPostTags } from '@/post'
+import { themeConfig } from '@/theme.config'
+
+const { t } = useTranslate(themeConfig.site.locale)
+const [tags, postEntries] = await Promise.all([getPostTags(), getPostEntries()])
+
+const tagsWithCount = tags.map((tag) => ({
+  name: tag,
+  count: postEntries.filter((post) => post.data.tags?.includes(tag)).length,
+}))
+---
+
+<Layout>
+  <div class="max-w-2xl w-full">
+    <h1 class="text-7 font-bold mb-6">{t('tags')}</h1>
+    <ul class="flex flex-wrap gap-3">
+      {
+        tagsWithCount.map((tag) => (
+          <li>
+            <a class="link" href={getPostTagUrl(tag.name)}>
+              <span>{tag.name}</span>
+              <span class="text-3.5 ml-2">({tag.count})</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>

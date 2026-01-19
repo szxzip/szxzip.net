@@ -2,7 +2,7 @@
 import Pagination from '@/components/Pagination.astro'
 import Layout from '@/layouts/Layout.astro'
 import { useTranslate } from '@/i18n'
-import { getPostEntries, getPostUrl, formatPostDate } from '@/post'
+import { formatPostDate, getPostEntries, getPostTagUrl, getPostUrl } from '@/post'
 import { themeConfig } from '@/theme.config'
 import { render } from 'astro:content'
 
@@ -27,7 +27,7 @@ const { Content } = await render(postEntry)
 ---
 
 <Layout>
-  <div class="max-w-2xl">
+  <div class="max-w-2xl w-full">
     <header>
       <h2 class="text-6 font-bold mb-2">
         <a class="link" href={getPostUrl(postEntry)}>{postEntry.data.title}</a>
@@ -38,7 +38,7 @@ const { Content } = await render(postEntry)
         >
         {
           postEntry.data.tags.map((tag) => (
-            <a href="" class="link">
+            <a href={getPostTagUrl(tag)} class="link">
               <span> # {tag} </span>
             </a>
           ))

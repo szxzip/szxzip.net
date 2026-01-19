@@ -1,7 +1,7 @@
 ---
 title: Markdown
 pubDate: 2026-01-09
-tags: [test]
+tags: [test, typography, design, "type notes", 构字, "排版 练习"]
 description: 'This is a documentation about Markdown syntax.'
 draft: false
 slug: markdown

@@ -1,0 +1,41 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PostSummary from '@/components/PostSummary.astro'
+import { getPostEntries, getPostTags } from '@/post'
+import { useTranslate } from '@/i18n'
+import { themeConfig } from '@/theme.config'
+
+export async function getStaticPaths() {
+  const tags = await getPostTags()
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag },
+  }))
+}
+
+const { tag } = Astro.props
+const { t } = useTranslate(themeConfig.site.locale)
+const postEntries = await getPostEntries()
+const tagPosts = postEntries.filter((post) => post.data.tags?.includes(tag))
+---
+
+<Layout>
+  <div class="max-w-2xl w-full">
+    <header class="mb-6">
+      <p class="text-3.5 uppercase tracking-wide">{t('tags')}</p>
+      <h1 class="text-7 font-bold">#{tag}</h1>
+      <p class="text-3.5 mt-2">{tagPosts.length} posts</p>
+    </header>
+
+    <ul class="flex flex-col gap-7.5">
+      {
+        tagPosts.map((postEntry) => (
+          <li>
+            <PostSummary postEntry={postEntry} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
