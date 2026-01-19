@@ -6,6 +6,26 @@ import SiteSocial from '@/components/SiteSocial.astro'
 import SiteTitle from '@/components/SiteTitle.astro'
 import { themeConfig } from '@/theme.config'
 import '@/styles/main.css'
+
+const viewAnimation = {
+  old: {
+    name: 'fade-in-down',
+    duration: '0.5s',
+    easing: 'linear',
+    direction: 'reverse',
+  },
+  new: {
+    name: 'fade-in-down',
+    duration: '0.5s',
+    delay: '0.5s',
+    easing: 'linear',
+  },
+}
+
+const viewTransition = {
+  forwards: viewAnimation,
+  backwards: viewAnimation,
+}
 ---
 
 <html lang={themeConfig.site.locale}>
@@ -36,7 +56,7 @@ import '@/styles/main.css'
 
       <main
         id="site-main"
-        transition:animate="fade"
+        transition:animate={viewTransition}
         class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center ']}
       >
         <slot />
