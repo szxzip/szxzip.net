@@ -1,9 +1,10 @@
 ---
 import { themeConfig } from '@/theme.config'
 const { title, subtitle } = themeConfig.site
+const { class: className } = Astro.props
 ---
 
-<hgroup class="flex flex-col items-center lg:items-start lg:border-l-2 lg:border-primary">
+<hgroup class:list={[className]} class="flex flex-col items-center lg:items-start lg:border-l-2 lg:border-primary">
   <a href="/" class="link no-underline transition lg:write-vertical-rl lg:pt-0 lg:pb-12 lg:px-2.5 group">
     <h2
       class="text-5 font-serif text-center lg:transition-transform lg:duration-800 lg:ease-in-out lg:group-hover:translate-y-3.75"
