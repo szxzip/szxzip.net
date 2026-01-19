@@ -4,9 +4,11 @@ import { themeConfig } from '@/theme.config'
 const { website, author } = themeConfig.site
 
 const year = new Date().getFullYear()
+
+const { class: className } = Astro.props
 ---
 
-<div>
+<div class={className}>
   <p class="font-bold text-3">
     <span>© {year} </span>
     <a target="_blank" class="link" href={website}>{author}</a>

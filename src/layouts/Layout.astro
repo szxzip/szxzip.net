@@ -18,21 +18,21 @@ import '@/styles/main.css'
     <ClientRouter />
   </head>
   <body>
-    <div class="container mx-auto p-7.5 lg:flex lg:flex-row-reverse">
-      <header class="m-7.5 flex flex-col gap-2.5 relative">
+    <div class="container mx-auto lg:flex lg:flex-row-reverse">
+      <header class="p-7.5 flex flex-col gap-2.5 relative">
         <SiteTitle />
         <nav class="flex flex-col gap-3.5">
           <SiteNavigation />
           <SiteSocial />
         </nav>
-        <SiteCredits class:list={['lg:block']} />
+        <SiteCredits class:list={['lg:block hidden']} />
       </header>
 
-      <main transition:animate="fade" class="lg:grow">
+      <main transition:animate="fade" class="lg:grow px-7.5">
         <slot />
       </main>
 
-      <footer class="my-7.5 lg:hidden">
+      <footer class="lg:hidden p-7.5">
         <SiteCredits />
       </footer>
     </div>
