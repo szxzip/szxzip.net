@@ -11,7 +11,16 @@ export function getPostUrl(postEntry: PostEntry) {
   if (!postEntry) {
     return '/'
   }
-  return `/post/${postEntry.id}/`
+  return `/posts/${postEntry.id}/`
+}
+
+export async function getPostTags() {
+  const tagsSet = new Set<string>()
+  const posts = await getCollection('posts')
+  posts.forEach((post) => {
+    post.data.tags?.forEach(tag => tagsSet.add(tag))
+  })
+  return Array.from(tagsSet).sort()
 }
 
 export function formatPostDate(date: Date, locale: string = 'zh-cn') {
