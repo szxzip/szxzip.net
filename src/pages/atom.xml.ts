@@ -17,7 +17,7 @@ export async function GET() {
   )
 
   const items = sortedEntries.map((entry) => {
-    const content = themeConfig.site.rss?.fullText === false
+    const content = themeConfig.feeds?.rss?.fullText === false
       ? undefined
       : sanitizeHtml(markdownParser.render(entry.body ?? ''), {
           allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),

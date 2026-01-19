@@ -26,9 +26,6 @@ export const themeConfig = defineThemeConfig({
         url: '/about',
       },
     ],
-    rss: {
-      fullText: true,
-    },
     socialLinks: [
       {
         title: 'github',
@@ -52,4 +49,42 @@ export const themeConfig = defineThemeConfig({
       },
     ],
   },
+  feeds: {
+    rss: {
+      fullText: true,
+    },
+  },
+  theme: {
+    // 未实现：夜间模式与外观切换
+    darkMode: 'auto',
+    // 未实现：字体配置
+    font: {
+      body: 'serif',
+      heading: 'serif',
+      mono: 'monospace',
+    },
+  },
+  content: {
+    // 未实现：MDX 渲染
+    mdx: {
+      enabled: false,
+    },
+    // 未实现：LaTeX 渲染
+    latex: {
+      enabled: false,
+      engine: 'katex',
+    },
+  },
+  services: {
+    // 未实现：评论系统
+    comments: {
+      provider: 'none',
+    },
+    // 未实现：数据分析
+    analytics: {
+      provider: 'none',
+    },
+  },
+  // 未实现：实验性功能
+  experimental: {},
 })

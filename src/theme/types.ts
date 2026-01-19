@@ -2,6 +2,11 @@ import type { SupportedLocale } from '@/i18n/locales'
 
 export interface ThemeConfig {
   site: SiteConfig
+  theme?: ThemeSettings
+  content?: ContentSettings
+  feeds?: FeedSettings
+  services?: ServicesSettings
+  experimental?: ExperimentalSettings
 }
 
 export interface SiteConfig {
@@ -10,13 +15,46 @@ export interface SiteConfig {
   website: string
   title: string
   subtitle: string
-  rss?: {
-    fullText?: boolean
-  }
   socialLinks: SocialLink[]
   navigationLinks: NavigationLink[]
   locale: SupportedLocale
 }
+
+export interface ThemeSettings {
+  darkMode?: 'auto' | 'light' | 'dark'
+  font?: {
+    body?: string
+    heading?: string
+    mono?: string
+  }
+}
+
+export interface ContentSettings {
+  mdx?: {
+    enabled?: boolean
+  }
+  latex?: {
+    enabled?: boolean
+    engine?: 'katex' | 'mathjax'
+  }
+}
+
+export interface FeedSettings {
+  rss?: {
+    fullText?: boolean
+  }
+}
+
+export interface ServicesSettings {
+  comments?: {
+    provider?: 'giscus' | 'disqus' | 'utterances' | 'none'
+  }
+  analytics?: {
+    provider?: 'none' | 'ga' | 'plausible' | 'umami'
+  }
+}
+
+export interface ExperimentalSettings {}
 
 export interface SocialLink {
   title: string
