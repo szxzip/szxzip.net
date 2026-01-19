@@ -12,3 +12,13 @@
   @apply ease-in-out duration-400 transition-colors;
   @apply hover:bg-primary hover:text-secondary hover:decoration-primary;
 }
+
+@utility write-vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@utility write-vertical-lr {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
