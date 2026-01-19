@@ -1,9 +1,9 @@
 ---
-import { ClientRouter } from 'astro:transitions'
 import SiteCredits from '@/components/SiteCredits.astro'
 import SiteNavigation from '@/components/SiteNavigation.astro'
 import SiteSocial from '@/components/SiteSocial.astro'
 import SiteTitle from '@/components/SiteTitle.astro'
+import SiteHead from '@/components/SiteHead.astro'
 import { themeConfig } from '@/theme.config'
 import '@/styles/main.css'
 
@@ -26,23 +26,12 @@ const viewTransition = {
   forwards: viewAnimation,
   backwards: viewAnimation,
 }
+
+const { title = themeConfig.site.title } = Astro.props
 ---
 
 <html lang={themeConfig.site.locale}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={themeConfig.site.title}
-      href={new URL('atom.xml', themeConfig.site.website)}
-    />
-    <title>{themeConfig.site.title}</title>
-    <ClientRouter />
-  </head>
+  <SiteHead title={title} />
   <body>
     <div class:list={['container mx-auto', 'lg:flex lg:flex-row-reverse lg:justify-center']}>
       <header
