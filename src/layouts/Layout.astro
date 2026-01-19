@@ -3,8 +3,9 @@ import SiteCredits from '@/components/SiteCredits.astro'
 import SiteNavigation from '@/components/SiteNavigation.astro'
 import SiteSocial from '@/components/SiteSocial.astro'
 import SiteTitle from '@/components/SiteTitle.astro'
-import SiteHead from '@/components/SiteHead.astro'
+import SiteSeo from '@/components/SiteSeo.astro'
 import { themeConfig } from '@/theme.config'
+import { ClientRouter } from 'astro:transitions'
 import '@/styles/main.css'
 
 const viewAnimation = {
@@ -31,7 +32,22 @@ const { title = themeConfig.site.title } = Astro.props
 ---
 
 <html lang={themeConfig.site.locale}>
-  <SiteHead title={title} />
+  <head>
+    <SiteSeo title={title} />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={title}
+      href={new URL('atom.xml', themeConfig.site.website)}
+    />
+    <title>{themeConfig.site.title}</title>
+    <ClientRouter />
+  </head>
+
   <body>
     <div class:list={['container mx-auto', 'lg:flex lg:flex-row-reverse lg:justify-center']}>
       <header
@@ -67,21 +83,19 @@ const { title = themeConfig.site.title } = Astro.props
         <SiteCredits />
       </footer>
     </div>
-  </body>
+  </body><script>
+    document.addEventListener(
+      'astro:page-load',
+      () => {
+        const siteHeader = document.getElementById('site-header')
+        const siteMain = document.getElementById('site-main')
+        const siteFooter = document.getElementById('site-footer')
+        siteHeader?.classList.add('lg:animate-fade-in-left')
+        siteHeader?.classList.add('animate-fade-in-down')
+        siteMain?.classList.add('animate-fade-in-down')
+        siteFooter?.classList.add('animate-fade-in-down')
+      },
+      { once: true },
+    )
+  </script>
 </html>
-
-<script>
-  document.addEventListener(
-    'astro:page-load',
-    () => {
-      const siteHeader = document.getElementById('site-header')
-      const siteMain = document.getElementById('site-main')
-      const siteFooter = document.getElementById('site-footer')
-      siteHeader?.classList.add('lg:animate-fade-in-left')
-      siteHeader?.classList.add('animate-fade-in-down')
-      siteMain?.classList.add('animate-fade-in-down')
-      siteFooter?.classList.add('animate-fade-in-down')
-    },
-    { once: true },
-  )
-</script>
