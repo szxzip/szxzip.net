@@ -47,6 +47,7 @@ export const themeConfig = defineThemeConfig({
         icon: 'mdi--mastodon',
       },
     ],
+    website: '',
   },
   feeds: {
     rss: {
@@ -59,6 +60,6 @@ export const themeConfig = defineThemeConfig({
     },
   },
   latex: {
-    katex: true,
+    enable: true,
   },
 })

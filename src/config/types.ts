@@ -15,23 +15,23 @@ export interface SiteConfig {
   socialLinks: SocialLink[]
   navigationLinks: NavigationLink[]
   locale: SupportedLocale
-  website?: string
+  website: string
 }
 
 export interface FeedConfig {
-  rss?: {
-    fullText?: boolean
+  rss: {
+    fullText: boolean
   }
 }
 
 export interface SeoConfig {
-  twitter?: {
+  twitter: {
     username: string
   }
 }
 
 export interface LatexConfig {
-  katex: boolean
+  enable: boolean
 }
 
 // interface ServicesConfig {
