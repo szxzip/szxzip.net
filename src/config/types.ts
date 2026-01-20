@@ -2,12 +2,8 @@ import type { SupportedLocale } from '@/i18n/locales'
 
 export interface ThemeConfig {
   site: SiteConfig
-  theme?: AppearanceConfig
-  content?: ContentConfig
-  feeds?: FeedConfig
-  seo?: SeoConfig
-  services?: ServicesConfig
-  experimental?: ExperimentalConfig
+  feeds: FeedConfig
+  seo: SeoConfig
 }
 
 export interface SiteConfig {
@@ -33,35 +29,23 @@ export interface SeoConfig {
   }
 }
 
-interface ServicesConfig {
-  comments?: {
-    provider?: 'giscus' | 'disqus' | 'utterances' | 'none'
-  }
-  analytics?: {
-    provider?: 'none' | 'ga' | 'plausible' | 'umami'
-  }
-}
+// interface ServicesConfig {
+//   comments?: {
+//     provider?: 'giscus' | 'disqus' | 'utterances' | 'none'
+//   }
+//   analytics?: {
+//     provider?: 'none' | 'ga' | 'plausible' | 'umami'
+//   }
+// }
 
-export interface AppearanceConfig {
-  darkMode?: 'auto' | 'light' | 'dark'
-  font?: {
-    body?: string
-    heading?: string
-    mono?: string
-  }
-}
-
-interface ContentConfig {
-  mdx?: {
-    enabled?: boolean
-  }
-  latex?: {
-    enabled?: boolean
-    engine?: 'katex' | 'mathjax'
-  }
-}
-
-export interface ExperimentalConfig {}
+// export interface AppearanceConfig {
+//   darkMode?: 'auto' | 'light' | 'dark'
+//   font?: {
+//     body?: string
+//     heading?: string
+//     mono?: string
+//   }
+// }
 
 export interface SocialLink {
   title: string
