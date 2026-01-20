@@ -81,19 +81,30 @@ const { title = themeConfig.site.title } = Astro.props
         <SiteCredits />
       </footer>
     </div>
-  </body><script>
-    document.addEventListener(
-      'astro:page-load',
-      () => {
-        const siteHeader = document.getElementById('site-header')
-        const siteMain = document.getElementById('site-main')
-        const siteFooter = document.getElementById('site-footer')
-        siteHeader?.classList.add('lg:animate-fade-in-left')
-        siteHeader?.classList.add('animate-fade-in-down')
-        siteMain?.classList.add('animate-fade-in-down')
-        siteFooter?.classList.add('animate-fade-in-down')
-      },
-      { once: true },
-    )
-  </script>
+  </body>
 </html>
+
+<script>
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      const siteHeader = document.getElementById('site-header')
+      const siteMain = document.getElementById('site-main')
+      const siteFooter = document.getElementById('site-footer')
+      siteHeader?.classList.add('lg:animate-fade-in-left')
+      siteHeader?.classList.add('animate-fade-in-down')
+      siteMain?.classList.add('animate-fade-in-down')
+      siteFooter?.classList.add('animate-fade-in-down')
+    },
+    { once: true },
+  )
+</script>
+
+<script>
+  const media = window.matchMedia('(prefers-color-scheme: dark)')
+  function applyTheme() {
+    document.documentElement.dataset.theme = media.matches ? 'dark' : 'light'
+  }
+  applyTheme()
+  media.addEventListener('change', applyTheme)
+</script>

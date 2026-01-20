@@ -1,8 +1,22 @@
-@theme {
-  --color-primary: #2e405b;
-  --color-secondary: #ffffff;
-  --color-accent: #c7254e;
-  --color-neutral: #000000;
+:root {
+  --primary: #2e405b;
+  --secondary: #ffffff;
+  --accent: #c7254e;
+  --neutral: #000000;
+}
+
+[data-theme='dark'] {
+  --primary: #ffffff;
+  --secondary: #2e405b;
+  --accent: #c7254e;
+  --neutral: #000000;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-neutral: var(--neutral);
 
   --font-serif: HiraMinProN-W6, Source Han Serif CN, Source Han Serif SC, Source Han Serif TC, serif;
   --font-sans:
