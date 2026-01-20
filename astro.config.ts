@@ -14,7 +14,12 @@ export default defineConfig({
   // [TODO] The base path of the site
   base: '/',
   prefetch: true,
-  integrations: [robotsTxt(), sitemap(), mdx(), partytown({ config: { forward: ['dataLayer.push'] } })],
+  integrations: [
+    robotsTxt(),
+    sitemap(),
+    mdx(),
+    partytown({ config: { forward: ['dataLayer.push', 'gtag', 'twikoo.init'] } }),
+  ],
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],

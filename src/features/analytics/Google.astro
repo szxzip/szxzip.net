@@ -6,7 +6,7 @@ const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`
 ---
 
 <script type="text/partytown" is:inline async src={gtagUrl}></script>
-<script is:inline define:vars={{ measurementId }}>
+<script type="text/partytown" is:inline define:vars={{ measurementId }}>
   window.dataLayer = window.dataLayer || []
   function gtag() {
     // eslint-disable-next-line prefer-rest-params

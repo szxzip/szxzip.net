@@ -63,7 +63,7 @@ export const themeConfig = defineThemeConfig({
     provider: 'katex',
   },
   comment: {
-    provider: 'none',
+    provider: 'disqus',
     disqus: {
       shortname: 'typography-astro',
     },
@@ -86,9 +86,9 @@ export const themeConfig = defineThemeConfig({
     },
   },
   analytics: {
-    provider: 'umami',
+    provider: 'google',
     google: {
-      measurementId: 'G-XXXXXXXXXX',
+      measurementId: 'G-TFT0WTWV89',
     },
     umami: {
       websiteId: 'df27d14d-1306-4f2b-ad16-9f30be54b80a',
