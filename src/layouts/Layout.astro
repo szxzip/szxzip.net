@@ -4,6 +4,7 @@ import SiteNavigation from '@/components/SiteNavigation.astro'
 import SiteSocial from '@/components/SiteSocial.astro'
 import SiteTitle from '@/components/SiteTitle.astro'
 import SiteSeo from '@/components/SiteSeo.astro'
+import Latex from '@/features/latex/Latex.astro'
 import { themeConfig } from '@/theme.config'
 import { ClientRouter } from 'astro:transitions'
 import '@/styles/main.css'
@@ -43,6 +44,7 @@ const { title = themeConfig.site.title } = Astro.props
       title={title}
       href={new URL('atom.xml', themeConfig.site.website)}
     />
+    <Latex />
     <SiteSeo title={title} />
     <ClientRouter />
   </head>

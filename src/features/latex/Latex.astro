@@ -1,0 +1,6 @@
+---
+import { themeConfig } from '@/theme.config'
+import katex from 'katex/dist/katex.min.css?url'
+---
+
+{themeConfig.latex.katex && <link rel="stylesheet" href={katex} />}

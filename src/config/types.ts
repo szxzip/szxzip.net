@@ -4,6 +4,7 @@ export interface ThemeConfig {
   site: SiteConfig
   feeds: FeedConfig
   seo: SeoConfig
+  latex: LatexConfig
 }
 
 export interface SiteConfig {
@@ -27,6 +28,10 @@ export interface SeoConfig {
   twitter?: {
     username: string
   }
+}
+
+export interface LatexConfig {
+  katex: boolean
 }
 
 // interface ServicesConfig {

@@ -58,4 +58,7 @@ export const themeConfig = defineThemeConfig({
       username: '@moeyua13',
     },
   },
+  latex: {
+    katex: true,
+  },
 })

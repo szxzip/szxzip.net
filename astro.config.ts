@@ -2,17 +2,26 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from 'astro-robots-txt'
-
 import { defineConfig } from 'astro/config'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 
 // https://astro.build/config
 export default defineConfig({
-  // The base URL of the site
+  // [TODO] The base URL of the site
   site: 'https://typography.moeyua.com/',
-  // The base path of the site
+  // [TODO] The base path of the site
   base: '/',
   prefetch: true,
-  integrations: [robotsTxt(), sitemap(), mdx()],
+  integrations: [
+    robotsTxt(),
+    sitemap(),
+    mdx(),
+  ],
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
   vite: {
     plugins: [tailwindcss()],
   },
