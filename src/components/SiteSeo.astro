@@ -1,15 +1,42 @@
 ---
 import { themeConfig } from '@/theme.config'
 import { SEO } from 'astro-seo'
+import type { Props as AstroSeoProps } from 'astro-seo'
 
 interface Props {
   title?: string
   description?: string
-  openGraph?: unknown
-  twitter?: unknown
 }
 
 const { title = themeConfig.site.title, description = themeConfig.site.description } = Astro.props
+
+const twitter: AstroSeoProps['twitter'] = {
+  title: title,
+  description: description,
+  card: 'summary_large_image',
+  site: themeConfig.seo?.twitter?.username,
+  creator: themeConfig.seo?.twitter?.username,
+  // [TODO]: Add a proper image URL for the Twitter card
+  image: '',
+  imageAlt: '',
+}
+
+const openGraph: AstroSeoProps['openGraph'] = {
+  basic: {
+    title: title,
+    type: 'article',
+    url: themeConfig.site.website,
+    // [TODO]: Add a proper image URL for the Open Graph card
+    image: '',
+  },
+  optional: {
+    description: description,
+    locale: themeConfig.site.locale,
+    siteName: themeConfig.site.title,
+  },
+  // [TODO]: Add proper article metadata for the Open Graph card
+  article: {},
+}
 ---
 
-<SEO title={title} description={description} />
+<SEO title={title} description={description} twitter={twitter} openGraph={openGraph} />

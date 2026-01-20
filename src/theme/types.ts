@@ -1,4 +1,3 @@
-import type { Props as AstroSeoProps } from 'astro-seo'
 import type { SupportedLocale } from '@/i18n/locales'
 
 export interface ThemeConfig {
@@ -6,6 +5,7 @@ export interface ThemeConfig {
   theme?: AppearanceConfig
   content?: ContentConfig
   feeds?: FeedConfig
+  seo?: SeoConfig
   services?: ServicesConfig
   experimental?: ExperimentalConfig
 }
@@ -27,7 +27,11 @@ export interface FeedConfig {
   }
 }
 
-export interface SeoConfig extends AstroSeoProps {}
+export interface SeoConfig {
+  twitter?: {
+    username: string
+  }
+}
 
 interface ServicesConfig {
   comments?: {

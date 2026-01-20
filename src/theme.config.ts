@@ -54,6 +54,11 @@ export const themeConfig = defineThemeConfig({
       fullText: true,
     },
   },
+  seo: {
+    twitter: {
+      username: '@moeyua13',
+    },
+  },
   theme: {
     // 未实现：夜间模式与外观切换
     darkMode: 'auto',
