@@ -1,0 +1,50 @@
+---
+title: MDX 功能示例
+pubDate: 2026-01-20
+tags: [MDX, Demo]
+description: '用于测试 MDX 渲染能力的示例文章，包含 JSX 组件、交互片段与 Markdown 语法混排。'
+draft: true
+slug: mdx-demo
+---
+
+import Pagination from '@/components/Pagination.astro'
+
+# MDX 功能示例
+
+这篇文章用于验证 MDX 在主题中的表现，包括 Markdown 与 JSX 的混排能力。
+
+## 1. Markdown 语法仍然可用
+
+- 普通列表
+- **加粗文本** 与 _斜体文本_
+- 行内代码 `pnpm dev`
+
+## 2. JSX 片段
+
+<div style={{ padding: '16px', border: '1px solid #d1d5db', borderRadius: '12px' }}>
+  <strong>这是一个内联 JSX 容器。</strong>
+  <p style={{ margin: '8px 0 0', color: '#6b7280' }}>
+    用来确认样式与布局是否被 MDX 正确渲染。
+  </p>
+</div>
+
+## 3. 自定义组件插槽
+
+这里是自定义组件插槽的示例：
+
+<Pagination totalPage={10} currentPage={1} />
+
+## 4. 代码块
+
+```ts
+const message = 'Hello MDX'
+console.log(message)
+```
+
+## 5. 表格
+
+| 功能 | 用途 | 状态 |
+| --- | --- | --- |
+| Markdown | 基础排版 | ✅ |
+| JSX | 扩展表达 | ✅ |
+| 组件 | 主题增强 | ⏳ |
