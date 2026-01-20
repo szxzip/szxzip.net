@@ -1,5 +1,7 @@
+import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from 'astro-robots-txt'
+
 import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
@@ -9,9 +11,7 @@ export default defineConfig({
   // The base path of the site
   base: '/',
   prefetch: true,
-  integrations: [
-    robotsTxt(),
-  ],
+  integrations: [robotsTxt(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
