@@ -1,8 +1,8 @@
 @theme {
-  --color-primary: oklch(0.3687 0.0523 258.29);
-  --color-secondary: oklch(1 0 0);
-  --color-accent: oklch(0.5444 0.1953 13.22);
-  --color-neutral: oklch(0 0 0);
+  --color-primary: #2e405b;
+  --color-secondary: #ffffff;
+  --color-accent: #c7254e;
+  --color-neutral: #000000;
 
   --font-serif: HiraMinProN-W6, Source Han Serif CN, Source Han Serif SC, Source Han Serif TC, serif;
   --font-sans:

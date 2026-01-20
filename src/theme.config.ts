@@ -65,7 +65,7 @@ export const themeConfig = defineThemeConfig({
   comment: {
     provider: 'disqus',
     disqus: {
-      shortname: 'your-disqus-shortname',
+      shortname: 'typography-astro',
     },
   },
 })

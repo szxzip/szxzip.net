@@ -12,6 +12,7 @@ import {
 } from '@/post'
 import { themeConfig } from '@/theme.config'
 import { render } from 'astro:content'
+import Comment from '@/features/comment/Comment.astro'
 
 export async function getStaticPaths() {
   const posts = await getPostEntries()
@@ -70,5 +71,7 @@ const { Content } = await render(postEntry)
         showPageCount={false}
       />
     </footer>
+
+    {themeConfig.comment.provider !== 'none' && <Comment entry={postEntry} />}
   </div>
 </Layout>

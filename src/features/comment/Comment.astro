@@ -9,23 +9,15 @@ interface Props {
   entry: PostEntry
 }
 
-const { id, data } = Astro.props.entry
-
-const path = `/posts/${id}`
-const url = `${Astro.site?.href}${path}`
-
-const provider = getProvider()
-
-function getProvider() {
-  const result = Object.keys(themeConfig.comment)[0]
-  return result || ''
-}
+const { entry } = Astro.props
+const url = Astro.url.href
+const provider = themeConfig.comment.provider
 ---
 
 {
-  provider !== '' && (
-    <div py-16>
-      {provider === 'disqus' && <Disqus identifier={id} url={url} title={data.title} />}
+  provider !== 'none' && (
+    <div class="py-16">
+      {provider === 'disqus' && <Disqus identifier={entry.id} url={url} title={entry.data.title} />}
       {provider === 'giscus' && <Giscus />}
       {provider === 'twikoo' && <Twikoo />}
     </div>
