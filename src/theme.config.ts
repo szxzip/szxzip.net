@@ -1,4 +1,4 @@
-import { defineThemeConfig } from './theme'
+import { defineThemeConfig } from './config'
 
 export const themeConfig = defineThemeConfig({
   site: {
