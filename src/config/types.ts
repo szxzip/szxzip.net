@@ -7,6 +7,7 @@ export interface ThemeConfig {
   seo: SeoConfig
   latex: LatexConfig
   comment: CommentConfig
+  analytics: AnalyticsConfig
 }
 
 export interface SiteConfig {
@@ -63,6 +64,17 @@ export interface CommentConfig {
   }
 }
 
+export interface AnalyticsConfig {
+  provider: 'google' | 'umami' | 'none'
+  google?: {
+    measurementId: string
+  }
+  umami?: {
+    websiteId: string
+    scriptUrl?: string
+  }
+}
+
 export interface SocialLink {
   title: string
   url: string
@@ -73,16 +85,6 @@ export interface NavigationLink {
   title: string
   url: string
 }
-
-// interface ServicesConfig {
-//   comments?: {
-//     provider?: 'giscus' | 'disqus' | 'utterances' | 'none'
-//   }
-//   analytics?: {
-//     provider?: 'none' | 'ga' | 'plausible' | 'umami'
-//   }
-// }
-
 // export interface AppearanceConfig {
 //   darkMode?: 'auto' | 'light' | 'dark'
 //   font?: {

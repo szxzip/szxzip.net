@@ -7,13 +7,4 @@ interface Props {
 const { title } = Astro.props
 ---
 
-{
-  (
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={title}
-      href={new URL('atom.xml', themeConfig.site.website)}
-    />
-  )
-}
+<link rel="alternate" type="application/rss+xml" title={title} href={new URL('atom.xml', themeConfig.site.website)} />

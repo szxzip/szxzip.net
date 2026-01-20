@@ -1,0 +1,12 @@
+---
+import { themeConfig } from '@/theme.config'
+
+if (!(themeConfig.analytics.provider !== 'umami') || !themeConfig.analytics.umami) {
+  throw new Error('Umami analytics is not configured')
+}
+
+const scriptSrc = themeConfig.analytics.umami.scriptUrl ?? 'https://analytics.umami.is/script.js'
+const websiteId = themeConfig.analytics.umami.websiteId
+---
+
+<script is:inline async defer src={scriptSrc} data-website-id={websiteId}></script>

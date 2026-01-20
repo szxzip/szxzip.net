@@ -85,4 +85,14 @@ export const themeConfig = defineThemeConfig({
       loading: 'lazy',
     },
   },
+  analytics: {
+    provider: 'none',
+    google: {
+      measurementId: 'G-XXXXXXXXXX',
+    },
+    umami: {
+      websiteId: 'your-umami-website-id',
+      scriptUrl: 'https://umami.example.com/umami.js',
+    },
+  },
 })
