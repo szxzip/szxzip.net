@@ -90,8 +90,10 @@
   ],
   "css.lint.unknownAtRules": "ignore",
   "cSpell.words": [
+    "Disqus",
     "heti",
     "iconify",
-    "Katex"
+    "Katex",
+    "twikoo"
   ]
 }

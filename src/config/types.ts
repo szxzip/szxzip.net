@@ -1,3 +1,4 @@
+import type { AvailableLanguage, BooleanString, InputPosition, Loading, Mapping, Repo, Theme } from 'giscus'
 import type { SupportedLocale } from '@/i18n/locales'
 
 export interface ThemeConfig {
@@ -5,6 +6,7 @@ export interface ThemeConfig {
   feeds: FeedConfig
   seo: SeoConfig
   latex: LatexConfig
+  comment: CommentConfig
 }
 
 export interface SiteConfig {
@@ -31,7 +33,45 @@ export interface SeoConfig {
 }
 
 export interface LatexConfig {
-  enable: boolean
+  provider?: 'katex'
+}
+
+export interface CommentConfig {
+  provider: 'giscus' | 'twikoo' | 'disqus' | 'none'
+  disqus?: {
+    shortname: string
+  }
+  twikoo?: {
+    envId: string
+    region?: string
+    lang?: string
+  }
+  giscus?: {
+    repo: Repo
+    repoId?: string
+    category?: string
+    categoryId?: string
+    mapping?: Mapping
+    term?: string
+    strict: BooleanString
+    reactionsEnabled: BooleanString
+    emitMetadata: BooleanString
+    inputPosition: InputPosition
+    theme: Theme
+    lang: AvailableLanguage
+    loading: Loading
+  }
+}
+
+export interface SocialLink {
+  title: string
+  url: string
+  icon: string
+}
+
+export interface NavigationLink {
+  title: string
+  url: string
 }
 
 // interface ServicesConfig {
@@ -51,14 +91,3 @@ export interface LatexConfig {
 //     mono?: string
 //   }
 // }
-
-export interface SocialLink {
-  title: string
-  url: string
-  icon: string
-}
-
-export interface NavigationLink {
-  title: string
-  url: string
-}

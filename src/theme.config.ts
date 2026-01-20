@@ -60,6 +60,12 @@ export const themeConfig = defineThemeConfig({
     },
   },
   latex: {
-    enable: true,
+    provider: 'katex',
+  },
+  comment: {
+    provider: 'disqus',
+    disqus: {
+      shortname: 'your-disqus-shortname',
+    },
   },
 })

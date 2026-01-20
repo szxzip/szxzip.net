@@ -1,0 +1,22 @@
+---
+import { themeConfig } from '@/theme.config'
+
+const twikooConfig = {
+  envId: themeConfig.comment.twikoo?.envId,
+  region: themeConfig.comment.twikoo?.region,
+  lang: themeConfig.comment.twikoo?.lang,
+  el: '#twikoo',
+}
+---
+
+<div id="twikoo"></div>
+<script is:inline src="https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js"></script>
+<script is:inline define:vars={{ config: twikooConfig }}>
+  twikoo.init(config)
+</script>
+
+<style is:global>
+  .tk-meta-input {
+    background-color: white;
+  }
+</style>

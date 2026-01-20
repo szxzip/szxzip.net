@@ -3,4 +3,4 @@ import { themeConfig } from '@/theme.config'
 import katex from 'katex/dist/katex.min.css?url'
 ---
 
-{themeConfig.latex.enable && <link rel="stylesheet" href={katex} />}
+{themeConfig.latex.provider === 'katex' && <link rel="stylesheet" href={katex} />}
