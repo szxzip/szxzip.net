@@ -63,9 +63,26 @@ export const themeConfig = defineThemeConfig({
     provider: 'katex',
   },
   comment: {
-    provider: 'disqus',
+    provider: 'none',
     disqus: {
       shortname: 'typography-astro',
+    },
+    twikoo: {
+      envId: 'https://twikoo-tau-flame.vercel.app',
+    },
+    giscus: {
+      repo: 'moeyua/astro-theme-typography',
+      repoId: 'R_kgDOKy9HOQ',
+      category: 'General',
+      categoryId: 'DIC_kwDOKy9HOc4CUZP7',
+      mapping: 'pathname',
+      strict: '1',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'bottom',
+      theme: 'preferred_color_scheme',
+      lang: 'zh-CN',
+      loading: 'lazy',
     },
   },
 })
