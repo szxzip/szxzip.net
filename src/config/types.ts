@@ -8,6 +8,7 @@ export interface ThemeConfig {
   latex: LatexConfig
   comment: CommentConfig
   analytics: AnalyticsConfig
+  appearance: AppearanceConfig
 }
 
 export interface SiteConfig {
@@ -75,6 +76,19 @@ export interface AnalyticsConfig {
   }
 }
 
+export interface AppearanceConfig {
+  darkMode: 'auto' | 'light' | 'dark'
+  colors: {
+    dark: ColorScheme
+    light: ColorScheme
+  }
+  font?: {
+    body?: string
+    heading?: string
+    mono?: string
+  }
+}
+
 export interface SocialLink {
   title: string
   url: string
@@ -85,11 +99,10 @@ export interface NavigationLink {
   title: string
   url: string
 }
-// export interface AppearanceConfig {
-//   darkMode?: 'auto' | 'light' | 'dark'
-//   font?: {
-//     body?: string
-//     heading?: string
-//     mono?: string
-//   }
-// }
+
+export interface ColorScheme {
+  primary: string
+  secondary: string
+  accent: string
+  neutral: string
+}

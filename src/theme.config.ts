@@ -95,4 +95,21 @@ export const themeConfig = defineThemeConfig({
       scriptUrl: 'https://umami.moeyua.com/script.js',
     },
   },
+  appearance: {
+    darkMode: 'auto',
+    colors: {
+      light: {
+        primary: '#2e405b',
+        secondary: '#ffffff',
+        accent: '#c7254e',
+        neutral: '#000000',
+      },
+      dark: {
+        primary: '#ffffff',
+        secondary: '#232222',
+        accent: '#c7254e',
+        neutral: '#ffffff',
+      },
+    },
+  },
 })
