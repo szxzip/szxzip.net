@@ -1,4 +1,5 @@
 import mdx from '@astrojs/mdx'
+import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from 'astro-robots-txt'
@@ -13,11 +14,7 @@ export default defineConfig({
   // [TODO] The base path of the site
   base: '/',
   prefetch: true,
-  integrations: [
-    robotsTxt(),
-    sitemap(),
-    mdx(),
-  ],
+  integrations: [robotsTxt(), sitemap(), mdx(), partytown({ config: { forward: ['dataLayer.push'] } })],
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],

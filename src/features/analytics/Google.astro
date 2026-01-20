@@ -5,7 +5,7 @@ const measurementId = themeConfig.analytics.google?.measurementId
 const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`
 ---
 
-<script is:inline async src={gtagUrl}></script>
+<script type="text/partytown" is:inline async src={gtagUrl}></script>
 <script is:inline define:vars={{ measurementId }}>
   window.dataLayer = window.dataLayer || []
   function gtag() {

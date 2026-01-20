@@ -1,0 +1,11 @@
+---
+import Google from './Google.astro'
+import Umami from './Umami.astro'
+
+import { themeConfig } from '@/theme.config'
+
+const provider = themeConfig.analytics.provider
+---
+
+{provider === 'google' && <Google />}
+{provider === 'umami' && <Umami />}

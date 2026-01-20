@@ -86,13 +86,13 @@ export const themeConfig = defineThemeConfig({
     },
   },
   analytics: {
-    provider: 'none',
+    provider: 'umami',
     google: {
       measurementId: 'G-XXXXXXXXXX',
     },
     umami: {
-      websiteId: 'your-umami-website-id',
-      scriptUrl: 'https://umami.example.com/umami.js',
+      websiteId: 'df27d14d-1306-4f2b-ad16-9f30be54b80a',
+      scriptUrl: 'https://umami.moeyua.com/script.js',
     },
   },
 })

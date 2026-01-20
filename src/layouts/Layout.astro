@@ -8,6 +8,7 @@ import Seo from '@/features/seo/SEO.astro'
 import { themeConfig } from '@/theme.config'
 import { ClientRouter } from 'astro:transitions'
 import '@/styles/main.css'
+import Analytics from '@/features/analytics/Analytics.astro'
 
 const viewAnimation = {
   old: {
@@ -39,9 +40,10 @@ const { title = themeConfig.site.title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <LaTeX />
-    <Seo title={title} />
     <ClientRouter />
+    <Seo title={title} />
+    <LaTeX />
+    <Analytics />
   </head>
 
   <body>
