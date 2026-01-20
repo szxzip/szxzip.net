@@ -11,11 +11,9 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
-  "dependencies": {
-
-  },
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",
+    "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.7.0",
     "@iconify-json/mdi": "^1.2.3",

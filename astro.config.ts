@@ -1,3 +1,4 @@
+import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from 'astro-robots-txt'
@@ -11,7 +12,7 @@ export default defineConfig({
   // The base path of the site
   base: '/',
   prefetch: true,
-  integrations: [robotsTxt(), sitemap()],
+  integrations: [robotsTxt(), sitemap(), mdx()],
   vite: {
     plugins: [tailwindcss()],
   },
