@@ -1,13 +1,16 @@
 import tailwindcss from '@tailwindcss/vite'
+import robotsTxt from 'astro-robots-txt'
 import { defineConfig } from 'astro/config'
-import { themeConfig } from './src/theme.config'
 
 // https://astro.build/config
 export default defineConfig({
-  site: themeConfig.site.website,
-  prefetch: true,
+  // The base URL of the site
+  site: 'https://typography.moeyua.com/',
+  // The base path of the site
   base: '/',
+  prefetch: true,
   integrations: [
+    robotsTxt(),
   ],
   vite: {
     plugins: [tailwindcss()],

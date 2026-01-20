@@ -4,7 +4,6 @@ export const themeConfig = defineThemeConfig({
   site: {
     author: 'Moeyua',
     description: 'Rediscory the beauty of typography',
-    website: 'https://typography.moeyua.com/',
     title: '活版印字',
     subtitle: 'Typography',
     locale: 'zh-cn',

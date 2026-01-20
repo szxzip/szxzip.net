@@ -11,14 +11,14 @@ export interface ThemeConfig {
 }
 
 export interface SiteConfig {
-  author: string
-  description: string
-  website: string
   title: string
   subtitle: string
+  description: string
+  author: string
   socialLinks: SocialLink[]
   navigationLinks: NavigationLink[]
   locale: SupportedLocale
+  website?: string
 }
 
 export interface FeedConfig {
