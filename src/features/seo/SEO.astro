@@ -1,6 +1,6 @@
 ---
 import { themeConfig } from '@/theme.config'
-import { SEO } from 'astro-seo'
+import { SEO as AstroSEO } from 'astro-seo'
 import type { Props as AstroSeoProps } from 'astro-seo'
 
 interface Props {
@@ -39,4 +39,4 @@ const openGraph: AstroSeoProps['openGraph'] = {
 }
 ---
 
-<SEO title={title} description={description} twitter={twitter} openGraph={openGraph} />
+<AstroSEO title={title} description={description} twitter={twitter} openGraph={openGraph} />
