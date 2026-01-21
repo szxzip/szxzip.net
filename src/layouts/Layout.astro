@@ -10,9 +10,28 @@ import { ClientRouter } from 'astro:transitions'
 import '@/styles/main.css'
 import Analytics from '@/features/analytics/Analytics.astro'
 import Appearance from '@/features/appearance/Appearance.astro'
-import { viewTransition } from '@/features/appearance/transition'
 
 const { title = themeConfig.site.title } = Astro.props
+
+const viewAnimation = {
+  old: {
+    name: 'fade-in-down',
+    duration: '0.5s',
+    easing: 'linear',
+    direction: 'reverse',
+  },
+  new: {
+    name: 'fade-in-down',
+    duration: '0.5s',
+    delay: '0.5s',
+    easing: 'linear',
+  },
+}
+
+const viewTransition = {
+  forwards: viewAnimation,
+  backwards: viewAnimation,
+}
 ---
 
 <html lang={themeConfig.site.locale}>
@@ -53,8 +72,8 @@ const { title = themeConfig.site.title } = Astro.props
       </header>
 
       <main
-        id="site-main"
         transition:animate={viewTransition}
+        id="site-main"
         class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center']}
       >
         <slot />
@@ -66,3 +85,18 @@ const { title = themeConfig.site.title } = Astro.props
     </div>
   </body>
 </html>
+
+<script>
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      const siteHeader = document.getElementById('site-header')
+      const siteMain = document.getElementById('site-main')
+      const siteFooter = document.getElementById('site-footer')
+      siteHeader?.classList.add('animate-fade-in-down', 'lg:animate-fade-in-left')
+      siteMain?.classList.add('animate-fade-in-down')
+      siteFooter?.classList.add('animate-fade-in-down')
+    },
+    { once: true },
+  )
+</script>

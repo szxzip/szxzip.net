@@ -1,4 +1,4 @@
-@theme inline {
+@theme {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
@@ -8,7 +8,9 @@
   --font-sans:
     Source Sans Pro, Roboto, Helvetica, Helvetica Neue, Source Han Sans SC, Source Han Sans TC, PingFang SC,
     PingFang HK, PingFang TC, sans-serif;
+}
 
+@theme {
   --animate-fade-in-down: fade-in-down 1s linear 1;
   --animate-fade-in-left: fade-in-left 1s ease-in-out 1;
 
