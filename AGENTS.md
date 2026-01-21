@@ -11,6 +11,7 @@
 - Framework: Astro
 - Package manager: pnpm
 - Language: TypeScript (strict)
+- Styling: Tailwind CSS v4 (CSS-first) + project CSS
 - Linting/formatting: ESLint (via @antfu/eslint-config)
 
 ## Commands
@@ -26,6 +27,7 @@
 - Lint: `pnpm lint`
 - Lint and auto-fix: `pnpm lint:fix`
 - Lint-staged: runs `eslint --fix` on all changed files
+- Lint a single file: `pnpm lint -- path/to/file`
 
 ### Tests
 
@@ -33,12 +35,20 @@
 - There is no single-test command at this time.
 - If tests are added later, update this section.
 
+## Tooling Notes
+
+- ESLint is the single source of truth for formatting and style.
+- TypeScript config extends `astro/tsconfigs/strict`.
+- `@/*` path alias maps to `src/*`.
+- Tailwind v4 is configured via CSS imports, not a JS config file.
+
 ## Code Style and Formatting
 
-- ESLint is the source of truth for style and formatting.
-- No separate Prettier/Stylelint/EditorConfig config exists.
-- Use `pnpm lint:fix` to apply consistent formatting.
 - Prefer minimal, readable diffs; avoid noisy reformatting.
+- Use `pnpm lint:fix` to apply consistent formatting.
+- Do not introduce new formatting tools (Prettier, Stylelint, etc.).
+- Keep line breaks and indentation consistent with surrounding code.
+- Favor small, focused edits over large refactors unless requested.
 
 ## Imports
 
@@ -57,6 +67,7 @@
 - Use type inference inside local scopes when clear.
 - Respect strict null checks; handle undefined/null explicitly.
 - Avoid casting unless required and well justified.
+- Keep types close to usage and avoid unnecessary indirection.
 
 ## Naming Conventions
 
@@ -79,6 +90,14 @@
 - Use frontmatter for data loading and setup only.
 - Keep styling colocated when it improves clarity.
 - Favor semantic HTML and accessible attributes.
+- Avoid heavy client-side JS unless necessary.
+
+## Styling and Tailwind
+
+- Tailwind v4 is CSS first; avoid adding a JS config unless required.
+- Theme colors are exposed via CSS variables and `@theme inline`.
+- Prefer existing variables for colors and typography before adding new ones.
+- Keep CSS changes close to the component when practical.
 
 ## Linting and Hooks
 
@@ -91,6 +110,7 @@
 - Do not add new tooling without discussion.
 - Avoid introducing new formatting tools by default.
 - Keep dependency additions minimal and justified.
+- Do not edit generated files (for example, `dist`).
 
 ## Cursor / Copilot Rules
 
