@@ -1,5 +1,3 @@
-@import './heti.css';
-
 .heti {
   @apply font-sans;
 }

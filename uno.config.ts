@@ -35,8 +35,6 @@ export default defineConfig({
         'font-size': `calc(${size} * var(--spacing))`,
       }),
     ],
-    ['write-vertical-rl', { 'writing-mode': 'vertical-rl', 'text-orientation': 'mixed' }],
-    ['write-vertical-lr', { 'writing-mode': 'vertical-lr', 'text-orientation': 'mixed' }],
     ['animate-fade-in-down', { animation: 'fade-in-down 1s linear 1' }],
     ['animate-fade-in-left', { animation: 'fade-in-left 1s ease-in-out 1' }],
   ],

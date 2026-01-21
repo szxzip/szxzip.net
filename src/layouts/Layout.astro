@@ -9,7 +9,6 @@ import { themeConfig } from '@/theme.config'
 import { ClientRouter } from 'astro:transitions'
 import '@/styles/main.css'
 import Analytics from '@/features/analytics/Analytics.astro'
-import Appearance from '@/features/appearance/Appearance.astro'
 
 const { title = themeConfig.site.title } = Astro.props
 
@@ -41,7 +40,6 @@ const viewTransition = {
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <Appearance />
     <Seo title={title} />
     <LaTeX />
     <ClientRouter />
