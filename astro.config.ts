@@ -7,11 +7,12 @@ import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import sonda from 'sonda/astro'
 import unocss from 'unocss/astro'
+import { themeConfig } from './src/theme.config'
 
 // https://astro.build/config
 export default defineConfig({
   // [TODO] The base URL of the site
-  site: 'https://typography.moeyua.com/',
+  site: themeConfig.site.website,
   // [TODO] The base path of the site
   base: '/',
   prefetch: true,
@@ -21,7 +22,7 @@ export default defineConfig({
     mdx(),
     partytown({ config: { forward: ['dataLayer.push', 'gtag', 'twikoo.init'] } }),
     sonda({ enabled: false }),
-    unocss({ injectReset: true }),
+    unocss(),
   ],
   markdown: {
     remarkPlugins: [remarkMath],

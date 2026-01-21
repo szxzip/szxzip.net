@@ -4,15 +4,18 @@ import { themeConfig } from './src/theme.config'
 const colors = themeConfig.appearance.theme === 'dark' ? themeConfig.appearance.colors.dark : themeConfig.appearance.colors.light
 
 export default defineConfig({
-  presets: [presetWind4(), presetIcons()],
+  presets: [
+    presetWind4({
+      preflights: {
+        reset: true,
+      },
+    }),
+    presetIcons(),
+  ],
   transformers: [transformerDirectives()],
   preflights: [
     {
-      getCSS: () => `
-        :root {
-          --colors-neutral: ${colors.neutral};
-        }
-      `,
+      getCSS: () => ``,
     },
   ],
   theme: {

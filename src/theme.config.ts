@@ -6,6 +6,7 @@ export const themeConfig = defineThemeConfig({
     description: 'Rediscory the beauty of typography',
     title: '活版印字',
     subtitle: 'Typography',
+    website: 'https://typography.moeyua.com/',
     locale: 'zh-cn',
     navigationLinks: [
       {
@@ -47,7 +48,6 @@ export const themeConfig = defineThemeConfig({
         icon: 'i-mdi-mastodon',
       },
     ],
-    website: 'https://typography.moeyua.com/',
   },
   feeds: {
     rss: {

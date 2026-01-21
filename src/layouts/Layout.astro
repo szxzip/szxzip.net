@@ -98,3 +98,38 @@ const viewTransition = {
     { once: true },
   )
 </script>
+
+<style scoped>
+  :root {
+    --neutral-background: theme('colors.neutral');
+  }
+  body {
+    background-size: 7px 7px;
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--neutral-background) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--neutral-background) 4%, transparent) 1px, transparent 1px);
+  }
+
+  @keyframes fade-in-down {
+    0% {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(1rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
