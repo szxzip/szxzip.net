@@ -1,0 +1,12 @@
+---
+
+---
+
+<script>
+  const media = window.matchMedia('(prefers-color-scheme: dark)')
+  function applyTheme() {
+    document.documentElement.dataset.theme = media.matches ? 'dark' : 'light'
+  }
+  applyTheme()
+  media.addEventListener('change', applyTheme)
+</script>

@@ -77,7 +77,7 @@ export interface AnalyticsConfig {
 }
 
 export interface AppearanceConfig {
-  darkMode: 'auto' | 'light' | 'dark'
+  theme: 'auto' | 'light' | 'dark'
   colors: {
     dark: ColorScheme
     light: ColorScheme

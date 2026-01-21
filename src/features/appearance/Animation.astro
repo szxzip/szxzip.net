@@ -1,0 +1,19 @@
+---
+
+---
+
+<script>
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      const siteHeader = document.getElementById('site-header')
+      const siteMain = document.getElementById('site-main')
+      const siteFooter = document.getElementById('site-footer')
+      siteHeader?.classList.add('lg:animate-fade-in-left')
+      siteHeader?.classList.add('animate-fade-in-down')
+      siteMain?.classList.add('animate-fade-in-down')
+      siteFooter?.classList.add('animate-fade-in-down')
+    },
+    { once: true },
+  )
+</script>

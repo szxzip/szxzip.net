@@ -97,7 +97,7 @@ export const themeConfig = defineThemeConfig({
     },
   },
   appearance: {
-    darkMode: 'auto',
+    theme: 'auto',
     colors: {
       light: {
         primary: '#2e405b',

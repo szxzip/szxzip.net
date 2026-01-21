@@ -9,40 +9,23 @@ import { themeConfig } from '@/theme.config'
 import { ClientRouter } from 'astro:transitions'
 import '@/styles/main.css'
 import Analytics from '@/features/analytics/Analytics.astro'
-
-const viewAnimation = {
-  old: {
-    name: 'fade-in-down',
-    duration: '0.5s',
-    easing: 'linear',
-    direction: 'reverse',
-  },
-  new: {
-    name: 'fade-in-down',
-    duration: '0.5s',
-    delay: '0.5s',
-    easing: 'linear',
-  },
-}
-
-const viewTransition = {
-  forwards: viewAnimation,
-  backwards: viewAnimation,
-}
+import Appearance from '@/features/appearance/Appearance.astro'
+import { viewTransition } from '@/features/appearance/transition'
 
 const { title = themeConfig.site.title } = Astro.props
 ---
 
-<html lang={themeConfig.site.locale} class="bg-secondary">
+<html lang={themeConfig.site.locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <ClientRouter />
+    <Appearance />
     <Seo title={title} />
     <LaTeX />
+    <ClientRouter />
     <Analytics />
   </head>
 
@@ -83,28 +66,3 @@ const { title = themeConfig.site.title } = Astro.props
     </div>
   </body>
 </html>
-
-<script>
-  document.addEventListener(
-    'astro:page-load',
-    () => {
-      const siteHeader = document.getElementById('site-header')
-      const siteMain = document.getElementById('site-main')
-      const siteFooter = document.getElementById('site-footer')
-      siteHeader?.classList.add('lg:animate-fade-in-left')
-      siteHeader?.classList.add('animate-fade-in-down')
-      siteMain?.classList.add('animate-fade-in-down')
-      siteFooter?.classList.add('animate-fade-in-down')
-    },
-    { once: true },
-  )
-</script>
-
-<script>
-  const media = window.matchMedia('(prefers-color-scheme: dark)')
-  function applyTheme() {
-    document.documentElement.dataset.theme = media.matches ? 'dark' : 'light'
-  }
-  applyTheme()
-  media.addEventListener('change', applyTheme)
-</script>
