@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # OpenCode settings folder
 .opencode
+
+# Sonda analytics local data
+.sonda/

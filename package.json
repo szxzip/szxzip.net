@@ -38,6 +38,7 @@
     "remark-math": "^6.0.0",
     "sanitize-html": "^2.17.0",
     "simple-git-hooks": "^2.13.1",
+    "sonda": "^0.10.1",
     "tailwindcss": "^4.1.18"
   },
   "simple-git-hooks": {

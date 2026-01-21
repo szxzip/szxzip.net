@@ -6,6 +6,7 @@ import robotsTxt from 'astro-robots-txt'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
+import sonda from 'sonda/astro'
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,12 +20,16 @@ export default defineConfig({
     sitemap(),
     mdx(),
     partytown({ config: { forward: ['dataLayer.push', 'gtag', 'twikoo.init'] } }),
+    sonda({ enabled: false }),
   ],
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
   },
   vite: {
+    build: {
+      sourcemap: false,
+    },
     plugins: [tailwindcss()],
   },
 })
