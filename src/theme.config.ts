@@ -29,25 +29,25 @@ export const themeConfig = defineThemeConfig({
       {
         title: 'github',
         url: 'https://github.com',
-        icon: 'mdi--github',
+        icon: 'i-mdi-github',
       },
       {
         title: 'rss',
         url: '/atom.xml',
-        icon: 'mdi--rss',
+        icon: 'i-mdi-rss',
       },
       {
         title: 'twitter',
         url: 'https://twitter.com',
-        icon: 'mdi--twitter',
+        icon: 'i-mdi-twitter',
       },
       {
         title: 'mastodon',
         url: 'https://mastodon.social',
-        icon: 'mdi--mastodon',
+        icon: 'i-mdi-mastodon',
       },
     ],
-    website: '',
+    website: 'https://typography.moeyua.com/',
   },
   feeds: {
     rss: {

@@ -6,19 +6,42 @@ html {
   font-size: 16px;
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
-  background-color: var(--color-secondary);
+  background-color: var(--colors-secondary);
 }
 
 body {
   min-height: 100svh;
   min-width: 100svw;
 
-  color: var(--color-primary);
+  color: var(--colors-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   background-size: 7px 7px;
   background-image:
-    linear-gradient(to right, color-mix(in oklch, var(--color-neutral) 4%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--color-neutral) 4%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in oklch, var(--colors-neutral) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--colors-neutral) 4%, transparent) 1px, transparent 1px);
+}
+
+@keyframes fade-in-down {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
