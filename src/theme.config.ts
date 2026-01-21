@@ -63,7 +63,7 @@ export const themeConfig = defineThemeConfig({
     provider: 'katex',
   },
   comment: {
-    provider: 'giscus',
+    provider: 'disqus',
     disqus: {
       shortname: 'typography-astro',
     },
