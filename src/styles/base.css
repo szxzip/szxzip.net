@@ -1,26 +1,24 @@
-@layer base {
-  :root {
-    text-autospace: normal;
-  }
+:root {
+  text-autospace: normal;
+}
 
-  html {
-    font-size: 16px;
-    font-family: var(--font-sans);
-    text-rendering: optimizeLegibility;
-    background-color: var(--color-secondary);
-  }
+html {
+  font-size: 16px;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  background-color: var(--color-secondary);
+}
 
-  body {
-    min-height: 100svh;
-    min-width: 100svw;
+body {
+  min-height: 100svh;
+  min-width: 100svw;
 
-    color: var(--color-primary);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  color: var(--color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-    background-size: 7px 7px;
-    background-image:
-      linear-gradient(to right, color-mix(in oklch, var(--color-neutral) 4%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in oklch, var(--color-neutral) 4%, transparent) 1px, transparent 1px);
-  }
+  background-size: 7px 7px;
+  background-image:
+    linear-gradient(to right, color-mix(in oklch, var(--color-neutral) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--color-neutral) 4%, transparent) 1px, transparent 1px);
 }

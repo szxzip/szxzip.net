@@ -1,12 +1,12 @@
 import mdx from '@astrojs/mdx'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
-import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from 'astro-robots-txt'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import sonda from 'sonda/astro'
+import unocss from 'unocss/astro'
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,6 +21,7 @@ export default defineConfig({
     mdx(),
     partytown({ config: { forward: ['dataLayer.push', 'gtag', 'twikoo.init'] } }),
     sonda({ enabled: false }),
+    unocss({ injectReset: true }),
   ],
   markdown: {
     remarkPlugins: [remarkMath],
@@ -30,6 +31,6 @@ export default defineConfig({
     build: {
       sourcemap: false,
     },
-    plugins: [tailwindcss()],
+
   },
 })

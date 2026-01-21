@@ -1,10 +1,1 @@
-@import 'tailwindcss';
-@import './base.css';
-@import './theme.css';
-@import './utilities.css';
 @import './typography.css';
-
-@plugin "@iconify/tailwind4" {
-  prefix: 'iconify';
-  prefixes: mdi;
-}
