@@ -63,7 +63,7 @@ export const themeConfig = defineThemeConfig({
     provider: 'katex',
   },
   comment: {
-    provider: 'disqus',
+    provider: 'giscus',
     disqus: {
       shortname: 'typography-astro',
     },
@@ -71,6 +71,7 @@ export const themeConfig = defineThemeConfig({
       envId: 'https://twikoo-tau-flame.vercel.app',
     },
     giscus: {
+      scriptUrl: 'https://giscus.app/client.js',
       repo: 'moeyua/astro-theme-typography',
       repoId: 'R_kgDOKy9HOQ',
       category: 'General',
@@ -86,7 +87,7 @@ export const themeConfig = defineThemeConfig({
     },
   },
   analytics: {
-    provider: 'google',
+    provider: 'umami',
     google: {
       measurementId: 'G-TFT0WTWV89',
     },

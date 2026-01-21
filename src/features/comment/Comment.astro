@@ -16,7 +16,7 @@ const provider = themeConfig.comment.provider
 
 {
   provider !== 'none' && (
-    <div class="py-16">
+    <div class="py-16 giscus">
       {provider === 'disqus' && <Disqus identifier={entry.id} url={url} title={entry.data.title} />}
       {provider === 'giscus' && <Giscus />}
       {provider === 'twikoo' && <Twikoo />}

@@ -91,6 +91,7 @@
   "css.lint.unknownAtRules": "ignore",
   "cSpell.words": [
     "Disqus",
+    "giscus",
     "heti",
     "iconify",
     "Katex",

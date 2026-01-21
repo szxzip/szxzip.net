@@ -1,4 +1,3 @@
-import type { AvailableLanguage, BooleanString, InputPosition, Loading, Mapping, Repo, Theme } from 'giscus'
 import type { SupportedLocale } from '@/i18n/locales'
 
 export interface ThemeConfig {
@@ -49,19 +48,20 @@ export interface CommentConfig {
     lang?: string
   }
   giscus?: {
-    repo: Repo
+    scriptUrl?: string
+    repo: string
     repoId?: string
     category?: string
     categoryId?: string
-    mapping?: Mapping
+    mapping?: string
     term?: string
-    strict: BooleanString
-    reactionsEnabled: BooleanString
-    emitMetadata: BooleanString
-    inputPosition: InputPosition
-    theme: Theme
-    lang: AvailableLanguage
-    loading: Loading
+    strict: string
+    reactionsEnabled: string
+    emitMetadata: string
+    inputPosition: string
+    theme: string
+    lang: string
+    loading: string
   }
 }
 

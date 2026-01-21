@@ -10,24 +10,22 @@ if (!comment || !comment.giscus) {
 const giscus = comment.giscus
 ---
 
-<giscus-widget
-  id="comments"
-  repo={giscus.repo}
-  repoId={giscus.repoId}
-  category={giscus.category}
-  categoryId={giscus.categoryId}
-  mapping={giscus.mapping}
-  term={giscus.term}
-  strict={giscus.strict}
-  reactionsEnabled={giscus.reactionsEnabled}
-  emitMetadata={giscus.emitMetadata}
-  inputPosition={giscus.inputPosition}
-  theme={giscus.theme}
-  lang={giscus.lang}
-  loading={giscus.loading}
->
-</giscus-widget>
-
-<script>
-  import 'giscus'
-</script>
+<script
+  is:inline
+  async
+  type="text/partytown"
+  crossorigin="anonymous"
+  src={giscus.scriptUrl ?? 'https://giscus.app/client.js'}
+  data-repo={giscus.repo}
+  data-repo-id={giscus.repoId}
+  data-category={giscus.category}
+  data-category-id={giscus.categoryId}
+  data-mapping={giscus.mapping ?? 'pathname'}
+  data-term={giscus.term}
+  data-strict={giscus.strict ?? '0'}
+  data-reactions-enabled={giscus.reactionsEnabled ?? '1'}
+  data-emit-metadata={giscus.emitMetadata ?? '0'}
+  data-input-position={giscus.inputPosition ?? 'bottom'}
+  data-theme={giscus.theme ?? 'preferred_color_scheme'}
+  data-lang={giscus.lang ?? 'zh-CN'}
+  data-loading={giscus.loading}></script>
