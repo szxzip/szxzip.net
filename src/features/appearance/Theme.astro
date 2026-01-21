@@ -41,14 +41,16 @@ switch (theme) {
 }
 ---
 
-<script>
-  const media = window.matchMedia('(prefers-color-scheme: dark)')
-  function applyTheme() {
-    document.documentElement.dataset.theme = media.matches ? 'dark' : 'light'
-  }
+<script is:inline define:vars={{ theme }}>
+  if (theme === 'auto') {
+    const media = window.matchMedia('(prefers-color-scheme: dark)')
+    function applyTheme() {
+      document.documentElement.dataset.theme = media.matches ? 'dark' : 'light'
+    }
 
-  applyTheme()
-  media.addEventListener('change', applyTheme)
+    applyTheme()
+    media.addEventListener('change', applyTheme)
+  }
 </script>
 
 <style is:inline set:html={rawStylesCSS}></style>
