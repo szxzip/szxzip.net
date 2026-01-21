@@ -1,17 +1,3 @@
-:root {
-  --primary: #2e405b;
-  --secondary: #ffffff;
-  --accent: #c7254e;
-  --neutral: #000000;
-}
-
-[data-theme='dark'] {
-  --primary: #ffffff;
-  --secondary: #2e405b;
-  --accent: #c7254e;
-  --neutral: #000000;
-}
-
 @theme inline {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);

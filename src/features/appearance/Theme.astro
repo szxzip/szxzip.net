@@ -1,5 +1,21 @@
 ---
+import { themeConfig } from '@/theme.config'
 
+const themeColors = themeConfig.appearance.colors
+
+const rawStylesCSS = `
+:root {
+${Object.entries(themeColors.light)
+  .map(([key, value]) => `  --${key}: ${value};`)
+  .join('\n')}
+}
+
+[data-theme='dark'] {
+${Object.entries(themeColors.dark)
+  .map(([key, value]) => `  --${key}: ${value};`)
+  .join('\n')}
+}
+`
 ---
 
 <script>
@@ -7,6 +23,9 @@
   function applyTheme() {
     document.documentElement.dataset.theme = media.matches ? 'dark' : 'light'
   }
+
   applyTheme()
   media.addEventListener('change', applyTheme)
 </script>
+
+<style is:inline set:html={rawStylesCSS}></style>
