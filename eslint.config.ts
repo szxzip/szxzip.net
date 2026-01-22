@@ -2,10 +2,11 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
-    lessOpinionated: true,
-    stylistic: true,
     astro: true,
+    unocss: true,
+    stylistic: true,
     formatters: true,
+    lessOpinionated: true,
   },
   {
     rules: {
