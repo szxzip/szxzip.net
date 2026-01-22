@@ -9,26 +9,27 @@ import { themeConfig } from '@/theme.config'
 import { ClientRouter } from 'astro:transitions'
 import '@/styles/main.css'
 import Analytics from '@/features/analytics/Analytics.astro'
+
 const { title = themeConfig.site.title } = Astro.props
 
-const viewAnimation = {
-  old: {
-    name: 'fade-in-down',
-    duration: '0.5s',
-    easing: 'linear',
-    direction: 'reverse',
-  },
-  new: {
-    name: 'fade-in-down',
-    duration: '0.5s',
-    delay: '0.5s',
-    easing: 'linear',
-  },
+const mainAnimation = {
+  old: { name: 'fade-in-down', duration: '0.5s', easing: 'linear', direction: 'reverse' },
+  new: { name: 'fade-in-down', duration: '0.5s', delay: '0.5s', easing: 'linear' },
 }
 
-const viewTransition = {
-  forwards: viewAnimation,
-  backwards: viewAnimation,
+const footerAnimation = {
+  old: { name: 'fade-in-down', duration: '0s', easing: 'linear', direction: 'reverse' },
+  new: { name: 'fade-in-down', duration: '0.5s', delay: '0.5s', easing: 'linear' },
+}
+
+const mainTransition = {
+  forwards: mainAnimation,
+  backwards: mainAnimation,
+}
+
+const footerTransition = {
+  forwards: footerAnimation,
+  backwards: footerAnimation,
 }
 ---
 
@@ -69,14 +70,14 @@ const viewTransition = {
       </header>
 
       <main
-        transition:animate={viewTransition}
+        transition:animate={mainTransition}
         id="site-main"
         class:list={['px-7.5', 'lg:grow lg:py-20 lg:flex lg:justify-center']}
       >
         <slot />
       </main>
 
-      <footer id="site-footer" class:list={['p-7.5', 'lg:hidden ']}>
+      <footer transition:animate={footerTransition} id="site-footer" class:list={['p-7.5', 'lg:hidden ']}>
         <SiteCredits />
       </footer>
     </div>
