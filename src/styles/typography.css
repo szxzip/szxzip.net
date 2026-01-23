@@ -23,3 +23,13 @@
   @apply border-l-4 border-primary/30 pl-4;
   @apply text-primary/80;
 }
+
+.heti a:has(code) {
+  @apply decoration-accent p-0 rounded-4px text-sm;
+  @apply hover:bg-accent hover:decoration-accent;
+}
+
+.heti a > code {
+  @apply m-0
+  @apply hover:text-secondary;
+}
