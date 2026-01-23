@@ -13,4 +13,8 @@ export default antfu(
       'pnpm/yaml-enforce-settings': 'off',
     },
   },
-)
+).prepend({
+  ignores: [
+    'README*.md',
+  ],
+})

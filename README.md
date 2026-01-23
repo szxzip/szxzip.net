@@ -11,12 +11,12 @@
 <b>This work is rewrite from <a href="https://github.com/sumimakito/hexo-theme-typography">hexo-theme-Typography</a></b>
 </h5>
 <p align='center'>
-<b>English</b> | <a href="./README.zh-CN.md">简体中文</a>
+  <b>English</b> | <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
 ## Features
 
-- Build with **Astro**, **TypeScript** and **Tailwind CSS**
+- Build with **Astro**, **TypeScript** and **UnoCSS (presetWind4)**
 - **Fast**. 100% [Pagespeed Score](https://pagespeed.web.dev/analysis/https-astro-theme-typography-vercel-app/j34nq9tx0s?form_factor=desktop).
 - **Typography** Derived from prevalent Chinese typographic norms and aims to provide an enhanced reading experience for website visitors.
 - **Responsive**. Responsive and works well on all screen sizes.
@@ -52,21 +52,17 @@ Or you can refer to the [Astro](https://docs.astro.build/guides/deploy/) documen
 
 ### Add post
 
-You can add content by creating a new markdown file in `src/content/posts`. The file need metadata in the frontmatter, like this:
+You can add content by creating a new markdown file in `src/contents/posts`. The file need metadata in the frontmatter, like this:
 
 ```md
 ---
 title: title
 pubDate: 2021-08-01
-categories: ["article"]
 description: "description"
+tags: ["tag-a", "tag-b"]
+draft: false
+pinned: false
 ---
-```
-
-Or, you can use the following command in your terminal to create a new post:
-
-```bash
-pnpm theme:create
 ```
 
 ## Updating the theme
@@ -75,23 +71,25 @@ You can simply [`Sync Fork`](https://docs.github.com/en/pull-requests/collaborat
 
 ## Customization
 
-Typography is highly customizable. The default configuration file is [src/.config/default.ts](src/.config/default.ts), you can override the default configuration in [src/.config/user.ts](src/.config/user.ts) as needed.
+Typography is highly customizable. The main configuration file is `src/theme.config.ts`.
 
 ### Social links
 
-Typography has built-in support for adding links to your social media accounts to the site via the social option in the config file:
+Typography has built-in support for adding links to your social media accounts to the site via `site.socialLinks` in `src/theme.config.ts`:
 
 ```ts
-socials: [
-  {
-    name: 'github',
-    href: 'https://github.com/moeyua/astro-theme-typography'
-  }
-]
+site: {
+  socialLinks: [
+    {
+      title: 'github',
+      url: 'https://github.com/moeyua/astro-theme-typography',
+      icon: 'i-mdi-github',
+    },
+  ],
+}
 ```
 
-The `name` is the icon name in [Material Design Icons](https://pictogrammers.com/library/mdi/),
-which will be automatically generated as the icon.
+The `icon` is an [Iconify](https://iconify.design/) icon class name (e.g. `i-mdi-github`).
 
 > Note that you need to restart the development server to see the changes.
 
@@ -101,12 +99,14 @@ By default, the navigation are `Posts`, `Archive`, `Categories` and `About`. You
 
 ```ts
 {
-  navs: [
-    {
-      name: 'Categories',
-      href: '/categories'
-    }
-  ]
+  site: {
+    navigationLinks: [
+      {
+        title: 'Tags',
+        url: '/tags',
+      },
+    ],
+  },
 }
 ```
 
@@ -117,7 +117,9 @@ And then add the corresponding page in `src/pages`, see more in [Astro Pages](ht
 Typography supports dark mode. You can change it in the config file:
 
 ```ts
-themeStyle: 'dark' // 'light' | 'dark' | 'system'
+appearance: {
+  theme: 'auto', // 'auto' | 'light' | 'dark'
+}
 ```
 
 ### Internationalization (i18n)
@@ -125,7 +127,9 @@ themeStyle: 'dark' // 'light' | 'dark' | 'system'
 Typography provides built-in support for multilingual sites. By default, the language is `en-us`, you can change it in the config file:
 
 ```ts
-locale: 'zh-cn'
+site: {
+  locale: 'zh-cn',
+}
 ```
 
 For now, Typography supports below languages:
@@ -134,6 +138,7 @@ For now, Typography supports below languages:
 - `zh-cn`
 - `zh-tw`
 - `ja-jp`
+- `ko-kr`
 - `it-it`
 
 You can see all supported languages in [src/i18n.ts](src/i18n.ts), and add more if you need.
@@ -142,17 +147,18 @@ You can see all supported languages in [src/i18n.ts](src/i18n.ts), and add more 
 
 Typography supports multiple comment services, currently supports [Disqus](https://disqus.com/), [Giscus](https://giscus.app/) and [Twikoo](https://twikoo.js.org/).
 
-Enable the corresponding comment service by adding the configuration to the config file, when you fill in multiple comment services, only the first service will be displayed.
+Select the provider via `comment.provider`, then fill the corresponding config.
 
 #### Disqus
 
 You can enable Disqus by adding the following configuration to the config file:
 
 ```ts
-comments: {
+comment: {
+  provider: 'disqus',
   disqus: {
-    shortname: 'your-disqus-shortname'
-  }
+    shortname: 'your-disqus-shortname',
+  },
 }
 ```
 
@@ -166,22 +172,23 @@ You can enable Giscus by adding the following configuration to the config file:
 
 ```ts
 {
-  comments: {
+  comment: {
+    provider: 'giscus',
     giscus: {
-      repo: 'moeyua/astro-theme-typography'
-      repoId: 'R_kgDOKy9HOQ'
-      category: 'General'
-      categoryId: 'DIC_kwDOKy9HOc4CegmW'
-      mapping: 'title'
-      strict: '0'
-      reactionsEnabled: '1'
-      emitMetadata: '1'
-      inputPosition: 'top'
-      theme: 'light'
-      lang: 'zh-CN'
-      loading: 'lazy'
-    }
-  }
+      repo: 'moeyua/astro-theme-typography',
+      repoId: 'R_kgDOKy9HOQ',
+      category: 'General',
+      categoryId: 'DIC_kwDOKy9HOc4CUZP7',
+      mapping: 'pathname',
+      strict: '1',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'bottom',
+      theme: 'preferred_color_scheme',
+      lang: 'zh-CN',
+      loading: 'lazy',
+    },
+  },
 }
 ```
 
@@ -191,11 +198,26 @@ You can enable Twikoo by adding the following configuration to the config file:
 
 ```ts
 {
-  comments: {
+  comment: {
+    provider: 'twikoo',
     twikoo: {
-      envId: 'your-env-id'
-    }
-  }
+      envId: 'your-env-id',
+    },
+  },
+}
+```
+
+### Analytics
+
+You can enable analytics in `src/theme.config.ts`:
+
+```ts
+analytics: {
+  provider: 'umami', // 'google' | 'umami' | 'none'
+  umami: {
+    websiteId: 'your-umami-website-id',
+    scriptUrl: 'https://your-umami-instance/script.js',
+  },
 }
 ```
 
