@@ -65,6 +65,12 @@ pinned: false
 ---
 ```
 
+Or create it with the CLI script (run without args for interactive prompts):
+
+```bash
+pnpm post:create -- --title "My Post" --tags "demo,astro" --slug "my-post" --no-draft
+```
+
 ## Updating the theme
 
 You can simply [`Sync Fork`](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) on your own forked project (do not click Discard Changes, otherwise you will lose your own changes).

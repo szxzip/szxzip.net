@@ -68,6 +68,12 @@ slug: my-post-slug
 正文从这里开始。
 ```
 
+也可以用脚本快速创建（不带参数会进入交互式提示）：
+
+```bash
+pnpm post:create -- --title "我的新文章" --tags "demo,astro" --slug "my-post" --no-draft
+```
+
 ## 主题配置
 
 主题主要配置集中在 `src/theme.config.ts`。
