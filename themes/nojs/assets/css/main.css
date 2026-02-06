@@ -41,12 +41,9 @@ main {
 }
 
 .footer-content {
-  text-align: center;            /* 文字居中 */
-  padding: 1.5em 0;
-}
-
-.footer-content p {
-  margin: 0.4em 0;               /* 上下间距 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 article {
