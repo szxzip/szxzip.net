@@ -4,6 +4,11 @@ title = "Pizxzs"
 theme = "nojs"
 timeZone = "Asia/Shanghai"
 
+[params.assets]
+  favicon = "/icons/favicon.ico"
+  favicon16x16 = "/icons/favicon-16x16.webp"
+  favicon32x32 = "/icons/favicon-32x32.webp"
+
 [menus]
   [[menus.main]]
     name = 'Home'
