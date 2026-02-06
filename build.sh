@@ -1,3 +1,5 @@
+#!/bin/bash
+git pull
 rm -rf /var/www/html/*
 docker run --rm \
   -v $(pwd):/src \
