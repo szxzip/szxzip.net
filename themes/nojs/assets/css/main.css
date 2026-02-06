@@ -46,6 +46,10 @@ main {
   justify-content: center;
 }
 
+.footer-content p {
+  margin: 0;
+}
+
 article {
   margin-top: 2em;
 }
