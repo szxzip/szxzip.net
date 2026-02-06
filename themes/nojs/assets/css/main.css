@@ -137,3 +137,22 @@ figcaption {
   color: var(--fg2);
   text-align: center;
 }
+
+.beian-plain,
+.beian-plain:hover,
+.beian-plain:visited,
+.beian-plain:active {
+  color: inherit;                /* 继承父元素的颜色（通常是 var(--fg1)） */
+  text-decoration: none;         /* 去掉下划线 */
+  background: none;              /* 无背景 */
+  border: none;                  /* 无边框 */
+  cursor: pointer;               /* 保持鼠标手型（可选） */
+  font-size: inherit;            /* 字体大小和普通文字一样 */
+  opacity: 1;                    /* 不变淡 */
+}
+
+/* 防止 hover 时出现任何变化 */
+.beian-plain:hover {
+  text-decoration: none;
+  color: inherit;
+}
