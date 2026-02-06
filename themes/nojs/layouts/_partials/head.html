@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, initial-scale = 1.0, shrink-to-fit=no">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+{{- if .Description }}
+  <meta name="description" content="{{ .Description | plainify }}">
+{{- end }}
+
+{{- $styles := slice "css/vars.css" "css/syntax.css" "css/main.css" "css/nav.css" -}}
+{{- range $styles }}
+  {{- with resources.Get . }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{ $noop := .WordCount }}
+{{ if .Page.Store.Get "hasMath" }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css">
+{{ end }}

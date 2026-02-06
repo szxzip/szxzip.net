@@ -1,0 +1,139 @@
+/* @import url("vars.css"); */
+
+body {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  margin: 0;
+
+  background-color: var(--bg1);
+  color: var(--fg1);
+  font-family: sans-serif;
+  line-height: 1.5;
+
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+header,
+footer,
+thead,
+pre,
+code {
+  background-color: var(--bg2);
+}
+
+.navbar,
+main,
+.footer-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  box-sizing: border-box;
+}
+
+main {
+  flex: 1;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article {
+  margin-top: 2em;
+}
+
+article:not(:last-of-type) {
+  padding-bottom: 2em;
+  border-bottom: solid 1px var(--fg2);
+}
+
+.metadata {
+  margin: 1em 0;
+}
+
+.tags {
+  list-style: none;
+  display: inline-flex;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.tags a {
+  color: var(--fg2);
+  text-decoration: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) .anchor {
+  visibility: hidden;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover .anchor {
+  visibility: visible;
+}
+
+p,
+li {
+  text-align: justify;
+  hyphens: auto;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+pre code {
+  padding: 0;
+}
+
+code {
+  padding: 0.2em 0.3em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: solid 1px;
+}
+
+td,
+th,
+pre {
+  padding: 1em;
+}
+
+pre,
+.katex {
+  overflow: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+figcaption {
+  margin-top: 1em;
+  color: var(--fg2);
+  text-align: center;
+}

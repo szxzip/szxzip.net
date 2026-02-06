@@ -1,0 +1,16 @@
+baseURL = "http://szxzip.net/"
+languageCode = "en-us"
+title = "Pizxzs"
+theme = "nojs"
+timeZone = "Asia/Shanghai"
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 1
+
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 2
