@@ -1,5 +1,5 @@
 ---
-title: Time, forward
+title: Time, forward.
 ---
 
 Hello World!
