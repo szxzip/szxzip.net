@@ -42,22 +42,8 @@ main {
 
 .footer-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-}
-
-.footer-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.footer-beian img {
-  object-fit: contain;
 }
 
 article {
