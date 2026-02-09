@@ -56,12 +56,6 @@ main {
   flex-wrap: wrap;  /* 允许一行内元素换行 */
 }
 
-.footer-beian img {
-  height: 16px;  /* 固定高度 */
-  width: auto;   /* 固定宽度 */
-  object-fit: contain;  /* 保持图片比例 */
-}
-
 article {
   margin-top: 2em;
 }
