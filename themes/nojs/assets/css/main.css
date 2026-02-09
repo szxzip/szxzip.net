@@ -42,8 +42,29 @@ main {
 
 .footer-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0.5em 2em;  /* 整体减少内边距 */
+  gap: 0.25em;  /* 两行之间的间距 */
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5em;  /* 行内元素间距 */
+}
+
+.spacer {
+  width: 0.5em;  /* 间距元素 */
+  display: inline-block;
+}
+
+.beian-img {
+  width: auto;
+  object-fit: contain;
 }
 
 article {
@@ -130,12 +151,6 @@ figure {
 
 img {
   width: 100%;
-}
-
-.beian-img {
-  width: auto !important;  /* 覆盖 width: 100% */
-  height: 16px;  /* 明确设置高度 */
-  object-fit: contain;  /* 保持图片比例 */
 }
 
 figcaption {
