@@ -42,10 +42,11 @@ main {
 
 .footer-content {
   display: grid;
-  grid-template-rows: auto auto;  /* 明确两行 */
-  justify-items: center;  /* 水平居中 */
-  align-items: center;    /* 垂直居中 */
-  gap: 8px;
+  grid-template-columns: 1fr;  /* 单列 */
+  grid-auto-rows: auto;        /* 自动行高 */
+  justify-items: center;       /* 水平居中 */
+  align-items: center;         /* 垂直居中 */
+  row-gap: 8px;                /* 行间距 */
 }
 
 article {
