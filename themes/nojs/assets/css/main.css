@@ -57,11 +57,6 @@ main {
   gap: 0.5em;
 }
 
-.spacer {
-  width: 0.2em;
-  display: inline-block;
-}
-
 .beian-img {
   width: auto;
   height: 16px;
