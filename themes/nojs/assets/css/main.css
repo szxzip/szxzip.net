@@ -64,6 +64,7 @@ main {
 
 .beian-img {
   width: auto;
+  height: 16px;
   object-fit: contain;
 }
 
