@@ -41,10 +41,10 @@ main {
 }
 
 .footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: auto auto;  /* 明确两行 */
+  justify-items: center;  /* 水平居中 */
+  align-items: center;    /* 垂直居中 */
   gap: 8px;
 }
 
