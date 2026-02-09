@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'SourceSans';
+    src: url('/fonts/SourceSans3VF-Upright.otf.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans';
+    src: url('/fonts/SourceSans3VF-Italic.otf.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4Variable-Roman.otf.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4Variable-Italic.otf.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('/fonts/SourceCodeVF-Upright.otf.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('/fonts/SourceCodeVF-Italic.otf.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceHanSansSC';
+    src: url('/fonts/SourceHanSansSC-VF.otf.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceHanSerifSC';
+    src: url('/fonts/SourceHanSerifSC-VF.otf.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'SourceSans', 'SourceHanSansSC', sans-serif;
+    font-weight: 400;
+}
+
+code, pre, .chroma {
+    font-family: 'SourceCodePro', monospace;
+}
+
+h1, h2 { font-weight: 700; }
+h3, h4 { font-weight: 500; }
+strong { font-weight: 600; }
