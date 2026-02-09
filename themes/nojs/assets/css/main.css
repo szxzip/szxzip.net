@@ -56,10 +56,6 @@ main {
   flex-wrap: wrap;
 }
 
-.footer-beian img {
-  object-fit: contain;
-}
-
 article {
   margin-top: 2em;
 }
