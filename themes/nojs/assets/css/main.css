@@ -41,9 +41,12 @@ main {
 }
 
 .footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;  /* 单列 */
+  grid-auto-rows: auto;        /* 自动行高 */
+  justify-items: center;       /* 水平居中 */
+  align-items: center;         /* 垂直居中 */
+  row-gap: 8px;                /* 行间距 */
 }
 
 article {
