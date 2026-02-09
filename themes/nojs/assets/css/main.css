@@ -68,10 +68,6 @@ code, pre, .chroma {
   font-family: 'SourceCodePro', monospace;
 }
 
-h1, h2 { font-weight: 700; }
-h3, h4 { font-weight: 500; }
-strong { font-weight: 600; }
-
 body {
   display: flex;
   min-height: 100dvh;
