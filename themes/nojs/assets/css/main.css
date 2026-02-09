@@ -42,7 +42,7 @@ main {
 
 .footer-content {
   display: flex;
-  flex-direction: column;  /* 垂直排列 */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -52,8 +52,12 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;  /* 控制一行内元素间距 */
-  flex-wrap: wrap;  /* 允许一行内元素换行 */
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-beian img {
+  object-fit: contain;
 }
 
 article {
