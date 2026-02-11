@@ -165,6 +165,7 @@ figcaption {
   border: none;
   cursor: pointer;
   opacity: 0.7;
+  font-size: 0.85em;
 }
 
 .beian:hover {
