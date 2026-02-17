@@ -68,10 +68,10 @@ slug: my-post-slug
 正文从这里开始。
 ```
 
-也可以用脚本快速创建（不带参数会进入交互式提示）：
+也可以用脚本快速创建（交互式提示）：
 
 ```bash
-pnpm post:create -- --title "我的新文章" --tags "demo,astro" --slug "my-post" --no-draft
+pnpm post:create
 ```
 
 ## 主题配置

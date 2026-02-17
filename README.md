@@ -65,10 +65,10 @@ pinned: false
 ---
 ```
 
-Or create it with the CLI script (run without args for interactive prompts):
+Or create it with the CLI script (interactive prompts):
 
 ```bash
-pnpm post:create -- --title "My Post" --tags "demo,astro" --slug "my-post" --no-draft
+pnpm post:create
 ```
 
 ## Updating the theme

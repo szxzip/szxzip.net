@@ -5,14 +5,6 @@ import process from 'node:process'
 import { Temporal } from '@js-temporal/polyfill'
 import consola from 'consola'
 
-type ArgValue = string | boolean
-
-interface ParsedArgs {
-  _: string[]
-  help?: boolean
-  [key: string]: ArgValue | string[] | undefined
-}
-
 function slugify(input: string) {
   return input
     .toLowerCase()
@@ -20,89 +12,6 @@ function slugify(input: string) {
     .replace(/["']/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-}
-
-function parseArgs(argv: string[]): ParsedArgs {
-  const out: ParsedArgs = { _: [] }
-
-  for (let i = 0; i < argv.length; i += 1) {
-    const a = argv[i]
-    if (!a) {
-      continue
-    }
-
-    if (a === '--') {
-      continue
-    }
-
-    if (a === '-h' || a === '--help') {
-      out.help = true
-      continue
-    }
-
-    if (!a.startsWith('-')) {
-      out._.push(a)
-      continue
-    }
-
-    if (a.startsWith('--no-')) {
-      out[a.slice(5)] = false
-      continue
-    }
-
-    if (a.startsWith('--')) {
-      const key = a.slice(2)
-      const next = argv[i + 1]
-      if (next && !next.startsWith('-')) {
-        out[key] = next
-        i += 1
-      }
-      else {
-        out[key] = true
-      }
-      continue
-    }
-
-    if (a.length === 2) {
-      const key = a.slice(1)
-      const next = argv[i + 1]
-      if (next && !next.startsWith('-')) {
-        out[key] = next
-        i += 1
-      }
-      else {
-        out[key] = true
-      }
-    }
-  }
-
-  return out
-}
-
-function printHelp() {
-  process.stdout.write(`\
-Create a new post under src/contents/posts.
-
-Usage:
-  pnpm post:create -- --title "My Post" [options]
-
-Options:
-  --title, -t        Post title (default: filename)
-  --slug, -s         Post slug (default: derived from title)
-  --date             pubDate in YYYY-MM-DD (default: today)
-  --description      Post description (default: empty)
-  --tags             Comma-separated tags (default: empty)
-  --draft            Set draft: true
-  --no-draft         Set draft: false
-  --pinned           Set pinned: true
-  --no-pinned        Set pinned: false
-  --filename         Output filename (e.g. "my-post.md" or "my-post.mdx")
-  --overwrite        Overwrite existing file
-  --open             Open in VS Code after creation
-  --no-open          Do not open after creation
-  -h, --help         Show help
-\
-`)
 }
 
 function yamlString(value: string) {
@@ -153,9 +62,9 @@ function buildFrontmatter(data: {
 void createPost()
 
 async function createPost(): Promise<void> {
-  const args = parseArgs(process.argv.slice(2))
-  if (args.help) {
-    printHelp()
+  if (!process.stdin.isTTY) {
+    consola.error('post:create 需要在交互式终端(TTY)中运行')
+    process.exitCode = 1
     return
   }
 
@@ -164,23 +73,24 @@ async function createPost(): Promise<void> {
   const targetDir = path.resolve(process.cwd(), 'src/contents/posts')
   fs.mkdirSync(targetDir, { recursive: true })
 
-  const filenameArg = (typeof args.filename === 'string' ? args.filename : undefined)
-  let baseName = ''
-  let extension = ''
+  let fileNameInput = String(await consola.prompt('Enter file name: ', { type: 'text' }))
+  fileNameInput = fileNameInput.trim()
 
-  if (filenameArg) {
-    const ext = path.extname(filenameArg)
-    if (ext === '.md' || ext === '.mdx') {
-      extension = ext
-      baseName = filenameArg.slice(0, -ext.length)
-    }
-    else {
-      baseName = filenameArg
-      extension = '.md'
-    }
+  if (!fileNameInput) {
+    consola.error('File name is required')
+    process.exitCode = 1
+    return
   }
-  else {
-    baseName = String(await consola.prompt('Enter file name: ', { type: 'text' }))
+
+  if (fileNameInput.includes('/') || fileNameInput.includes('\\')) {
+    consola.error('File name must not include path separators')
+    process.exitCode = 1
+    return
+  }
+
+  let extension = path.extname(fileNameInput)
+  let baseName = extension ? fileNameInput.slice(0, -extension.length) : fileNameInput
+  if (extension !== '.md' && extension !== '.mdx') {
     extension = String(await consola.prompt('Select file extension: ', { type: 'select', options: ['.md', '.mdx'] }))
   }
 
@@ -191,69 +101,43 @@ async function createPost(): Promise<void> {
     return
   }
 
-  if (baseName.includes('/') || baseName.includes('\\')) {
-    consola.error('File name must not include path separators')
-    process.exitCode = 1
-    return
-  }
-
-  const title = String((typeof args.title === 'string' ? args.title : undefined)
-    ?? (typeof args.t === 'string' ? args.t : undefined)
-    ?? baseName)
-
-  const dateInput = (typeof args.date === 'string' ? args.date : undefined) ?? getTodayISODate()
-  const pubDate = validateISODate(dateInput)
-  if (!pubDate) {
-    consola.error(`Invalid --date: ${dateInput} (expected YYYY-MM-DD)`)
-    process.exitCode = 1
-    return
-  }
-
-  const tags = (typeof args.tags === 'string' ? args.tags : '')
+  const title = String(await consola.prompt('Enter title: ', { type: 'text', initial: baseName }))
+  const description = String(await consola.prompt('Enter description: ', { type: 'text', initial: '' }))
+  const tags = String(await consola.prompt('Enter tags (comma-separated): ', { type: 'text', initial: '' }))
     .split(',')
     .map(s => s.trim())
     .filter(Boolean)
 
-  const description = String((typeof args.description === 'string' ? args.description : undefined) ?? '')
+  const draft = Boolean(await consola.prompt('Is this a draft?', { type: 'confirm', initial: true }))
+  const pinned = Boolean(await consola.prompt('Pinned?', { type: 'confirm', initial: false }))
 
-  const pinned = args.pinned === true
-
-  let draft: boolean
-  if (args.draft === true) {
-    draft = true
-  }
-  else if (args.draft === false) {
-    draft = false
-  }
-  else {
-    draft = Boolean(await consola.prompt('Is this a draft?', { type: 'confirm', initial: true }))
-  }
-
-  const derivedSlug = slugify(String(
-    (typeof args.slug === 'string' ? args.slug : undefined)
-    ?? (typeof args.s === 'string' ? args.s : undefined)
-    ?? title,
-  ))
-
-  let slug = derivedSlug
-  if (!slug) {
-    slug = String(await consola.prompt('Enter slug (required): ', { type: 'text' }))
-      .trim()
-  }
+  const slugDefault = slugify(title || baseName)
+  const slug = String(await consola.prompt('Enter slug: ', { type: 'text', initial: slugDefault })).trim()
   if (!slug) {
     consola.error('slug is required')
     process.exitCode = 1
     return
   }
 
+  let pubDate: string | null = null
+  const dateDefault = getTodayISODate()
+  while (!pubDate) {
+    const dateInput = String(await consola.prompt('Enter pubDate (YYYY-MM-DD): ', { type: 'text', initial: dateDefault }))
+      .trim()
+    pubDate = validateISODate(dateInput || dateDefault)
+    if (!pubDate) {
+      consola.warn('Invalid date format, expected YYYY-MM-DD')
+    }
+  }
+
   const fileName = `${baseName}${extension}`
   const fullPath = path.join(targetDir, fileName)
-  const overwrite = args.overwrite === true
-  if (fs.existsSync(fullPath) && !overwrite) {
-    consola.error(`File already exists: ${path.relative(process.cwd(), fullPath)}`)
-    consola.info('Use --overwrite to overwrite it.')
-    process.exitCode = 1
-    return
+  if (fs.existsSync(fullPath)) {
+    const overwrite = Boolean(await consola.prompt('File exists, overwrite?', { type: 'confirm', initial: false }))
+    if (!overwrite) {
+      consola.info('Aborted.')
+      return
+    }
   }
 
   const frontmatter = buildFrontmatter({
@@ -270,17 +154,7 @@ async function createPost(): Promise<void> {
     fs.writeFileSync(fullPath, `${frontmatter}\n`, 'utf8')
     consola.success(`Created: ${path.relative(process.cwd(), fullPath)}`)
 
-    let shouldOpen: boolean
-    if (args.open === true) {
-      shouldOpen = true
-    }
-    else if (args.open === false) {
-      shouldOpen = false
-    }
-    else {
-      shouldOpen = Boolean(await consola.prompt('Open the new post in VS Code?', { type: 'confirm', initial: true }))
-    }
-
+    const shouldOpen = Boolean(await consola.prompt('Open the new post in VS Code?', { type: 'confirm', initial: true }))
     if (shouldOpen) {
       try {
         execSync(`code "${fullPath}"`, { stdio: 'ignore' })
