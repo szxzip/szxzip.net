@@ -1,0 +1,33 @@
+name: 网页部署
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 部署到服务器
+        uses: appleboy/ssh-action@master
+        with:
+          host: szxzip.net
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /root/szxzip.net
+            git pull origin main
+            rm -rf /var/www/html/*
+            docker run --rm \
+              -v $(pwd):/src \
+              -v /var/www/html:/src/public \
+              hugomods/hugo:exts \
+              --minify --gc --cleanDestinationDir --logLevel debug
+
+      - name: 部署完成
+        run: echo "✅ 部署成功完成"
