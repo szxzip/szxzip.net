@@ -14,3 +14,6 @@ timeZone = "Asia/Shanghai"
     name = 'Posts'
     pageRef = '/posts'
     weight = 2
+
+[markup.goldmark.renderer]
+  unsafe = true
