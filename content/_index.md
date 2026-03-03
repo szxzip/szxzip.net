@@ -15,8 +15,8 @@ time_is_widget.init({Beijing_z43d:{}});
 
 本站还（将）提供以下服务：
 
-Gitea: git.szxzip.net  
-OpenList: files.szxzip.net  
+Gitea: <git.szxzip.net>  
+OpenList: <files.szxzip.net>  
 Mail: -  
 DNS: -  
 Jellyfin: -  
