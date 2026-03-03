@@ -2,7 +2,7 @@
 title: Minecraft
 ---
 
-Minecraft 版本：Paper 1.21.11  
+Minecraft 版本：Paper 1.21.11 Build #126  
 端口：25565
 
 服务器规格：
