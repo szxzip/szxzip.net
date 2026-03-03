@@ -15,10 +15,12 @@ time_is_widget.init({Beijing_z43d:{}});
 
 本站还（将）提供以下服务：
 
-<span>
-  [![Gitea](https://img.shields.io/badge/Gitea-609926?style=for-the-badge&logo=gitea&logoColor=white)](https://git.szxzip.net)
-  [![Gitea](https://img.shields.io/badge/Gitea-609926?style=for-the-badge&logo=gitea&logoColor=white)](https://git.szxzip.net)
-</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0;">
+  <a href="https://git.szxzip.net"><img src="https://img.shields.io/badge/Gitea-609926?style=for-the-badge&logo=gitea&logoColor=white" alt="Gitea"></a>
+  <a href="https://github.com/your-repo"><img src="https://img.shields.io/badge/GitHub-镜像-181717?logo=github" alt="GitHub"></a>
+  <a href="https://docs.example.com"><img src="https://img.shields.io/badge/文档-在线查看-blue?logo=readthedocs" alt="文档"></a>
+</div>
+
 OpenList: <files.szxzip.net>  
 Mail: -  
 DNS: -  
