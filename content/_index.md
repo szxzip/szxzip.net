@@ -6,9 +6,12 @@ title: Time, forward.
 
 请校准时钟：
 
-<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:36px">Time in Beijing:</a>
-<span id="Beijing_z43d" style="font-size:36px"></span>
-<script src="//widget.time.is/t.js"></script>
-<script>
-time_is_widget.init({Beijing_z43d:{}});
-</script>
+<!-- 静态时间显示 -->
+<div style="text-align: center; margin: 20px 0;">
+  <a href="https://time.is/Beijing" target="_blank" rel="noopener">
+    <img src="https://time.is/img/Beijing.gif" alt="北京时间" style="max-width: 100%; height: auto;">
+  </a>
+  <p style="font-size: 14px; color: #666;">
+    <a href="https://time.is/Beijing" target="_blank" rel="noopener">点击查看精确时间</a>
+  </p>
+</div>
