@@ -6,12 +6,9 @@ title: Time, forward.
 
 请校准时钟：
 
-**洛杉磯現在時間：**  
-<span id="Los_Angeles_z160" style="font-size:160%; font-family: monospace;"></span>
-
+<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" style="font-size:36px">北京时间:</a>
+<span id="Beijing_z43d" style="font-size:36px"></span>
 <script src="//widget.time.is/t.js"></script>
 <script>
-time_is_widget.init({
-  Los_Angeles_z160 : {format:"%H:%M:%S"},
-});
+time_is_widget.init({Beijing_z43d:{}});
 </script>
