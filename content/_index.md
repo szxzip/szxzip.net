@@ -15,7 +15,7 @@ time_is_widget.init({Beijing_z43d:{}});
 
 本站还（将）提供以下服务：
 
-Gitea: <git.szxzip.net>  
+{{< button url="https://git.szxzip.net" text="访问Gitea仓库" newtab="true" >}}  
 OpenList: <files.szxzip.net>  
 Mail: -  
 DNS: -  
