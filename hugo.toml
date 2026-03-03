@@ -12,7 +12,7 @@ timeZone = "Asia/Shanghai"
 
   [[menus.main]]
     name = 'Minecraft'
-    pageRef = '/mc'
+    pageRef = '/minecraft'
     weight = 2
 
   [[menus.main]]
