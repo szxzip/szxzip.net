@@ -6,12 +6,19 @@ title: Time, forward.
 
 请校准时钟：
 
-<!-- 静态时间显示 -->
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://time.is/Beijing" target="_blank" rel="noopener">
-    <img src="https://time.is/img/Beijing.gif" alt="北京时间" style="max-width: 100%; height: auto;">
+## 目前時間（洛杉磯）
+
+{{< rawhtml >}}
+<div style="text-align:center; margin:1.5em 0;">
+  <a href="https://time.is/Los_Angeles" id="time_is_link" rel="nofollow" style="font-size:180%; text-decoration:none;">
+    Los Angeles:
   </a>
-  <p style="font-size: 14px; color: #666;">
-    <a href="https://time.is/Beijing" target="_blank" rel="noopener">点击查看精确时间</a>
-  </p>
+  <span id="Los_Angeles_z180" style="font-size:180%; font-weight:bold;"></span>
+  <script src="//widget.time.is/t.js"></script>
+  <script>
+    time_is_widget.init({
+      Los_Angeles_z180 : {format:"%H:%M:%S"},
+    });
+  </script>
 </div>
+{{< /rawhtml >}}
