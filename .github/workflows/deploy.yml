@@ -27,7 +27,7 @@ jobs:
               -v $(pwd):/src \
               -v /var/www/html:/src/public \
               hugomods/hugo:exts \
-              --minify --gc --cleanDestinationDir --logLevel debug
+              --gc --cleanDestinationDir --logLevel debug
 
       - name: 部署完成
         run: echo "✅ 部署成功完成"
