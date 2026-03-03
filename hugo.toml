@@ -11,9 +11,14 @@ timeZone = "Asia/Shanghai"
     weight = 1
 
   [[menus.main]]
+    name = 'Minecraft'
+    pageRef = '/mc'
+    weight = 2
+
+  [[menus.main]]
     name = 'Posts'
     pageRef = '/posts'
-    weight = 2
+    weight = 4
 
 [markup.goldmark.renderer]
   unsafe = true
