@@ -1,4 +1,4 @@
-name: 网页部署
+name: hugo
 
 on:
   push:
@@ -10,10 +10,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出代码
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 部署到服务器
+      - name: Build
         uses: appleboy/ssh-action@master
         with:
           host: szxzip.net
@@ -28,6 +28,3 @@ jobs:
               -v /var/www/html:/src/public \
               hugomods/hugo:exts \
               --gc --cleanDestinationDir --logLevel debug
-
-      - name: 部署完成
-        run: echo "✅ 部署成功完成"
