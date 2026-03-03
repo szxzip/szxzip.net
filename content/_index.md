@@ -10,3 +10,15 @@ title: Time, forward.
 <script>
 time_is_widget.init({Beijing_z43d:{}});
 </script>
+
+Mail
+
+DNS
+
+Jellyfin
+
+OpenList
+
+Gitea
+
+Status
