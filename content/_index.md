@@ -13,8 +13,13 @@ time_is_widget.init({Beijing_z43d:{}});
 
 <br>
 
-本站还提供以下服务：
+本站还（将）提供以下服务：
 
-Mail DNS Jellyfin OpenList Gitea Status
+Gitea: git.szxzip.net  
+OpenList: files.szxzip.net  
+Mail: -  
+DNS: -  
+Jellyfin: -  
+Status: -
 
 运行平台：一台 Raspberry Pi 5 8GB
