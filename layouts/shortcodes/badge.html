@@ -1,0 +1,7 @@
+{{ $name := .Get "name" }}
+{{ $link := .Get "link" }}
+{{ $badgeURL := index .Site.Data.badges $name }}
+
+<a href="{{ $link }}">
+  <img src="{{ $badgeURL }}" alt="{{ $name }}">
+</a>
