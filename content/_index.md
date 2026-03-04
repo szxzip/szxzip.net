@@ -17,8 +17,8 @@ time_is_widget.init({Beijing_z43d:{}});
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0;">
   <a href="https://git.szxzip.net"><img src="https://img.shields.io/badge/Gitea-609926?style=for-the-badge&logo=gitea&logoColor=white" alt="Gitea"></a>
-  <a href="https://media.szxzip.net"><img src="/s/badge-jellyfin" alt="Jellyfin"></a>
-  <a href="https://files.szxzip.net"><img src="/s/badge-openlist" alt="Openlist"></a>
+  <a href="https://media.szxzip.net"><img src="{{ .Site.Data.redirects.shortlinks["/s/badge-jellyfin"] }}" alt="Jellyfin"></a>
+  <a href="https://files.szxzip.net"><img src="{{ .Site.Data.redirects.shortlinks["/s/badge-openlist"] }}" alt="Openlist"></a>
   <a href="https://mail.szxzip.net"><img src="https://img.shields.io/badge/Mail-red?style=for-the-badge&logo=data:image/svg%2bxml;base64,123" alt="Mail"></a>
   <a href="https://dns.szxzip.net"><img src="https://img.shields.io/badge/DNS-yellow?style=for-the-badge&logo=data:image/svg%2bxml;base64,123" alt="DNS"></a>
   <a href="https://status.szxzip.net"><img src="https://img.shields.io/badge/status-green?style=for-the-badge&logo=data:image/svg%2bxml;base64,123" alt="Status"></a>
