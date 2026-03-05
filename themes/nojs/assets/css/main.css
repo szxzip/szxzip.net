@@ -91,7 +91,11 @@ article:not(:last-of-type) {
   visibility: visible;
 }
 
-p,
+p {
+  text-align: left;
+  hyphens: auto;
+}
+
 li {
   text-align: justify;
   hyphens: auto;
