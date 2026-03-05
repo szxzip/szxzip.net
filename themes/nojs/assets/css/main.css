@@ -62,11 +62,6 @@ main {
     flex-direction: column;
     gap: 0.4em;
   }
-
-  .footer-row a.beian {
-    font-size: 0.9em;
-    white-space: nowrap;
-  }
 }
 
 article {
