@@ -20,5 +20,8 @@ timeZone = "Asia/Shanghai"
     pageRef = '/posts'
     weight = 3
 
+[params]
+  customCSS = ["css/custom.css"]
+
 [markup.goldmark.renderer]
   unsafe = true
