@@ -57,6 +57,18 @@ main {
   gap: 0.5em;
 }
 
+@media (max-width: 480px) {
+  .footer-row {
+    flex-direction: column;
+    gap: 0.4em;
+  }
+
+  .footer-row a.beian {
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+}
+
 article {
   margin-top: 2em;
 }
