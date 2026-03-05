@@ -60,7 +60,7 @@ main {
 @media (max-width: 480px) {
   .footer-row {
     flex-direction: column;
-    gap: 0.4em;
+    gap: 0.2em;
   }
 }
 
