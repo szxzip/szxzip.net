@@ -28,7 +28,7 @@ time_is_widget.init({Beijing_z43d:{}});
 
 <br>
 
-本站未计划提供以下服务：
+未计划：
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0;">
   <img src="https://img.shields.io/badge/Immich-4250AF?logo=immich&logoColor=fff&style=for-the-badge" alt="Immich">
