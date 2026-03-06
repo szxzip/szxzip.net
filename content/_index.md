@@ -17,9 +17,10 @@ time_is_widget.init({Beijing_z43d:{}});
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0;">
   <a href="https://git.szxzip.net"><img src="https://img.shields.io/badge/Gitea-609926?logo=gitea&logoColor=fff&style=for-the-badge" alt="Gitea"></a>
+  {{< badge name="mailcow" link="https://mail.szxzip.net" >}}
   <a href="https://media.szxzip.net"><img src="https://img.shields.io/badge/Jellyfin-00A4DC?logo=jellyfin&logoColor=fff&style=for-the-badge" alt="Jellyfin"></a>
   {{< badge name="openlist" link="https://files.szxzip.net" >}}
-  {{< badge name="mail" link="https://mail.szxzip.net" >}}
+  <a href="analytics.szxzip.net"><img src="https://img.shields.io/badge/Plausible%20Analytics-5850EC?logo=plausibleanalytics&logoColor=fff&style=for-the-badge" alt="Plausible Analytics Badge"></a>
   {{< badge name="status" link="https://status.szxzip.net" >}}
   {{< badge name="img" link="https://img.szxzip.net" >}}
 </div>
@@ -34,7 +35,7 @@ time_is_widget.init({Beijing_z43d:{}});
   <img src="https://img.shields.io/badge/Lemmy-000?logo=lemmy&logoColor=fff&style=for-the-badge" alt="Lemmy">
   <img src="https://img.shields.io/badge/Mastodon-6364FF?logo=mastodon&logoColor=fff&style=for-the-badge" alt="Mastodon">
   <img src="https://img.shields.io/badge/Matrix-000?logo=matrix&logoColor=fff&style=for-the-badge" alt="Matrix">
-  <img src=“https://img.shields.io/badge/Nextcloud-0082C9?logo=nextcloud&logoColor=fff&style=for-the-badge” alt="Nextcloud">
+  <img src="https://img.shields.io/badge/Nextcloud-0082C9?logo=nextcloud&logoColor=fff&style=for-the-badge" alt="Nextcloud">
   <img src="https://img.shields.io/badge/Ollama-000?logo=ollama&logoColor=fff&style=for-the-badge" alt="Ollama">
   <img src="https://img.shields.io/badge/PeerTube-F1680D?logo=peertube&logoColor=fff&style=for-the-badge" alt="PeerTube">
   <img src="https://img.shields.io/badge/XMPP-002B5C?logo=xmpp&logoColor=fff&style=for-the-badge" alt="XMPP">
