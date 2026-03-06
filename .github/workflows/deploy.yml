@@ -23,8 +23,8 @@ jobs:
             cd /root/szxzip.net
             git pull origin main
             rm -rf /var/www/html/*
-            docker run --rm \
-              -v $(pwd):/src \
-              -v /var/www/html:/src/public \
-              hugomods/hugo:exts \
+            podman run --rm \
+              -v $(pwd):/src:z \
+              -v /var/www/html:/src/public:z \
+              ghcr.io/gohugoio/hugo:latest \
               --gc --cleanDestinationDir --logLevel debug
