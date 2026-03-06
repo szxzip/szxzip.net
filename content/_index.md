@@ -20,23 +20,24 @@ time_is_widget.init({Beijing_z43d:{}});
   {{< badge name="mailcow" link="https://mail.szxzip.net" >}}
   <a href="https://media.szxzip.net"><img src="https://img.shields.io/badge/Jellyfin-00A4DC?logo=jellyfin&logoColor=fff&style=for-the-badge" alt="Jellyfin"></a>
   {{< badge name="openlist" link="https://files.szxzip.net" >}}
-  <a href="analytics.szxzip.net"><img src="https://img.shields.io/badge/Plausible%20Analytics-5850EC?logo=plausibleanalytics&logoColor=fff&style=for-the-badge" alt="Plausible Analytics Badge"></a>
+  <a href="https://analytics.szxzip.net"><img src="https://img.shields.io/badge/Plausible%20Analytics-5850EC?logo=plausibleanalytics&logoColor=fff&style=for-the-badge" alt="Plausible Analytics"></a>
   {{< badge name="status" link="https://status.szxzip.net" >}}
-  {{< badge name="img" link="https://img.szxzip.net" >}}
 </div>
 
 运行平台：一台 Raspberry Pi 5 8GB
 
 <br>
 
-本站无计划提供以下服务：
+本站未计划提供以下服务：
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0;">
+  <img src="https://img.shields.io/badge/Immich-4250AF?logo=immich&logoColor=fff&style=for-the-badge" alt="Immich">
   <img src="https://img.shields.io/badge/Lemmy-000?logo=lemmy&logoColor=fff&style=for-the-badge" alt="Lemmy">
   <img src="https://img.shields.io/badge/Mastodon-6364FF?logo=mastodon&logoColor=fff&style=for-the-badge" alt="Mastodon">
   <img src="https://img.shields.io/badge/Matrix-000?logo=matrix&logoColor=fff&style=for-the-badge" alt="Matrix">
   <img src="https://img.shields.io/badge/Nextcloud-0082C9?logo=nextcloud&logoColor=fff&style=for-the-badge" alt="Nextcloud">
   <img src="https://img.shields.io/badge/Ollama-000?logo=ollama&logoColor=fff&style=for-the-badge" alt="Ollama">
   <img src="https://img.shields.io/badge/PeerTube-F1680D?logo=peertube&logoColor=fff&style=for-the-badge" alt="PeerTube">
+  <img src="https://img.shields.io/badge/RSS-FFA500?logo=rss&logoColor=fff&style=for-the-badge" alt="RSS">
   <img src="https://img.shields.io/badge/XMPP-002B5C?logo=xmpp&logoColor=fff&style=for-the-badge" alt="XMPP">
 </div>
