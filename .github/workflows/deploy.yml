@@ -25,7 +25,7 @@ jobs:
             rm -rf /var/www/html/*
             podman run --rm \
               -v /root/szxzip.net:/src:Z \
-              -v /var/www/html:/src/public:Z \
               -w /src \
               ghcr.io/gohugoio/hugo:latest \
               --gc --cleanDestinationDir --logLevel debug
+            mv /root/szxzip.net/public /var/www/html
