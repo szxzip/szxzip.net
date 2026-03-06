@@ -24,7 +24,7 @@ jobs:
             cd /root/szxzip.net
             git pull origin main
             podman run --rm \
-              -v /root/szxzip.net:/data:Z \
+              -v /root/szxzip.net:/data \
               -w /data \
               ghcr.io/gohugoio/hugo:latest \
               --gc --cleanDestinationDir --logLevel debug
