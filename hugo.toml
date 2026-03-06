@@ -22,13 +22,3 @@ timeZone = "Asia/Shanghai"
 
 [markup.goldmark.renderer]
   unsafe = true
-
-[module]
-  [[module.imports]]
-    path = "github.com/kaushalmodi/hugo-atom-feed"
-
-[outputs]
-  home = ["HTML", "RSS", "ATOM"]
-  # Optional:
-  # section = ["HTML", "RSS", "ATOM"]
-  # taxonomy = ["HTML", "RSS", "ATOM"]
