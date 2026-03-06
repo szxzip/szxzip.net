@@ -23,10 +23,12 @@ jobs:
             rm -rf /var/www/html/*
             cd /root/szxzip.net
             git pull origin main
-            podman run --rm \
-              -v /root/szxzip.net:/data \
+            podman run --name hugo \
+              -v /root/szxzip.net:/data:Z \
               -w /data \
               ghcr.io/gohugoio/hugo:latest \
-              --gc --cleanDestinationDir --logLevel debug
+              --gc --cleanDestinationDir --logLevel debug --destination /tmp/hugo-public
+            podman cp hugo:/tmp/hugo-public /root/szxzip.net/public
+            podman rm hugo
             mv /root/szxzip.net/public/{.,}* /var/www/html/
 
