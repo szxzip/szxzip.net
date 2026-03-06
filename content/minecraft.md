@@ -8,6 +8,6 @@ Minecraft 版本：Paper 1.21.11 Build #126
 
 Paper 分配内存：10GiB
 
-<br>
+验证系统：<a href="https://littlesk.in" class="link">LittleSkin</a>
 
-暂无开放计划，未来会引入验证系统。
+服务时间：不定
