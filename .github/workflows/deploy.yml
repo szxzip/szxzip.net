@@ -20,12 +20,13 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            rm -rf /var/www/html/*
             cd /root/szxzip.net
             git pull origin main
-            rm -rf /var/www/html/*
+            chmod 777 public
             podman run --rm \
-              -v /root/szxzip.net:/src:Z \
-              -w /src \
+              -v /root/szxzip.net:/data:Z \
+              -w /data \
               ghcr.io/gohugoio/hugo:latest \
               --gc --cleanDestinationDir --logLevel debug
             mv /root/szxzip.net/public/{.,}* /var/www/html/
