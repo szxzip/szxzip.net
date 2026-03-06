@@ -24,7 +24,7 @@ jobs:
             git pull origin main
             rm -rf /var/www/html/*
             podman run --rm \
-              -v $(pwd):/src:z \
-              -v /var/www/html:/src/public:z \
+              -v /root/szxzip.net:/src:Z \
+              -v /var/www/html:/src/public:Z \
               ghcr.io/gohugoio/hugo:latest \
               --gc --cleanDestinationDir --logLevel debug
