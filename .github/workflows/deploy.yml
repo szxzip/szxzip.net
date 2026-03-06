@@ -29,5 +29,5 @@ jobs:
               --user 0:0 \
               ghcr.io/gohugoio/hugo:latest \
               --gc --cleanDestinationDir --logLevel debug
-            mv /root/szxzip.net/public/{.,}* /var/www/html/
+            mv /root/szxzip.net/public/* /var/www/html/
 
