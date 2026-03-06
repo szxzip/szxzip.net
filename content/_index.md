@@ -16,18 +16,13 @@ time_is_widget.init({Beijing_z43d:{}});
 本站还（将）提供以下服务：
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0;">
-
   <a href="https://git.szxzip.net"><img src="https://img.shields.io/badge/Gitea-609926?style=for-the-badge&logo=gitea&logoColor=white" alt="Gitea"></a>
-  
   {{< badge name="jellyfin" link="https://media.szxzip.net" >}}
   {{< badge name="openlist" link="https://files.szxzip.net" >}}
-  
   {{< badge name="mail" link="https://mail.szxzip.net" >}}
   {{< badge name="status" link="https://status.szxzip.net" >}}
   {{< badge name="img" link="https://img.szxzip.net" >}}
-  
   <a href="https://sample.szxzip.net"><img src="https://img.shields.io/badge/sample-black?style=for-the-badge&logo=data:image/svg%2bxml;base64,123" alt="sample"></a>
-
 </div>
 
 运行平台：一台 Raspberry Pi 5 8GB
