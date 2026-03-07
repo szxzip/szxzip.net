@@ -22,6 +22,7 @@ time_is_widget.init({Beijing_z43d:{}});
   <a href="https://mail.szxzip.net">{{< badge name="Mailcow" >}}</a>
   <a href="https://files.szxzip.net">{{< badge name="OpenList" >}}</a>
   <a href="https://analytics.szxzip.net"><img src="https://img.shields.io/badge/Plausible%20Analytics-5850EC?logo=plausibleanalytics&logoColor=fff&style=for-the-badge" alt="Plausible Analytics"></a>
+  <a href="https://status.szxzip.net"><img src="https://img.shields.io/badge/Uptime%20Kuma-5CDD8B?logo=uptimekuma&logoColor=000&style=for-the-badge" alt="Uptime Kuma"></a>
 </div>
 
 运行平台：一台 Raspberry Pi 5 8GB
