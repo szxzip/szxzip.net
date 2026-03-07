@@ -17,11 +17,11 @@ time_is_widget.init({Beijing_z43d:{}});
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0;">
   <a href="https://git.szxzip.net"><img src="https://img.shields.io/badge/Gitea-609926?logo=gitea&logoColor=fff&style=for-the-badge" alt="Gitea"></a>
+  <a href="https://pi.szxzip.net">{{< badge name="Glances" >}}</a>
   <a href="https://media.szxzip.net"><img src="https://img.shields.io/badge/Jellyfin-00A4DC?logo=jellyfin&logoColor=fff&style=for-the-badge" alt="Jellyfin"></a>
   <a href="https://mail.szxzip.net">{{< badge name="Mailcow" >}}</a>
   <a href="https://files.szxzip.net">{{< badge name="OpenList" >}}</a>
   <a href="https://analytics.szxzip.net"><img src="https://img.shields.io/badge/Plausible%20Analytics-5850EC?logo=plausibleanalytics&logoColor=fff&style=for-the-badge" alt="Plausible Analytics"></a>
-  <a href="https://status.szxzip.net">{{< badge name="Status" >}}</a>
 </div>
 
 运行平台：一台 Raspberry Pi 5 8GB
