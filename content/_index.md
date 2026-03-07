@@ -21,7 +21,7 @@ time_is_widget.init({Beijing_z43d:{}});
   <a href="https://media.szxzip.net"><img src="https://img.shields.io/badge/Jellyfin-00A4DC?logo=jellyfin&logoColor=fff&style=for-the-badge" alt="Jellyfin"></a>
   <a href="https://mail.szxzip.net">{{< badge name="Mailcow" >}}</a>
   <a href="https://files.szxzip.net">{{< badge name="OpenList" >}}</a>
-  <a href="https://status.szxzip.net">{{< badge name="OpenStatus"}}</a>
+  <a href="https://status.szxzip.net">{{< badge name="OpenStatus" >}}</a>
   <a href="https://analytics.szxzip.net"><img src="https://img.shields.io/badge/Plausible%20Analytics-5850EC?logo=plausibleanalytics&logoColor=fff&style=for-the-badge" alt="Plausible Analytics"></a>
 </div>
 
