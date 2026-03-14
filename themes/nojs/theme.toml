@@ -1,0 +1,12 @@
+name = "noJS"
+license = "MIT"
+licenselink = "https://git.andy.sb/nojs/blob/main/LICENSE"
+description = "Minimal theme without JavaScript"
+homepage = "https://git.andy.sb/nojs"
+demosite = "https://nojs.andy.sb"
+tags = ["blank", "blog", "dark", "dark mode", "development", "light", "minimal", "personal", "plain", "starter"]
+features = ["blog", "fast", "responsive"]
+
+[author]
+  name = "Andy Sukowski-Bang"
+  homepage = "https://andy.sb"

@@ -1,0 +1,5 @@
+<a href="{{ .Get "url" }}"
+   class="button {{ .Get "class" }}"
+   {{ if .Get "newtab" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+  {{ .Get "text" }}
+</a>
