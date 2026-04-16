@@ -13,16 +13,16 @@ export const defaultConfig: ThemeConfig = {
     pageSize: 5,
     socialLinks: [
       {
-        name: 'rss',
-        href: '/atom.xml',
-      },
-      {
         name: 'matrix',
         href: 'https://matrix.to/#/#general:matrix.szxzip.net',
       },
       {
         name: 'web',
         href: 'https://status.szxzip.net'
+      },
+      {
+        name: 'rss',
+        href: '/atom.xml',
       },
     ],
     navLinks: [
