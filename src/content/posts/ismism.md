@@ -1,5 +1,5 @@
 ---
-title: '主义主义'
+title: '主义主义笔记-大纲'
 pubDate: 2026-04-16
 categories: ['哲学']
 description: ''
