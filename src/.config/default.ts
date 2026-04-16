@@ -88,7 +88,6 @@ export const defaultConfig: ThemeConfig = {
       theme: 'preferred_color_scheme',
       lang: 'en-US',
       loading: 'lazy',
-      crossorigin='anonymous',
     },
   },
   analytics: {
