@@ -1,5 +1,5 @@
 ---
-title: '极简主义主义 - 基本元素 & 实在论'
+title: '极简主义主义 - 实在论'
 pubDate: 2026-04-16
 categories: ['哲学']
 description: ''
