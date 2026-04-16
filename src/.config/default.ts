@@ -78,7 +78,7 @@ export const defaultConfig: ThemeConfig = {
     giscus: {
       repo: 'szxzip/szxzip.net',
       repoId: 'R_kgDOSEGCsw',
-      category: 'Announcements',
+      category: 'General',
       categoryId: 'DIC_kwDOSEGCs84C69lf',
       mapping: 'pathname',
       strict: '0',
