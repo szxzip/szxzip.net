@@ -79,7 +79,7 @@ export const defaultConfig: ThemeConfig = {
       repo: 'szxzip/szxzip.net',
       repoId: 'R_kgDOSEGCsw',
       category: 'General',
-      categoryId: 'DIC_kwDOSEGCs84C69lf',
+      categoryId: 'DIC_kwDOSEGCs84C69lg',
       mapping: 'pathname',
       strict: '0',
       reactionsEnabled: '1',
