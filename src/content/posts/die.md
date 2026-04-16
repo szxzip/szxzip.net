@@ -1,7 +1,8 @@
 ---
-title: "我死了"
+title: 我死了
 pubDate: 2025-06-29
-description: ""
+categories: ['无类']
+description: ''
 ---
 
 枪支、弹药；失去了画面与声音，一片漆黑。

@@ -1,7 +1,8 @@
 ---
-title: "杀人日记"
+title: 杀人日记
 pubDate: 2026-01-27
-description: ""
+categories: ['无类']
+description: ''
 ---
 
 在一个楼层的三个房间杀了三个人。

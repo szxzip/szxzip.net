@@ -1,7 +1,8 @@
 ---
-title: "一段回忆"
+title: 一段回忆
 pubDate: 2024-12-19
-description: ""
+categories: ['无类']
+description: ''
 ---
 
 六年级，造梦西游退坑，于浏览器中敲出「建站」二字，自此开启这段旅途。

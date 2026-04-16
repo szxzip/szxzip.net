@@ -1,7 +1,8 @@
 ---
-title: "业余无线电入坑"
+title: 业余无线电入坑
 pubDate: 2026-01-23
-description: ""
+categories: ['经验', '兴趣']
+description: ''
 ---
 
 业余无线电入门需要两个步骤：申请操作证、申请电台执照。或许购机也算一步。
