@@ -22,7 +22,7 @@ const rss = new URL('/atom.xml', Astro.site).toString()
 const optimizedImage = await getOptimizedImageURL()
 
 const seoLinks = [
-  { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+  { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' },
   {
     rel: 'alternate',
     type: 'application/rss+xml',
