@@ -10,7 +10,7 @@ export const defaultConfig: ThemeConfig = {
     author: 'szxzip.net',
     description: '时代，前进 | Time, Forward | Temps, en avant | Время, вперёд',
     website: 'https://szxzip.net/',
-    pageSize: 5,
+    pageSize: 10,
     socialLinks: [
       {
         name: 'matrix',
