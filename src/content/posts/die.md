@@ -1,5 +1,5 @@
 ---
-title: 我死了
+title: '我死了'
 pubDate: 2025-06-29
 categories: ['无类']
 description: ''

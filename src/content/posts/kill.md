@@ -1,5 +1,5 @@
 ---
-title: 杀人日记
+title: '杀人日记'
 pubDate: 2026-01-27
 categories: ['无类']
 description: ''

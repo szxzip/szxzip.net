@@ -1,5 +1,5 @@
 ---
-title: 高考了
+title: '高考了'
 pubDate: 2025-06-03
 categories: ['无类']
 description: ''
