@@ -1,5 +1,5 @@
 ---
-title: '主义主义笔记-大纲'
+title: '极简主义主义'
 pubDate: 2026-04-16
 categories: ['哲学']
 description: ''
@@ -36,7 +36,7 @@ description: ''
 
 1-1 ~ 1-3：前反思。
 
-1-1, 1-2 本体是宇宙 / B vs b，1-3 本体应当具一种调和性，为什么是精神？精神调和了哪两者？不过精神确实有中心性。
+1-1, 1-2 本体是宇宙 / Being vs beings；1-3 本体为精神，调和 Being & beings。
 
 ### 1-4
 
