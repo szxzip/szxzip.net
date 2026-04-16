@@ -5,9 +5,9 @@ import type { ThemeConfig } from '~/types'
 
 export const defaultConfig: ThemeConfig = {
   site: {
-    title: '时代  前进',
-    subtitle: 'Time Forward',
-    author: 'szxzip',
+    title: 'Pizxzs',
+    subtitle: '',
+    author: 'szxzip.net',
     description: '时代，前进 | Time, Forward | Temps, en avant | Время, вперёд',
     website: 'https://szxzip.net/',
     pageSize: 5,
@@ -17,9 +17,13 @@ export const defaultConfig: ThemeConfig = {
         href: '/atom.xml',
       },
       {
+        name: 'matrix',
+        href: '/atom.xml',
+      },
+      {
         name: 'web',
         href: 'https://status.szxzip.net'
-      }
+      },
     ],
     navLinks: [
       {
