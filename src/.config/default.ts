@@ -76,18 +76,19 @@ export const defaultConfig: ThemeConfig = {
   },
   comment: {
     giscus: {
-      repo: 'szxzip/szxzip.net'
-      repoId: 'R_kgDOSEGCsw'
-      category: 'Announcements'
-      categoryId: 'DIC_kwDOSEGCs84C69lg'
-      mapping: 'pathname'
-      strict: '0'
-      reactionsEnabled: '1'
-      emitMetadata: '1'
-      inputPosition: 'top'
-      theme: 'preferred_color_scheme'
-      lang: 'en-US'
-      loading: 'lazy'
+      repo: 'szxzip/szxzip.net',
+      repoId: 'R_kgDOSEGCsw',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOSEGCs84C69lg',
+      mapping: 'pathname',
+      strict: '0',
+      reactionsEnabled: '1',
+      emitMetadata: '1',
+      inputPosition: 'top',
+      theme: 'preferred_color_scheme',
+      lang: 'en-US',
+      loading: 'lazy',
+      crossorigin='anonymous',
     },
   },
   analytics: {
