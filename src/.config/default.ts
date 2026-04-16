@@ -18,7 +18,7 @@ export const defaultConfig: ThemeConfig = {
       },
       {
         name: 'matrix',
-        href: '/atom.xml',
+        href: 'https://matrix.to/#/#general:matrix.szxzip.net',
       },
       {
         name: 'web',
