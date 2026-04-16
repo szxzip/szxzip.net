@@ -86,7 +86,7 @@ export const defaultConfig: ThemeConfig = {
       emitMetadata: '1',
       inputPosition: 'top',
       theme: 'preferred_color_scheme',
-      lang: 'en-US',
+      lang: 'en',
       loading: 'lazy',
     },
   },
