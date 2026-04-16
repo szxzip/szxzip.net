@@ -1,5 +1,5 @@
 ---
-title: '「获得」'
+title: '一些凭证或珍品'
 pubDate: 2026-01-27
 categories: ['兴趣', '经验']
 description: ''
