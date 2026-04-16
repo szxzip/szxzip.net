@@ -95,6 +95,6 @@ export const defaultConfig: ThemeConfig = {
     umamiAnalyticsId: '',
   },
   latex: {
-    katex: false,
+    katex: true,
   },
 }
