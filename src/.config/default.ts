@@ -87,6 +87,7 @@ export const defaultConfig: ThemeConfig = {
       inputPosition: 'top',
       theme: 'transparent_dark',
       lang: 'en',
+      loading: 'lazy',
     },
   },
   analytics: {
