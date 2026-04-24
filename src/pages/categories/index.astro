@@ -15,9 +15,9 @@ function getListFromMap(map: typeof categoryMap) {
       ? t('categories_count', count)
       : t('categories_count_plural', count)
     return{
-    title: key,
-    href: `/categories/${getPathFromCategory(key, themeConfig.site.categoryMap)}`,
-    size,
+      title: key,
+      href: `/categories/${getPathFromCategory(key, themeConfig.site.categoryMap)}`,
+      size,
     }
   }))
 }
