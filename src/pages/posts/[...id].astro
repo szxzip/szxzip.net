@@ -39,15 +39,17 @@ function getUrl(id: string) {
     <Content />
   </LayoutPost>
 
-  <Pagination
-    showLeft={Boolean(prev)}
-    leftTitle={`${t('prev_post')}: ${prev?.data.title}`}
-    leftUrl={getUrl(prev?.id)}
-    showRight={Boolean(next)}
-    rightTitle={`${t('next_post')}: ${next?.data.title}`}
-    rightUrl={getUrl(next?.id)}
-    showPageCount={false}
-  />
+  <div class="my-8">
+    <Pagination
+      showLeft={Boolean(prev)}
+      leftTitle={`${t('prev_post')}: ${prev?.data.title}`}
+      leftUrl={getUrl(prev?.id)}
+      showRight={Boolean(next)}
+      rightTitle={`${t('next_post')}: ${next?.data.title}`}
+      rightUrl={getUrl(next?.id)}
+      showPageCount={false}
+    />
+  </div>
   <!-- BUG 这里使用 client:visible 会导致构建失败。ref: https://github.com/withastro/astro/issues/7329 -->
   <Comments post={entry} />
 </LayoutDefault>
