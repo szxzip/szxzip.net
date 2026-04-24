@@ -24,9 +24,9 @@ function getListFromMap(map: typeof categoryMap) {
       {
         list.map(({ title, href, size }) => (
           <li>
-            <h4 class="post-title">
+            <h3 class="post-title text-base">
               <a href={href}># {title}</a>
-            </h4>
+            </h3>
             <p>{size}</p>
           </li>
         ))
