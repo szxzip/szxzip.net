@@ -37,7 +37,7 @@ export const LANGUAGES = {
     tag_count: '%d tags',
     archive_count: '%d post',
     categories_count: '%d post',
-    categories_count_plural: "{{count}} posts"
+    categories_count_plural: "%d posts"
     page_count: '%d',
     page_number: 'Page %d',
     all_posts: 'All Posts',
