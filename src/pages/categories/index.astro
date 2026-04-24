@@ -14,7 +14,6 @@ function getListFromMap(map: typeof categoryMap) {
     const size = count === 1
       ? t('categories_count', count)
       : t('categories_count_plural', count)
-
     return {
       title: key,
       href: `/categories/${getPathFromCategory(key, themeConfig.site.categoryMap)}`,
