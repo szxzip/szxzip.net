@@ -9,17 +9,18 @@ const categoryMap = await getCategories()
 const list = getListFromMap(categoryMap)
 
 function getListFromMap(map: typeof categoryMap) {
-  return Array.from(map).map(([key, value]) => ({
+  return Array.from(map).map(([key, value]) => {
     const count = value.length
     const size = count === 1
       ? t('categories_count', count)
       : t('categories_count_plural', count)
-    return{
+
+    return {
       title: key,
       href: `/categories/${getPathFromCategory(key, themeConfig.site.categoryMap)}`,
       size,
     }
-  }))
+  })
 }
 ---
 
