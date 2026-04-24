@@ -39,7 +39,7 @@ function getListItem(post: Post): ListItem {
       yearMap.map(([year, posts]) => (
         <section>
           <h2 class="post-title">{year}</h2>
-          <ul class="pl-6" flex="~ col gap-4">
+          <ul class="pl-6" flex="~ col gap-8">
             {posts.map(({ title, href, date }) => (
               <li>
                 <h3 class="post-title">
