@@ -29,7 +29,7 @@ function getListItems(posts: Post[]) {
 
 <LayoutDefault>
   <section>
-    <h2 class="post-title"># {name}</h2>
+    <h2 class="post-title mb-4"># {name}</h2>
     <ul class="pl-6 py-3" flex="~ col gap-4">
       {
         getListItems(posts).map(({ title, href, date }) => (
