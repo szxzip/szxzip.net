@@ -10,8 +10,6 @@ const { post } = Astro.props
 ---
 
 <article class="prose">
-  <div class="mb-8">
-    <PostMeta post={post} />
-  </div>
+  <PostMeta post={post} />
   <slot />
 </article>
