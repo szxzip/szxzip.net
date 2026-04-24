@@ -1,5 +1,5 @@
 ---
-title: About
+title: ''
 pubDate: 2026-04-16
 ---
 
