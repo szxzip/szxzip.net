@@ -42,7 +42,7 @@ function getListItem(post: Post): ListItem {
           <ul class="pl-6" flex="~ col gap-4">
             {posts.map(({ title, href, date }) => (
               <li>
-                <h3 class="post-title">
+                <h4 class="post-title">
                   <a href={href}>{title}</a>
                 </h3>
                 <time>{date}</time>
