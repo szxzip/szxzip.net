@@ -15,14 +15,17 @@ export const defaultConfig: ThemeConfig = {
       {
         name: 'matrix',
         href: 'https://matrix.to/#/#general:matrix.szxzip.net',
+        label: 'matrix',
       },
       {
         name: 'web',
-        href: 'https://status.szxzip.net'
+        href: 'https://status.szxzip.net',
+        label: 'status',
       },
       {
         name: 'rss',
         href: '/atom.xml',
+        label: 'rss',
       },
     ],
     navLinks: [

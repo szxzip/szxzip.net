@@ -21,8 +21,8 @@ const { translate: t } = Astro.locals
     {
       socialLinks.map(({ href, name }) => (
         <li>
-          <a href={href} target="_blank" title={name} class="not-underline-hover inline-flex items-center">
-            <span class:list={[`i-mdi-${name}`, 'w-6 h-6']}>{name}</span>
+          <a href={href} target="_blank" title={label} class="not-underline-hover inline-flex items-center">
+            <span class:list={[`i-mdi-${name}`, 'w-6 h-6']}>{label}</span>
           </a>
         </li>
       ))
