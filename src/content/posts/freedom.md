@@ -1,7 +1,7 @@
 ---
 title: '为了……'
 pubDate: 2026-04-24
-categories: ['无类']
+categories: ['日记']
 description: ''
 ---
 

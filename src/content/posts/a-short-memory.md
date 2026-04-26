@@ -1,7 +1,7 @@
 ---
 title: '一段回忆'
 pubDate: 2024-12-19
-categories: ['无类']
+categories: ['日记']
 description: ''
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: '花'
 pubDate: 2026-02-18
-categories: ['无类']
+categories: ['日记']
 description: ''
 ---
 
