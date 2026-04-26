@@ -19,7 +19,7 @@ const { translate: t } = Astro.locals
   </ul>
   <ul flex="~ row gap-1 justify-center">
     {
-      socialLinks.map(({ href, name }) => (
+      socialLinks.map(({ href, name, label }) => (
         <li>
           <a href={href} target="_blank" title={label} class="not-underline-hover inline-flex items-center">
             <span class:list={[`i-mdi-${name}`, 'w-6 h-6']}>{label}</span>
