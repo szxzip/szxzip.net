@@ -2,8 +2,10 @@
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import type { Post } from '~/types'
 import { formatDate, getPosts } from '~/utils'
+import { filterHidden } from '~/utils/filters'
 
-const posts = await getPosts(true)
+const allPosts = await getPosts(true)
+const posts = filterHidden(allPosts)
 
 const yearMap = getYearMap(posts)
 
