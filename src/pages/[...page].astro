@@ -5,11 +5,13 @@ import Pagination from '~/components/Pagination.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import LayoutPost from '~/layouts/LayoutPost.astro'
 import { getPostDescription, getPosts } from '~/utils'
+import { filterHidden } from '~/utils/filters'
 
 const { translate: t } = Astro.locals
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getPosts()
+  const allPosts = await getPosts()
+  const posts = filterHidden(allPosts)
   posts.sort((a, b) => {
     if (a.data.pin && !b.data.pin) return -1
     if (!a.data.pin && b.data.pin) return 1
