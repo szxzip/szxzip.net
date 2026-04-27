@@ -29,7 +29,7 @@ export default defineConfig({
       rehypeKatex,
     ],
     shikiConfig: {
-      theme: 'dracula',
+      theme: 'github-dark',
       wrap: true,
     },
   },
