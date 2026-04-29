@@ -13,8 +13,15 @@ export default antfu(
       'pnpm/yaml-enforce-settings': 'off',
     },
   },
-).prepend({
-  ignores: [
-    'README*.md',
-  ],
-})
+)
+  .prepend({
+    ignores: [
+      'README*.md',
+    ],
+  })
+  .append({
+    files: ['**/*.md'],
+    rules: {
+      'no-trailing-spaces': 'off',
+    },
+  })
