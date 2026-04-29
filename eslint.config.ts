@@ -16,14 +16,6 @@ export default antfu(
 )
   .prepend({
     ignores: [
-      'README*.md',
+      '*.md',
     ],
-  })
-  .append({
-    files: ['**/*.md'],
-    rules: {
-      'no-trailing-spaces': 'off',
-      'format/prettier': 'off',
-      'format/trailing-spaces': 'off',
-    },
   })
