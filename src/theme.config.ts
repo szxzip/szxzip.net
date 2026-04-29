@@ -55,12 +55,8 @@ export const themeConfig = defineThemeConfig({
   },
   comment: {
     provider: 'giscus',
-    disqus: {
-      shortname: 'typography-astro',
-    },
-    twikoo: {
-      envId: 'https://twikoo-tau-flame.vercel.app',
-    },
+    disqus: {},
+    twikoo: {},
     giscus: {
       scriptUrl: 'https://giscus.app/client.js',
       repo: 'szxzip/szxzip.net',
