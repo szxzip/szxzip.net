@@ -1,7 +1,7 @@
 ---
 title: '一些凭证或珍品'
 pubDate: 2026-01-27
-categories: ['兴趣', '经验']
+tags: ['兴趣', '经验']
 description: ''
 ---
 

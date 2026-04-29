@@ -1,7 +1,7 @@
 ---
 title: '极简主义主义 - 实在论（建设中）'
 pubDate: 2026-04-16
-categories: ['哲学']
+tags: ['哲学']
 description: ''
 ---
 

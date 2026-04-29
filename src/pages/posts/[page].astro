@@ -13,7 +13,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   const pinnedEntries = pinPostEntries(sortedEntries)
 
   return paginate(pinnedEntries, {
-    pageSize: 5,
+    pageSize: 10,
   })
 }) satisfies GetStaticPaths
 

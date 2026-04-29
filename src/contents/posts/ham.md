@@ -1,7 +1,7 @@
 ---
 title: '业余无线电入坑'
 pubDate: 2026-01-23
-categories: ['经验', '兴趣']
+tags: ['经验', '兴趣']
 description: ''
 ---
 

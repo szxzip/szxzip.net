@@ -1,7 +1,7 @@
 ---
 title: '我死了'
 pubDate: 2025-06-29
-categories: ['日记']
+tags: ['日记']
 description: ''
 ---
 

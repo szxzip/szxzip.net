@@ -1,7 +1,7 @@
 ---
 title: '原神 5.3 本地私服 & 模组'
 pubDate: 2025-05-09
-categories: ['游戏', '经验']
+tags: ['游戏', '经验']
 description: ''
 ---
 
@@ -10,16 +10,16 @@ description: ''
 1. 安装 MongoDB、JDK 17、Node.js、mitmproxy、Python；
 
 2. 启动 MongoDB：
+
    ```
    $ sudo systemctl enable --now mongodb
    ```
-   
+
 3. 克隆 [Kei-Luna/LunaGC_5.3.0](https://github.com/Kei-Luna/LunaGC_5.3.0)，并编译：
    ```
    $ chmod +x gradlew
    $ ./gradlew jar
    ```
-   
 4. 克隆 [pmagixc/5.3-res](https://github.com/pmagixc/5.3-res)，重命名为 `resources`，置于 LunaGC_5.3.0 根目录；
 
 5. 获取 [MlgmXyysd/Grasscutter](https://github.com/MlgmXyysd/Grasscutter) `proxy.py` `proxy_config.py`，置于 LunaGC_5.3.0 根目录；
@@ -39,11 +39,11 @@ description: ''
 
 3. 启动 Lutris，添加环境变量：
 
-   | Key | Value |
-   |---|---|
-   | http_proxy | http://localhost:8080 |
+   | Key         | Value                 |
+   | ----------- | --------------------- |
+   | http_proxy  | http://localhost:8080 |
    | https_proxy | http://localhost:8080 |
-  
+
 4. 添加游戏。
 
 ## 自定义模组
@@ -53,6 +53,7 @@ description: ''
 2. 由 [SilentNightSound/GI-Model-Importer](https://github.com/SilentNightSound/GI-Model-Importer) 下载 3DMigoto-GIMI；
 
 3. 创建 `launch.bat`，并设为 Lutris 游戏主程序：
+
    ```
    cd C:\path\to\3dmigoto\
    start "" "3DMigoto Loader.exe"
@@ -60,5 +61,5 @@ description: ''
    cd C:\path\to\GenshinImpact\
    start "" "GenshinImpact.exe"
    ```
-   
+
 4. 自定义模组请置于 3dmigoto-gimi/Mods/，游戏中可按 `F1` 查看帮助。
