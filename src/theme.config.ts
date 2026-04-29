@@ -2,10 +2,10 @@ import { defineThemeConfig } from './config'
 
 export const themeConfig = defineThemeConfig({
   site: {
-    author: 'szxzip',
+    author: 'szxzip.net',
     description: '时代，前进 | Time, Forward | Temps, en avant | Время, вперёд',
-    title: '活版印字',
-    subtitle: 'Typography',
+    title: 'Pizxzs',
+    subtitle: '',
     website: 'https://next.szxzip.net/',
     locale: 'en-us',
     navigationLinks: [
