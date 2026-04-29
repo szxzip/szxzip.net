@@ -23,5 +23,7 @@ export default antfu(
     files: ['**/*.md'],
     rules: {
       'no-trailing-spaces': 'off',
+      'format/prettier': 'off',
+      'format/trailing-spaces': 'off',
     },
   })
