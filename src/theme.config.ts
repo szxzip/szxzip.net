@@ -2,50 +2,45 @@ import { defineThemeConfig } from './config'
 
 export const themeConfig = defineThemeConfig({
   site: {
-    author: 'Moeyua',
-    description: 'Rediscory the beauty of typography',
+    author: 'szxzip',
+    description: '时代，前进 | Time, Forward | Temps, en avant | Время, вперёд',
     title: '活版印字',
     subtitle: 'Typography',
-    website: 'https://typography.moeyua.com/',
-    locale: 'zh-cn',
+    website: 'https://next.szxzip.net/',
+    locale: 'en-us',
     navigationLinks: [
       {
-        title: '文章',
+        title: 'Posts',
         url: '/',
       },
       {
-        title: '归档',
+        title: 'Archives',
         url: '/archives',
       },
       {
-        title: '标签',
+        title: 'Tags',
         url: '/tags',
       },
       {
-        title: '关于',
+        title: 'About',
         url: '/about',
       },
     ],
     socialLinks: [
       {
-        title: 'github',
-        url: 'https://github.com',
-        icon: 'i-mdi-github',
+        title: 'matrix',
+        url: 'https://matrix.to/#/#general:matrix.szxzip.net',
+        icon: 'i-mdi-matrix',
+      },
+      {
+        title: 'status',
+        url: 'https://status.szxzip.net',
+        icon: 'i-mdi-web',
       },
       {
         title: 'rss',
         url: '/atom.xml',
         icon: 'i-mdi-rss',
-      },
-      {
-        title: 'twitter',
-        url: 'https://twitter.com',
-        icon: 'i-mdi-twitter',
-      },
-      {
-        title: 'mastodon',
-        url: 'https://mastodon.social',
-        icon: 'i-mdi-mastodon',
       },
     ],
   },
@@ -54,16 +49,12 @@ export const themeConfig = defineThemeConfig({
       fullText: true,
     },
   },
-  seo: {
-    twitter: {
-      username: '@moeyua13',
-    },
-  },
+  seo: {},
   latex: {
     provider: 'katex',
   },
   comment: {
-    provider: 'disqus',
+    provider: 'giscus',
     disqus: {
       shortname: 'typography-astro',
     },
@@ -72,30 +63,21 @@ export const themeConfig = defineThemeConfig({
     },
     giscus: {
       scriptUrl: 'https://giscus.app/client.js',
-      repo: 'moeyua/astro-theme-typography',
-      repoId: 'R_kgDOKy9HOQ',
+      repo: 'szxzip/szxzip.net',
+      repoId: 'R_kgDOSEGCsw',
       category: 'General',
-      categoryId: 'DIC_kwDOKy9HOc4CUZP7',
+      categoryId: 'DIC_kwDOSEGCs84C69lg',
       mapping: 'pathname',
-      strict: '1',
+      strict: '0',
       reactionsEnabled: '1',
-      emitMetadata: '0',
-      inputPosition: 'bottom',
-      theme: 'preferred_color_scheme',
-      lang: 'zh-CN',
+      emitMetadata: '1',
+      inputPosition: 'top',
+      theme: 'transparent_dark',
+      lang: 'en',
       loading: 'lazy',
     },
   },
-  analytics: {
-    provider: 'umami',
-    google: {
-      measurementId: 'G-TFT0WTWV89',
-    },
-    umami: {
-      websiteId: 'df27d14d-1306-4f2b-ad16-9f30be54b80a',
-      scriptUrl: 'https://umami.moeyua.com/script.js',
-    },
-  },
+  analytics: {},
   appearance: {
     theme: 'auto',
     colors: {
