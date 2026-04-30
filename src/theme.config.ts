@@ -38,7 +38,7 @@ export const themeConfig = defineThemeConfig({
         icon: 'i-mdi-web',
       },
       {
-        title: 'rss',
+        title: 'atom feed',
         url: '/atom.xml',
         icon: 'i-mdi-rss',
       },
