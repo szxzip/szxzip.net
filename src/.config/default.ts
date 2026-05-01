@@ -23,9 +23,9 @@ export const defaultConfig: ThemeConfig = {
         label: 'status',
       },
       {
-        name: 'atom feed',
+        name: 'rss',
         href: '/atom.xml',
-        label: 'rss',
+        label: 'atom feed',
       },
     ],
     navLinks: [
