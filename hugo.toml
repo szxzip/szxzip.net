@@ -1,6 +1,6 @@
 baseURL = 'https://szxzip.net/'
 locale = 'en-us'
-title = 'Pizxzs'
+title = 'szxzip.net'
 theme = 'hugo-bearblog'
 timeZone = 'Asia/Shanghai'
 
