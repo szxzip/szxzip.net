@@ -28,6 +28,4 @@ tags = ['FOSS']
 
 未完待续⋯⋯
 
----
-
 [^1]: 关于链接之文章，作者后来 [有一些澄清](https://www.yinwang.org/posts/linux-windows-mac) 。
