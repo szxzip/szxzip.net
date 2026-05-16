@@ -38,10 +38,10 @@ tags = ['游戏', '经验']
 
 3. 启动 Lutris，添加环境变量：
 
-   | Key         | Value                 |
-   | ----------- | --------------------- |
-   | http_proxy  | http://localhost:8080 |
-   | https_proxy | http://localhost:8080 |
+   | Key               | Value                       |
+   | ----------------- | --------------------------- |
+   | ```http_proxy```  | ```http://localhost:8080``` |
+   | ```https_proxy``` | ```http://localhost:8080``` |
 
 4. 添加游戏。
 
