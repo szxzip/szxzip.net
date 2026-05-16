@@ -50,4 +50,6 @@ tags = ['日记']
 
 岁月如歌。
 
+---
+
 [^1]: 原址: ~~https://szxzip.wordpress.com/2024/12/19/about/~~
