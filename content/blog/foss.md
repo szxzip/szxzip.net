@@ -12,7 +12,7 @@ tags = ['FOSS']
 
 > 据说移动端也可以选择 Linux，我还没试过。
 
-> 业余无线电台的自定义固件，可参考 [这篇文章](https://szxzip.net/posts/ham/) 。
+> 业余无线电台的自定义固件，可参考 [这篇文章](/blog/ham/) 。
 
 接下来是实用软件。Linux GUI，较流行的桌面环境（KDE、GNOME、Xfce 等）都有配套的实用工具包，覆盖了媒体播放、设计、编程、通讯等功能。Android，有 F-Droid 这样的应用商店，提供自由软件。
 
