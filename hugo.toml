@@ -3,3 +3,6 @@ locale = 'en-us'
 title = 'Pizxzs'
 theme = 'hugo-bearblog'
 timeZone = 'Asia/Shanghai'
+
+[params]
+avatar = "avatar.png"
