@@ -1,7 +1,7 @@
 +++
 title = '我的自由软件选择'
 date = 2026-05-14
-tags = ['FOSS']
+tags = ['FOSS', '倡议']
 +++
 
 自由软件的选择，我的原则是，以功能性为底线，以自由精神为上限。
@@ -26,6 +26,6 @@ tags = ['FOSS']
 
 ---
 
-未完待续⋯⋯
+未完待续
 
 [^1]: 关于链接之文章，作者后来有一些澄清：[《谈 Linux，Windows 和 Mac》](https://www.yinwang.org/posts/linux-windows-mac) 。

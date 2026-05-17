@@ -18,6 +18,12 @@ Matrix（```#general:szxzip.net``` [加入房间](https://matrix.to/#/#general:s
 
 「Now」（[《The /now page movement》](https://sive.rs/nowff)）是个好主意，但只对清醒的人有效。
 
+「About」或许更适合死亡状态。
+
+---
+
+[倡议](/blog/advocacy)
+
 ---
 
 All posts © 2024-2026 by szxzip.net are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) .
