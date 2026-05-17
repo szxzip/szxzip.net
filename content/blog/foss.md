@@ -6,13 +6,13 @@ tags = ['FOSS']
 
 自由软件的选择，我的原则是，以功能性为底线，以自由精神为上限。
 
-首先是操作系统。对于桌面端，Linux [完全可以胜任日常工作](https://i.linuxtoy.org/docs/guide/ch06.html) [^1] 。发行版大同小异，如能避免 Ubuntu（专有的 Snap 包仓库）则更好。由于功能性需要，仓库软件包通常无法保证完全开源，各发行版对闭源软件的态度也各不相同，具体可见 [这篇文章](https://www.gnu.org/distros/common-distros.html) 。
+首先是操作系统。对于桌面端，Linux 完全可以胜任日常工作。（见 [完全用 Gnu/Linux 工作](https://i.linuxtoy.org/docs/guide/ch06.html) [^1] ）。发行版大同小异，如能避免 Ubuntu（专有的 Snap 包仓库）则更好。由于功能性需要，仓库软件包通常无法保证完全开源，各发行版对闭源软件的态度也各不相同，具体可见 [《详解我们为什么不认可其他系统》](https://www.gnu.org/distros/common-distros.html) 。
 
 移动端，Android 大概是唯一的选择。解锁 Bootloader 后，可以刷入 LineageOS、crDroid 等社区发行版。
 
 > 据说移动端也可以选择 Linux，我还没试过。
 
-> 业余无线电台的自定义固件，可参考 [这篇文章](/blog/ham/) 。
+> 业余无线电台的自定义固件，可参考 [《业余无线电入坑》](/blog/ham/) 。
 
 接下来是实用软件。Linux GUI，较流行的桌面环境（KDE、GNOME、Xfce 等）都有配套的实用工具包，覆盖了媒体播放、设计、编程、通讯等功能。Android，有 F-Droid 这样的应用商店，提供自由软件。
 
@@ -28,4 +28,4 @@ tags = ['FOSS']
 
 未完待续⋯⋯
 
-[^1]: 关于链接之文章，作者后来 [有一些澄清](https://www.yinwang.org/posts/linux-windows-mac) 。
+[^1]: 关于链接之文章，作者后来有一些澄清：[谈 Linux，Windows 和 Mac](https://www.yinwang.org/posts/linux-windows-mac) 。
